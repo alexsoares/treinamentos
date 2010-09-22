@@ -1,7 +1,16 @@
 class ParticipantesController < ApplicationController
   # GET /participantes
   # GET /participantes.xml
-    before_filter :load_participantes
+  before_filter :load_participantes
+  layout :logado?
+
+  def logado?
+    if admin?
+      "gerenciar"
+    else
+      "cadastral"
+    end
+  end
 
    def load_participantes
     @participantes = Participante.find(:all, :order => 'nome ASC')

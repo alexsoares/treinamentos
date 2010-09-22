@@ -14,17 +14,19 @@
 </head>
 <body>
 
-<div id="alinha">
-<div id="topo">
-   <br/><br/><br/><br/>
-     <h4 align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font></h4>
-
+<div id="contents">
+  <div id="header">
+    <div id="topo">
+      <br/><br/>
+      <h4 align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font></h4>
+    </div>
+  </div>
+  <div id="principal">
+      <div id="logoSemEduc">
+        <%= yield  %>
+      </div>
+  </div>
 </div>
-
-</div>
-
-    <div id="contents"><%= yield  %></div>
-
 </body>
 </html>
 

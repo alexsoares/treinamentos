@@ -4,10 +4,18 @@ class InscricaosController < ApplicationController
     before_filter :load_cursos
     before_filter :load_participantes
     before_filter :load_inscricaos
+    layout :logado?
 
-   def load_inscricaos
+  def logado?
+    if admin?
+      "gerenciar"
+    else
+      "cadastral"
+    end
+  end
+
+  def load_inscricaos
     @inscricaos = Inscricao.find(:all)
-    
   end
 
 

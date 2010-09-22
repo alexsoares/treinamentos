@@ -2,6 +2,7 @@ class CursosController < ApplicationController
   # GET /cursos
   # GET /cursos.xml
   before_filter :load_cursos
+  before_filter :authorize
 
    def load_cursos
     @cursos = Curso.find(:all, :order => 'nome ASC')

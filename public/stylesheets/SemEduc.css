@@ -1,27 +1,4 @@
-#home1 {
-   position:absolute;
-   left: 26px;
-   top: 110px;;
-}
-#logoSemEduc{
-   background-image:url(Imagens/logo1SemEduc.jpg);
-   background-repeat: no-repeat;
-   text-align: center;
-   color:white;
-   width:500%;
-   height:680px;
-   margin:0;
-   font:bold;
-   border-color:black;
-   border-left: double;
-   border-bottom: double;
-   border-top: double;
-   border-right: double;
-}
-
-}
-
-#logo{
+logo{
 
 margin:90px 0px;
 background-image:url(Imagens/logo.jpg);
@@ -106,4 +83,34 @@ margin-top:-25px;
 margin-left: 440px;
 }
 
+#contents{
+    margin:0 auto;
+    background-image:url(Imagens/body.jpg);
+    height:600px;
+    width:950px;
+
+}
+
+#principal{
+    float:right;
+    height:600px;
+    width:950px;
+    background-image:url(Imagens/principal_body.gif);
+    font-size:10px;
+}
+#logoSemEduc{
+   background-image:url(Imagens/logo1SemEduc.gif);
+   background-repeat: no-repeat;
+   text-align: center;
+   color:white;
+   height:600px;
+   width:950px;
+   margin:0;
+   font:bold;
+   border-color:black;
+   border-left: double;
+   border-bottom: double;
+   border-top: double;
+   border-right: double;
+}
 
