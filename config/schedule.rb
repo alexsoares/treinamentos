@@ -20,5 +20,5 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.minute, :at => '12pm' do
-  command "/usr/bin/mysqldump -u root SemEduc_production -ps3inf05 > /home/administrador/teste/BKP_educ_#{Time.now().strftime("%d_%m_%y %H:%M")}.sql"
+  command "/usr/bin/mysqldump -u root SemEduc_production -ps3inf05 > /home/administrador/teste/BKP_educ_#{Time.now().strftime("%d_%m_%y_%H_%M")}.sql"
 end
