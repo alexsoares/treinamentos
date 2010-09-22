@@ -3,7 +3,7 @@ class CursosController < ApplicationController
   # GET /cursos.xml
   before_filter :load_cursos
   before_filter :authorize
-
+  layout "gerenciar"
    def load_cursos
     @cursos = Curso.find(:all, :order => 'nome ASC')
   end

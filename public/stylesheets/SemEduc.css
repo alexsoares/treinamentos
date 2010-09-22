@@ -47,7 +47,7 @@ margin:25px;
 }
 
 #topo {
-background-image:url(Imagens/americana_titulo.jpg);
+background-image:url(Imagens/americana.jpg);
 background-repeat: no-repeat;
 text-align: center;
 color:white;
@@ -93,17 +93,17 @@ margin-left: 440px;
 
 #principal{
     float:right;
-    height:600px;
+    height:650px;
     width:950px;
     background-image:url(Imagens/principal_body.gif);
     font-size:10px;
 }
 #logoSemEduc{
-   background-image:url(Imagens/logo1SemEduc.gif);
+   background-image:url(Imagens/logoSemEduc.jpg);
    background-repeat: no-repeat;
    text-align: center;
    color:white;
-   height:600px;
+   height:650px;
    width:950px;
    margin:0;
    font:bold;

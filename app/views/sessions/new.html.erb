@@ -3,7 +3,7 @@
    <table width="60%" border="1" align="center">
      <tr>
        <td>
-         <h2 align="center">Favor inserir password gerencial</h2>
+         <h2 align="center">Favor inserir senha gerencial</h2>
        </td>
      </tr>
       <tr>
@@ -15,5 +15,10 @@
         <%end%>
       </tr>
    </table>
-   <%= button_to "Voltar", :back %>
+     <table width="60%" align="center">
+    <tr>
+      <td><%= button_to "Voltar", root_path, {:method => 'get'} %></td>
+    </tr>
+  </table>
+   
 
