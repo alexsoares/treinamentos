@@ -1,70 +1,75 @@
 <br/>
-<fieldset>
-  <legend><font size=6 style="color:white">Cadastro de Participantes</font></legend>
-<table border="2" width="100%">
-  <td>
-     <% form_for(@participante) do |f| %>
-     <%= f.error_messages %>
-         <table>
+ <br/>
+ <table width="90%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Cadastrar Participante</h1>
+      </td>
+   </tr>
+   <tr>
+     <td>
+       <table border="2" width="100%">
+         <td>
+          <% form_for(@participante) do |f| %>
+          <%= f.error_messages %>
+          <table>
             <tr>
-             <td>  <b>Nome</b></td>
-             <td>  <%= f.text_field :nome %></td>
+              <td>  <b>Nome</b></td>
+              <td>  <%= f.text_field :nome %></td>
            </tr>
            <tr>
-             <td>  <b>Endereço</b></td>
-             <td>  <%= f.text_field :endereco %></td>
+              <td>  <b>Endereço</b></td>
+              <td>  <%= f.text_field :endereco %></td>
            </tr>
            <tr>
-             <td>  <b>Bairro</b></td>
-             <td>  <%= f.text_field :bairro, :size => 20 %></td>
-           </tr>
-
-           <tr>
-             <td>  <b>Cidade</b></td>
-             <td>  <%= f.text_field :cidade %></td>
+              <td>  <b>Bairro</b></td>
+              <td>  <%= f.text_field :bairro, :size => 20 %></td>
            </tr>
            <tr>
-             <td>  <b>Estado</b></td>
-             <td>  <%= f.text_field :estado, :size => 2 %></td>
+              <td>  <b>Cidade</b></td>
+              <td>  <%= f.text_field :cidade %></td>
            </tr>
            <tr>
-             <td>  <b>Fone Residencial</b></td>
-             <td>  <%= f.text_field :foneres, :size => 10 %></td>
+              <td>  <b>Estado</b></td>
+              <td>  <%= f.text_field :estado, :size => 2 %></td>
            </tr>
            <tr>
-             <td>  <b>Fone Comercial</b></td>
-             <td>  <%= f.text_field :fonecom, :size => 10 %></td>
+              <td>  <b>Fone Residencial</b></td>
+              <td>  <%= f.text_field :foneres, :size => 10 %></td>
            </tr>
            <tr>
-              <td> <b>Celular</b> </td>
-              <td> <%= f.text_field :cel, :size => 10 %></td>
+              <td>  <b>Fone Comercial</b></td>
+              <td>  <%= f.text_field :fonecom, :size => 10 %></td>
            </tr>
            <tr>
-             <td> <b>Local Trabalho</b></td>
-             <td> <%= f.text_field :trabalho %></td>
+               <td> <b>Celular</b> </td>
+               <td> <%= f.text_field :cel, :size => 10 %></td>
            </tr>
            <tr>
-             <td> <b>Número Matrícula</b> <br/>(Se Func.Público)</td>
-             <td> <%= f.text_field :matricula%></td>
+              <td> <b>Local Trabalho</b></td>
+              <td> <%= f.text_field :trabalho %></td>
            </tr>
            <tr>
-             <td> <b>E-mail</b></td>
-             <td> <%= f.text_field :email, :size => 20 %></td>
+              <td> <b>Número Matrícula</b> <br/>(Se Func.Público)</td>
+              <td> <%= f.text_field :matricula%></td>
            </tr>
            <tr>
-              <td>  <b>Observações</b></td>
-              <td>  <%= f.text_field :obs %></td>
+              <td> <b>E-mail</b></td>
+              <td> <%= f.text_field :email, :size => 20 %></td>
            </tr>
-   
            <tr>
-              <td colspan="2" align="right"><%= f.submit "Salvar" %></td>
+               <td>  <b>Observações</b></td>
+               <td>  <%= f.text_field :obs %></td>
+           </tr>
+           <tr>
+               <td colspan="2" align="right"><%= f.submit "Salvar" %></td>
            <tr/>
          </table>
         <% end %>
     </td>
     <td VALIGN=TOP>
          <br/>
-        <font size="4"  color="red"><u>OBSERVAÇÕES:</u></font> <br /> <br />
+        <b><font size="4"  color="red"><u>OBSERVAÇÕES:</u></font> <br /> <br />
         <font color="red">
           1. UTILIZAR  SOMENTE LETRAS MAIÚSCULAS<br />
           2. DIGITAR SEMPRE DADOS COMPLETOS<br/>
@@ -76,24 +81,18 @@
           7. SE FUNCIONÁRIO PÚBLICO MUNICIPAL: <br/>
              > PREENCHER Nº MATRICULA<br/>
              > EM OBSERVAÇÕES INFORMAR A FUNÇÃO EXERCIDA
-        </font>
-    </td>
+        </font></b>
+      </td>
+      </table>
+     </td>
+    </tr>
+  </table>
+  <table width="90%" align="center">
+    <tr>
+      <td><%= button_to 'Cadastrar Participante', new_participante_path %></td>
 
- </table>
-</fieldset>
-
-  <%  if ($var==1) %>
-   <table>
-      <td><%= button_to 'Inscrição', new_inscricao_path %></td>
-   </table>
-  <%  else %>
-   <table>
-      <td><%= button_to 'Voltar', new_gerenciar_path %></td>
-      <td><%= button_to 'Inscritos', new_inscricao_path %></td>
-   </table>
-
- <% end %>
-
-
+      <td align="right"><%= button_to 'Voltar', root_path, {:method => 'get'}%></td>
+    </tr>
+  </table>
 
 

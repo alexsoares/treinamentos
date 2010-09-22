@@ -11,15 +11,14 @@
            </tr>
            <tr>
              <td> <b>Tipo</b></td>
-             <td> <%= f.text_field :tipo %></td>
-           </tr>
-           <tr>
-             <td> <b>Carga Horária</b> </td>
-             <td> <%= f.text_field :carga_horaria, :order => [:day, :month, :year] %></td>
+             <td> <%= f.text_field :tipo, :size => 6 %>
+                  <b>Carga Horária</b>
+                  <%= f.text_field:carga_horaria, :order => [:hour, :minute], :size=> 6%>
+             </td>
            </tr>
            <tr>
              <td> <b>Data/Hora</b> </td>
-             <td> <%= f.text_field :data_hora %></td>
+             <td> <%= f.text_field:data_hora, :order => [:day, :month, :year,] %></td>
            </tr>
 
            <tr>

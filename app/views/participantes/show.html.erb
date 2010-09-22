@@ -1,53 +1,65 @@
-<div id="conteudo">
-<fieldset>
-  <legend><font size=6>Participante</font></legend>
- <table border="2">
-  <td width="400">
-   <table>
+ <br/>
+ <br/>
+ <table width="60%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Inscrição</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+        <br/>
+        <table border="2" align="center">
+          <td width="400">
+           <table>
+             <tr>
+               <td><b>Nome:</b><%=h @participante.nome %></td>
+             </tr>
+             <tr>
+               <td><b>Endereço:</b> <%=h @participante.endereco %></td>
+             </tr>
+             <tr>
+               <td><b>Cidade:</b> <%=h @participante.cidade %></td>
+             </tr>
+             <tr>
+               <td><b>Bairro:</b> <%=h @participante.bairro %></td>
+             </tr>
+             <tr>
+               <td><b>Estado:</b> <%=h @participante.estado %></td>
+            </tr>
+            <tr>
+               <td><b>Fone Residencial:</b> <%=h @participante.foneres %></td>
+            </tr>
+            <tr>
+               <td><b>Fone Comercial:</b> <%=h @participante.fonecom %></td>
+            </tr>
+            <tr>
+               <td><b>Fone Celular:</b> <%=h @participante.cel %></td>
+            </tr>
+            <tr>
+               <td><b>e_mail:</b> <%=h @participante.email %></td>
+            </tr>
+            <tr>
+              <td><b>Local de Trabalho:</b> <%=h @participante.trabalho %></td>
+            </tr>
+            <tr>
+              <td><b>Matricula:</b> <%=h @participante.matricula %></td>
+            </tr>
+            <tr>
+             <td><b>Observações:</b> <%=h @participante.obs %></td>
+           </tr>
+ 
+        </table>
+      </td>
+     </table>
+   </tr>
+  </table>
+  <table width="60%" align="center">
     <tr>
-      <td><b>Nome:</b><%=h @participante.nome %></td>
-    </tr>
-    <tr>
-      <td><b>Endereço:</b> <%=h @participante.endereco %></td>
-    </tr>
-    <tr>
-      <td><b>Cidade:</b> <%=h @participante.cidade %></td>
-    </tr>
-    <tr>
-      <td><b>Bairro:</b> <%=h @participante.bairro %></td>
-    </tr>
-    <tr>
-      <td><b>Estado:</b> <%=h @participante.estado %></td>
-    </tr>
-    <tr>
-      <td><b>Fone Residencial:</b> <%=h @participante.foneres %></td>
-    </tr>
-    <tr>
-      <td><b>Fone Comercial:</b> <%=h @participante.fonecom %></td>
-    </tr>
-    <tr>
-      <td><b>Fone Celular:</b> <%=h @participante.cel %></td>
-    </tr>
-    <tr>
-      <td><b>e_mail:</b> <%=h @participante.email %></td>
-    </tr>
-    <tr>
-      <td><b>Local de Trabalho:</b> <%=h @participante.trabalho %></td>
-    </tr>
-    <tr>
-      <td><b>Matricula:</b> <%=h @participante.matricula %></td>
-    </tr>
-    <tr>
-      <td><b>Observações:</b> <%=h @participante.obs %></td>
+      <td> <%= button_to('Editar',{:action => "edit", :id => @participante}, :method => "get") %></td>
+      <td align="right"> <%= button_to 'Voltar', new_participante_path %> </td>
+      <td align="right"><%= button_to 'Novo Participante', new_participante_path %></td>
+      <td align="right"> <%= button_to 'Inscrição', new_inscricao_path %></td>
     </tr>
   </table>
- </td>
-</table>
-</fieldset>
-  <table>
-    <td> <%= button_to('Editar',{:action => "edit", :id => @participante}, :method => "get") %></td>
-    <td> <%= button_to 'Voltar', new_participante_path %> </td>
-     <td><%= button_to 'Novo Participante', new_participante_path %></td>
-    <td> <%= button_to 'Inscrição', new_inscricao_path %></td>
-  </table>
-</div>
+ 

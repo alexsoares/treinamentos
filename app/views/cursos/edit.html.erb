@@ -1,7 +1,14 @@
-<div id="conteudo1">
-   <fieldset>
-   <legend><font size=6>Editar Curso</font></legend>
-     <table border="2">
+ <br/>
+ <br/>
+ <table width="90%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Editar Curso</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+<table border="2" width="100%">
       <td>
        <% form_for(@curso) do |f| %>
        <%= f.error_messages %>
@@ -36,7 +43,9 @@
      <% end %>
     </td>
     <td VALIGN=TOP>
-     <font size="4"><u>OBSERVAÇÕES:</u></font> <br /> <br />
+     <b>
+     <font size="4" color="red"><u>OBSERVAÇÕES:</u></font> <br /> <br />
+     <font color="red">
           1. UTILIZAR  SOMENTE LETRAS MAIÚSCULAS<br />
           2. DIGITAR SEMPRE DADOS COMPLETOS<br/>
           3. NÃO UTILIZAR ACENTUAÇÃO, TIL E CEDILHA<br />
@@ -46,13 +55,20 @@
              > LOCAL DE REALIZAÇÃO DO CURSO<br/>
              > QUEM PROVOME O CURSO<br/>
              > INFORMAÇÕES IMPORTANTES DO CURSO
+     </font>
+     </b>
     </td>
     </table>
-   </fieldset>
-   <table>
+     </td>
+   </tr>
+  </table>
+   <table width="90%" align="center">
+    <tr>
      <td><%= button_to('Exibir',{:action => "show", :id =>@curso}, :method => "get") %></td>
-     <td><%= button_to 'Voltar', voltar_path %></td>
-   </table>
+     <td align="right"><%= button_to 'Voltar', new_gerenciar_path %></td>
+    </tr>
+  </table>
+
 
 
 </div>
