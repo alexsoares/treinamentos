@@ -1,0 +1,25 @@
+
+       <% form_for(@dadosparticipa) do |f| %>
+       <%= f.error_messages %>
+        <table>
+            <tr>
+             <td>  <b>Nome</b></td>
+             <td>  <%= f.text_field :nome %></td>
+           </tr>
+           <tr>
+             <td> <b>Trabalho</b></td>
+             <td> <%= f.text_field :trabalho %></td>
+           </tr>
+           <tr>
+             <td> <b>Matrícula</b> </td>
+             <td> <%= f.text_field :matricula%></td>
+           </tr>
+           
+           <tr>
+               <td valign="top">  <b>Observações</b></td>
+               <td>  <%= f.text_area(:obs, :cols =>"33", :rows => "5") %></td>
+           </tr>
+
+         </table>
+     <% end %>
+

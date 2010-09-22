@@ -1,0 +1,32 @@
+<div id="conteudo">
+<fieldset> <legend><font size=6> Inscrições Realizadas</font></legend>
+  <br/>
+   <%= button_to 'Nova Inscrição', new_inscricao_path %>
+   <br/>
+    <table border="2">
+      <tr>
+        <td>Participante</td>
+        <td>Curso</td>
+        <td>Tipo</td>
+          <td>Data da Inscrição:</td>
+      </tr>
+      <% for inscricao in @inscricaos %>
+      <tr>
+       <td><%=h inscricao.participante.nome %></td>
+       <td><%=h inscricao.curso.nome %></td>
+       <td><%=h inscricao.curso.tipo %></td>
+       <td><%=h inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
+     </tr>
+     <tr>
+       <td bgcolor="gray"colspan="5">
+         |<%= link_to 'Exibir', inscricao %>|
+         <!--<%= link_to 'Apagar', inscricao, :confirm => 'Confirma?', :method => :delete %>|-->
+
+     </tr>
+     <% end %>
+    </table>
+</fieldset>
+   <%= button_to 'Nova Inscrição', new_inscricao_path %>
+</div>
+
+

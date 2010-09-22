@@ -1,0 +1,56 @@
+<div id="conteudo1">
+<fieldset><legend><font size=6>Cadastro de Cursos</font></legend>
+<table border="2">
+  <td>
+   <% form_for(@curso) do |f| %>
+   <%= f.error_messages %>
+     <table>
+       <br/>
+        <tr>
+          <td><b>Nome</b></td>
+          <td><%= f.text_field :nome %></td>
+        </tr>
+        <tr>
+          <td><b>Ministrante</b></td>
+          <td><%= f.text_field :ministrante %></td>
+        </tr>
+        <tr>
+          <td><b>Tipo</b></td>
+          <td><%= f.select :tipo, TIPO, :include_blank => '--Selecionar--'%>
+              <b>Carga Horária</b>
+              <%= f.time_select :carga_horaria  %> horas</td>
+        </tr>
+        <tr>
+          <td><b>Dia e Horário</b></td>
+          <td><%= f.datetime_select :data_hora, :order => [:day, :month, :year] %> horas</td>
+       </tr>
+         <tr>
+           <td valign="top"><b>Observações </b></td>
+           <td><%= f.text_area(:obs, :cols =>"45", :rows => "5") %></td>
+         </tr>
+         <tr>
+            <td colspan="2" align="right"><%= f.submit "Salvar" %></td>
+         </tr>
+     </table>
+    <% end %>
+   <td VALIGN=TOP>
+
+         <font size="4" color="red"><u>OBSERVAÇÕES:</u></font> <br /> <br />
+         <font color="red">
+          1. UTILIZAR  SOMENTE LETRAS MAIÚSCULAS<br />
+          2. DIGITAR SEMPRE DADOS COMPLETOS<br/>
+          3. NÃO UTILIZAR ACENTUAÇÃO, TIL E CEDILHA<br />
+          4. NÃO UTILIZAR ABREVIAÇÕES<br />
+          
+         </font>
+    </td>
+
+   </td>
+</table>
+</fieldset>
+  <%  if ($var==1) %>
+     <%= button_to 'Voltar', voltar_path %>
+ <% else %>
+     <%= button_to 'Voltar', new_gerenciar_path %>
+ <%end%>
+</div>

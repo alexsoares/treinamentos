@@ -1,0 +1,53 @@
+<div id="conteudo2">
+<fieldset>
+  <legend><font size=6>Cadastro de Cursos</font></legend>
+  <br/>
+    <table>
+      <td> <%= button_to 'Novo curso', new_curso_path %></td>
+        <% if $var == 0 %>
+          <td><%= button_to 'Voltar', new_gerenciar_path %></td>
+    <% end %>
+ </table>
+
+    <table border="2">
+      <tr>
+        <th>Nome</th>
+        <th>Ministrante</th>
+        <th>Tipo</th>
+        <th>Carga Horaria</th>
+        <th>Data/Hora</th>
+        <th>Observações</th>
+      </tr>
+     <% for curso in @cursos %>
+     <tr>
+       <td><center><%=h curso.nome %></center></td>
+       <td><center><%=h curso.ministrante %></center></td>
+       <td><center><%=h curso.tipo %></center></td>
+       <td><center><%=h curso.carga_horaria.strftime("%H:%M") %> horas</center></td>
+       <td><center><%=h curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %></center></td>
+       <td><center><%=h curso.obs %></center></td>
+    </tr>
+    <tr>
+       <td bgcolor="gray"colspan="6">
+        <table>
+          <td><%= button_to('Exibir',{:action => "show", :id =>curso}, :method => "get") %></td>
+          <td> <%= button_to('Editar',{:action => "edit", :id =>curso}, :method => "get") %></td>
+          <td><%= button_to('Excluir',{:action => "destroy", :id =>curso}, :confirm => 'Confirma exclusão?', :method => "delete")%></td>
+        </table>
+
+
+       </td>
+    </tr>
+    <% end %>
+ </table>
+
+  <br />
+
+</fieldset>
+    <table>
+      <td> <%= button_to 'Novo curso', new_curso_path %></td>
+        <% if $var == 0 %>
+          <td><%= button_to 'Voltar', new_gerenciar_path %></td>
+    <% end %>
+ </table>
+</div>

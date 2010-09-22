@@ -1,0 +1,15 @@
+<div id="conteudo3">
+ <br/>
+
+ <fieldset><legend><font size=5><b><u>CONSULTA PARTICIPANTE</u></font></b></legend>
+     <br/>
+    <font size="4"> Selecione um participante para consultar: <%= collection_select :participante, :participante_id, @participantes, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
+      <%= observe_field 'participante_participante_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'lista_participante' },
+           :with   => 'participante_participante_id' %>
+    <div id="listagem"> </div>
+ </fieldset>
+ <%= button_to 'Voltar', new_gerenciar_path %>
+</div>

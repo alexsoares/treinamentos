@@ -1,0 +1,33 @@
+<div id="conteudo">
+<fieldset> <legend><font size=6>Confirmação da Inscrição</font></legend>
+ 
+  <td width="400">
+   <table>
+     <br/>
+     <tr>
+       <td><b>Participante:</b></td>
+       <td>  <%=h  @inscricao.participante.nome %> </td>
+     </tr>
+     <tr>
+       <td><b>Curso:</b></td>
+       <td>  <%=h  @inscricao.curso.nome %> </td>
+     </tr>
+     <tr>
+       <td><b>Data_hora:</b></td>
+       <td>  <%=h  @inscricao.curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %> </td>
+     </tr>
+     <tr>
+       <td><b>Observações:</b></td>
+       <td>  <%=h  @inscricao.curso.obs %> </td>
+     </tr>
+     <tr>
+       <td><b>Data da Inscrição:</b></td>
+       <td>  <%=h  @inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
+     </tr>
+    <br/>
+   </table>
+ 
+</fieldset>
+ <%= button_to 'Voltar', voltarinscricao_path %>
+
+</div>

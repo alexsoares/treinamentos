@@ -1,0 +1,15 @@
+<div id="conteudo1">
+ <br/>
+
+ <fieldset><legend><font size=5><b><u>CONSULTA CURSO</u></font></b></legend>
+     <br/>
+    <font size="4"> Selecione uma unidade para consultar: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
+        <%= observe_field 'curso_curso_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'lista_curso' },
+           :with   => 'curso_curso_id' %>
+    <div id="listagem"> </div>
+ </fieldset>
+ <%= button_to 'Voltar', new_gerenciar_path %>
+</div>
