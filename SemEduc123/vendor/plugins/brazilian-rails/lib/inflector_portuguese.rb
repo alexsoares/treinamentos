@@ -3,7 +3,7 @@
 # http://pt.wikipedia.org/wiki/Plural e
 # http://pt.wikipedia.org/wiki/Singular
 module Inflector
-  Inflector.inflections do |inflect|
+  ActiveSupport::Inflector.inflections do |inflect|
     inflect.clear
     
     inflect.plural(/$/,  's')
@@ -34,7 +34,7 @@ module Inflector
     inflect.singular(/eis$/i, 'el')
     inflect.singular(/ois$/i, 'ol')
     inflect.singular(/uis$/i, 'ul')
-    inflect.singular(/(r|t)is$/i, '\1il')
+    inflect.singular(/(r|t|f|v)is$/i, '\1il')
     inflect.singular(/ns$/i, 'm')
     inflect.singular(/sses$/i, 'sse')
     inflect.singular(/^(.*[^s]s)es$/i, '\1')
