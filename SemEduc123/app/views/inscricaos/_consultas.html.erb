@@ -1,0 +1,15 @@
+<div id="conteudo">
+ <br/>
+
+ <fieldset><legend><font size=5><b><u>CURSO</u></font></b></legend>
+     <br/>
+    <font size="4"> Selecione curso: <%= collection_select :curso, :curso_id, @cursos, :id, :Nome, :include_blank => ' -- Selecione -- '  %></font>
+        <%= observe_field 'curso_curso_id',
+           :frequency => 0.5,
+           :update => "listagem",
+           :url    => { :action => 'lista_inscricao' },
+           :with   => 'curso_curso_id' %>
+    <div id="listagem"> </div>
+ </fieldset>
+ <%= button_to 'Voltar', new_gerenciar_path %>
+</div>

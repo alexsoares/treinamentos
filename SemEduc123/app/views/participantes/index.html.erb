@@ -1,0 +1,61 @@
+<div id="conteudo2">
+<fieldset>
+  <legend><font size=6>Participantes Cadastrados</font></legend>
+  <table>
+    <td><%= button_to 'Novo Participante', new_participante_path %> </td>
+    <td><%= button_to 'Inscrição', new_inscricao_path %></td>
+        <% if $var == 0 %>
+        <td><%= button_to 'Voltar', new_gerenciar_path %></td>
+    <% end %>
+ </table>
+ <table border="2">
+  <tr>
+    <th>Nome</th>
+    <th>Endereço</th>
+    <th>Cidade</th>
+    <th>Bairro</th>
+    <th>Estado</th>
+    <th>Fone Residencial</th>
+    <th>Fone Comecial</th>
+    <th>Fone Celular</th>
+    <th>e-mail</th>
+    <th>Trabalho</th>
+    <th>Matricula</th>
+    <th>Observações</th>
+  </tr>
+  <% for participante in @participantes %>
+  <tr>
+    <td><%=h participante.Nome %></td>
+    <td><%=h participante.Endereco %></td>
+    <td><%=h participante.Cidade %></td>
+    <td><%=h participante.Bairro %></td>
+    <td><%=h participante.Estado %></td>
+    <td><%=h participante.FoneRes %></td>
+    <td><%=h participante.FoneCom %></td>
+    <td><%=h participante.Cel %></td>
+    <td><%=h participante.Email %></td>
+    <td><%=h participante.Trabalho %></td>
+    <td><%=h participante.Matricula %></td>
+    <td><%=h participante.Obs %></td>
+ </tr>
+  <tr>
+   <td bgcolor="gray"colspan="12">
+     <table>
+       <td><%= button_to('Exibir',{:action => "show", :id => participante}, :method => "get") %></td>
+       <td> <%= button_to('Editar',{:action => "edit", :id => participante}, :method => "get") %></td>
+       <td><%= button_to('Excluir',{:action => "destroy", :id => participante}, :confirm => 'Confirma exclusão?', :method => "delete")%></td>
+     </table>
+    </td>
+  </tr>
+  <% end %>
+
+ </table>
+</fieldset>
+  <table>
+    <td><%= button_to 'Novo Participante', new_participante_path %> </td>
+    <td><%= button_to 'Inscrição', new_inscricao_path %></td>
+    <% if $var == 0 %>
+        <td><%= button_to 'Voltar', new_gerenciar_path %></td>
+    <% end %>
+ </table>
+</div>

@@ -1,0 +1,26 @@
+<br/>
+<table>
+<tr>
+  <td align="left"l><font size="4"><b><u> Resultado da Consulta</b</u></font></td>
+  <td align="right"><%= button_to 'Voltar', new_gerenciar_path %></td>
+  <br/>
+</tr>
+<tr>
+  <td colspan="2">
+   <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+       <tr>
+        <td>Participante</td>
+        <td>Curso</td>
+          <td>Data da Inscrição:</td>
+      </tr>
+      <% for inscricao in @inscricaos %>
+      <tr>
+       <td><%=h inscricao.participante.Nome %></td>
+       <td><%=h inscricao.curso.Nome %></td>
+       <td><%=h inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
+     </tr>
+    <% end %>
+   </table>
+ </td>
+</tr>
+ </table>

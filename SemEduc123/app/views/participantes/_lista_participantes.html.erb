@@ -1,0 +1,40 @@
+<br/>
+<font size="4"><b><u> Resultado da Consulta</b</u></font>
+  <br/>  <br/>
+   <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+     <tr>
+       <th>Nome</th>
+       <th>Endereço</th>
+       <th>Cidade</th>
+       <th>Bairro</th>
+       <th>Estado</th>
+       <th>Fone Residencial</th>
+       <th>Fone Comecial</th>
+       <th>Fone Celular</th>
+       <th>e-mail</th>
+       <th>Trabalho</th>
+       <th>Matricula</th>
+       <th>Observações</th>
+    </tr>
+    <% for participante in @participantes %>
+    <tr>
+      <td><%=h participante.Nome %></td>
+      <td><%=h participante.Endereco %></td>
+      <td><%=h participante.Cidade %></td>
+      <td><%=h participante.Bairro %></td>
+      <td><%=h participante.Estado %></td>
+      <td><%=h participante.FoneRes %></td>
+      <td><%=h participante.FoneCom %></td>
+      <td><%=h participante.Cel %></td>
+      <td><%=h participante.Email %></td>
+      <td><%=h participante.Trabalho %></td>
+      <td><%=h participante.Matricula %></td>
+      <td><%=h participante.Obs %></td>
+   </tr>
+  <% end %>
+ </table>
+
+
+
+
+

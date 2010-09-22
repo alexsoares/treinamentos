@@ -47,7 +47,8 @@ Exemplo 2 - Calendar
 
      <table>
       <tr>
-         <td><b><%= f.label :servidor_publico, 'Filho de servidor publico cuncursado?' %></b></td>
+         <td><b><%= f.label :servidor_publico, 'Filho de mãe cuncursada na ' %></b><br/>
+                                                <b>Prefeitura de Americana ?</b></td>
          <td><%= f.check_box :servidor_publico %>SIM </td>
       </tr>
       <tr>
@@ -145,7 +146,8 @@ Exemplo 2 - Calendar
                     });
                 });
                </script>
-               <b>Possui irmão(s)</b>
+               <b>Possui irmão(s) matriculado(s) em </b><br/>
+               <b>Creche, EMEI ou Casa da Criança?</b>
                 <a href="#" id="dropdownbutton9"><%= f.check_box :gemelar %></a>SIM
                <td>
                 <ul id="menu9" style="display:none">

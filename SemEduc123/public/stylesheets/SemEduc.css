@@ -1,0 +1,93 @@
+#home1 {
+   position:absolute;
+   left: 50px;
+   top: 150px;;
+}
+
+
+#logo{
+
+margin:90px 0px;
+background-image:url(Imagens/logo.jpg);
+background-repeat: no-repeat;
+height:120px;
+}
+#menu {
+   position:inherit;
+   left: 280px;
+   top: 20px;;
+}
+body {
+margin:0;
+background-color:#c4c4c4;
+}
+
+a:hover {
+  color:white;
+  background-color:gray;
+}
+#alinha{
+margin:25px;
+}
+
+#conteudo {
+   position:absolute;
+   left: 430px;
+   top: 250px;;
+}
+#conteudo1 {
+   position:absolute;
+   left: 300px;
+   top: 200px;;
+}
+
+#conteudo2 {
+   position:absolute;
+   left: 10px;
+   top: 200px;
+}
+
+#conteudo3 {
+   position:absolute;
+   left: 100px;
+   top: 200px;
+}
+
+#topo {
+background-image:url(Imagens/americana_titulo.jpg);
+background-repeat: no-repeat;
+text-align: center;
+color:white;
+width:100%;
+height:80px;
+margin:0;
+font:bold;
+border-color:black;
+border-left: double;
+border-bottom: double;
+border-top: double;
+border-right: double;
+}
+
+#rodape{
+    background-image:url(Imagens/fundo_rodape.jpg);
+    margin:25px;
+  	position:relative;
+    top: 589px;
+    width:96%;
+    color:white;
+    text-align:center;
+}
+
+#caixasobre {
+background-image:url(Imagens/caixa.jpg);
+height:480px;
+background-position: center;
+}
+#posicaosobre {
+width:35%;
+margin-top:-25px;
+margin-left: 440px;
+}
+
+

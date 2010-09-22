@@ -1,0 +1,23 @@
+<div id="conteudo">
+ <fieldset><legend><font size=5><b>ESTATISTICA DE INSCRIÇÕES</font></b></legend>
+  <table  border="1" width="100%" cellspacing="1">
+   <font size=4><b><tr>Nome</tr></font></b>
+    <% for curso in @cursos %>
+     <tr>
+      <td >
+        <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+          <tr><%=h curso.Nome %></tr>
+       </table>
+      </td>
+      <td>
+        <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+         <tr><%= Inscricao.tamanho_inscricao(curso) %>  </tr>
+       </table>
+      </td>
+     </tr>
+  <% end %>
+   </table>
+ </fieldset>
+  <%= button_to 'Voltar', new_gerenciar_path %>
+</div>
+

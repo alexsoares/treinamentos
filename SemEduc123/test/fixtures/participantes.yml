@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Nome: MyString
+  Matricula: 1
+  Trabalho: MyString
+  Obs: MyString
+
+two:
+  Nome: MyString
+  Matricula: 1
+  Trabalho: MyString
+  Obs: MyString

@@ -1,0 +1,69 @@
+<div id="conteudo1">
+
+     
+
+ <fieldset><legend><font size=6>Inscrição</font></legend>
+  <table border="3">
+     <tr align="Left"><font size=3>
+         <br/>
+         <u><b>Para efetuar a inscrição:</b></u> <br/>
+         1) Cadastrar participante <br/>
+         2) Selecionar participante<br/>
+         3) Selecionar curso<br/>
+         4) Confirmar inscrição<br/>
+         5) Caso participante já inscrito surgirá tela informando que a inscrição já foi realizada<br/>
+    
+        </font>
+   </tr>
+   <tr>
+     <td width="50" valign="top">
+       <table border="1">
+       
+       <tr>
+          <% form_for(@inscricao) do |f| %>
+          <%= f.error_messages %>
+          <td valign="top"> Participante:</td>
+          <td><%= f.collection_select :participante_id, @participantes, :id, :Nome, :include_blank => ' -- Selecione -- ' %>
+              <%= observe_field 'inscricao_participante_id',
+               :with => :inscricao_participante_id,
+               :url => { :action => 'sel_participa' } %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3"><div id="dadosparticipa"></div></td>
+        </tr>
+       </table>
+     </td>
+     <td valign="top">
+      <table border="1">
+        <tr>
+          <td >Curso:</td>
+          <td><%= f.collection_select :curso_id, @cursos, :id, :Nome, :include_blank => ' -- Selecione -- ' %>
+              <%= observe_field 'inscricao_curso_id',
+                  :frequency => 0.5,
+                  :with => :curso_inscricao_curso_id,
+                  :url => { :action => 'sel_curso' } %>
+          </td>
+       </tr>
+       <tr>
+         <td colspan="3"><div id="curso"></div></td>
+       </tr>
+     </table>
+    </td>
+   </tr>
+   <tr>
+     <td colspan="2" align="right">
+        <%= f.submit "Confirmar Inscrição" %>
+     </td>
+   </tr>
+ <% end %>
+ </table>
+ </fieldset>
+<table>
+  <tr>
+  <td><%= button_to 'Voltar', voltarinscricao_path %></td>
+  <td><%= button_to 'Cadastrar Participante', new_participante_path %></td>
+  <td><%= button_to 'Sair', root_path,:confirm => "Tem certeza que deseja voltar para tela inicial?" %></td>
+</tr>
+</table>
+</div>
