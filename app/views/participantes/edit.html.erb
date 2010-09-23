@@ -86,8 +86,18 @@
      </td>
    </tr>
   </table>
- <table width="90%" align="center">
-     <td><%= button_to('Exibir',{:action => "show", :id =>@participante}, :method => "get") %></td>
-     <td align="right"><%= button_to 'Voltar', new_participante_path %></td>
+
+  <table width="90%" align="center">
+    <tr>
+          <td width="8%"><%= button_to('Exibir',{:action => "show", :id =>@participante}, :method => "get") %></td>
+          <td>
+             <%if $Var == 1%>
+               <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
+             <%else%>
+                <%= button_to 'Voltar', new_participante_path %>
+             <%end%>
+          </td>
+          
+    </tr>
    </table>
 

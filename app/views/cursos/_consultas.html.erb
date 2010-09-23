@@ -1,15 +1,26 @@
-<div id="conteudo1">
- <br/>
-
- <fieldset><legend><font size=5><b><u>CONSULTA CURSO</u></font></b></legend>
-     <br/>
-    <font size="4"> Selecione uma unidade para consultar: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
-        <%= observe_field 'curso_curso_id',
+<br/><br/><br/><br/>
+ <table width="60%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Consulta Cursos</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+        <font size="4"> Selecione uma unidade para consultar: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
+         <%= observe_field 'curso_curso_id',
            :frequency => 0.5,
            :update => "listagem",
            :url    => { :action => 'lista_curso' },
            :with   => 'curso_curso_id' %>
-    <div id="listagem"> </div>
- </fieldset>
- <%= button_to 'Voltar', new_gerenciar_path %>
-</div>
+        <div id="listagem"> </div>
+     </td>
+   </tr>
+  </table>
+  <table width="60%" align="center">
+    <tr>
+        <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+    </tr>
+  </table>
+
+

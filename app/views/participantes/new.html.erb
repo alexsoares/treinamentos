@@ -89,9 +89,11 @@
   </table>
   <table width="90%" align="center">
     <tr>
-      <td><%= button_to 'Cadastrar Participante', new_participante_path %></td>
+          <td width="8%"><%= button_to 'Inscrição', new_inscricao_path %></td>
+          <% if $Var == 1 %>
+              <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+          <% end %>
 
-      <td align="right"><%= button_to 'Voltar', root_path, {:method => 'get'}%></td>
     </tr>
   </table>
 

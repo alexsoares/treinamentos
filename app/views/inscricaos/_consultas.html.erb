@@ -1,15 +1,30 @@
-<div id="conteudo">
  <br/>
+ <br/>
+ <table width="60%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Consuta inscrição por curso</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+        <br/>
+        <font size="4"> Selecione curso: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
+           <%= observe_field 'curso_curso_id',
+            :frequency => 0.5,
+            :update => "listagem",
+            :url    => { :action => 'lista_inscricao' },
+            :with   => 'curso_curso_id' %>
+          <div id="listagem"> </div>
+      </td>
+   </tr>
+  </table>
+   <table width="60%" align="center">
+    <tr>
+      <td><%= button_to 'Voltar', gerenciars_path, {:method => 'get'}%></td>
+    </tr>
+  </table>
 
- <fieldset><legend><font size=5><b><u>CURSO</u></font></b></legend>
-     <br/>
-    <font size="4"> Selecione curso: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
-        <%= observe_field 'curso_curso_id',
-           :frequency => 0.5,
-           :update => "listagem",
-           :url    => { :action => 'lista_inscricao' },
-           :with   => 'curso_curso_id' %>
-    <div id="listagem"> </div>
- </fieldset>
- <%= button_to 'Voltar', new_gerenciar_path %>
-</div>
+
+
+

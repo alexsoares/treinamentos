@@ -1,23 +1,37 @@
-<div id="conteudo">
- <fieldset><legend><font size=5><b>ESTATISTICA DE INSCRIÇÕES</font></b></legend>
-  <table  border="1" width="100%" cellspacing="1">
-   <font size=4><b><tr>Nome</tr></font></b>
-    <% for curso in @cursos %>
-     <tr>
-      <td >
-        <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
-          <tr><%=h curso.nome %></tr>
-       </table>
+ <br/>
+ <br/>
+ <table width="60%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Estatistica das Inscrições</h1>
       </td>
+   </tr>
+   <tr>
       <td>
-        <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
-         <tr><%= Inscricao.tamanho_inscricao(curso) %>  </tr>
-       </table>
-      </td>
-     </tr>
-  <% end %>
-   </table>
- </fieldset>
-  <%= button_to 'Voltar', new_gerenciar_path %>
-</div>
+        <table  border="1" width="100%" cellspacing="1">
+         <font size=4><b><tr>Nome co curso</tr></font></b>
+         <% for curso in @cursos %>
+          <tr>
+            <td>
+              <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+                <tr><%=h curso.nome %></tr>
+             </table>
+            </td>
+            <td>
+             <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+                <tr><%= Inscricao.tamanho_inscricao(curso) %>  </tr>
+             </table>
+            </td>
+          </tr>
+         <% end %>
+        </table>
+
+  </td>
+   </tr>
+  </table>
+   <table width="60%" align="center">
+    <tr>
+        <td><%= button_to 'Voltar', gerenciars_path, {:method => 'get'}%></td>
+    </tr>
+  </table>
 

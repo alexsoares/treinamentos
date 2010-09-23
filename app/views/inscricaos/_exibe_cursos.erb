@@ -1,32 +1,11 @@
-  <% form_for(@cursosparticipa) do |f| %>
-       <%= f.error_messages %>
-        <table>
-            <tr>
-             <td>  <b>Nome</b></td>
-             <td>  <%= f.text_field :nome %></td>
-           </tr>
-           <tr>
-             <td> <b>Ministrante</b></td>
-             <td> <%= f.text_field :ministrante %></td>
-           </tr>
-           <tr>
-             <td> <b>Tipo</b></td>
-             <td> <%= f.text_field :tipo, :size => 6 %>
-                  <b>Carga Horária</b>
-                  <%= f.text_field:carga_horaria, :order => [:hour, :minute], :size=> 6%>
-             </td>
-           </tr>
-           <tr>
-             <td> <b>Data/Hora</b> </td>
-             <td> <%= f.text_field:data_hora, :order => [:day, :month, :year,] %></td>
-           </tr>
-
-           <tr>
-              <td valign="top">  <b>Observações</b></td>
-              <td>  <%= f.text_area(:obs, :cols =>"33", :rows => "5") %></td>
-           </tr>
-
-         </table>
+<% for curso in @cursosparticipa %>
+     <b>Nome:<%=h curso.nome %><br/>
+        Ministrante: <%=h curso.ministrante %><br/>
+        Tipo: <%=h curso.tipo %><br/>
+        Carga Horaria: <%=h curso.carga_horaria%> horas<br/>
+        Data e Horário:<%=h curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %><br/>
+        Observações:<%=h curso.obs %>
+      </b>
      <% end %>
 
 

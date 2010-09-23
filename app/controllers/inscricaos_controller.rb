@@ -97,7 +97,7 @@ class InscricaosController < ApplicationController
 
     respond_to do |format|
       if @inscricao.save
-        flash[:notice] = 'Inscricao confirmada com sucesso.'
+        flash[:notice] = 'INSCRIÇÃO CONFIRMADA COM SUCESSO.'
         format.html { redirect_to(@inscricao) }
         format.xml  { render :xml => @inscricao, :status => :created, :location => @inscricao }
       else
@@ -116,7 +116,7 @@ class InscricaosController < ApplicationController
 
     respond_to do |format|
       if @inscricao.update_attributes(params[:inscricao])
-        flash[:notice] = 'Inscricao was successfully updated.'
+        flash[:notice] = 'INSCRIÇÃO ATUALIZADA COM SUCESSO.'
         format.html { redirect_to(@inscricao) }
         format.xml  { head :ok }
       else

@@ -26,11 +26,11 @@
               <td><b>Tipo</b></td>
               <td><%= f.select :tipo, TIPO, :include_blank => '--Selecionar--'%>
                  <b>Carga Horária</b>
-                 <%= f.time_select :carga_horaria  %> horas</td>
+                 <%= f.text_field :carga_horaria, :size => 8 %> - horas</td>
            </tr>
            <tr>
                <td><b>Dia e Horário</b></td>
-               <td><%= f.datetime_select :data_hora, :order => [:day, :month, :year] %> horas</td>
+               <td><%= f.datetime_select :data_hora, :order => [:day, :month, :year], :include_blank => '' %> horas</td>
            </tr>
            <tr>
               <td valign="top"><b>Observações </b></td>
@@ -57,12 +57,12 @@
   </tr>
  </table>
 <table width="90%" align="center">
-  <tr>
-     <td>
+    <tr>
+     <td width="8%">
          <% if ($var==1) %>
-             <%= button_to 'Voltar', :back %>
+             <%= button_to 'Voltar', root_path, {:method => 'get'}%> %>
           <% else %>
-            <%= button_to 'Voltar', new_gerenciar_path %>
+              <%= button_to 'Voltar', gerenciars_path, {:method => "get"}%>
          <%end%>
       </td>
     </tr>

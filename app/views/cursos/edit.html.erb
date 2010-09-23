@@ -26,7 +26,7 @@
           <td><b>Tipo</b></td>
           <td><%= f.select :tipo, TIPO, :include_blank => '--Selecionar--'%>
               <b>Carga Horária</b>
-              <%= f.time_select :carga_horaria, :include_blank => '00'  %> horas</td>
+              <%= f.text_field :carga_horaria, :size => 8 %> - horas</td>
         </tr>
         <tr>
           <td><b>Dia e Horário</b></td>
@@ -62,14 +62,12 @@
      </td>
    </tr>
   </table>
-   <table width="90%" align="center">
+  <table width="90%" align="center">
     <tr>
-     <td><%= button_to('Exibir',{:action => "show", :id =>@curso}, :method => "get") %></td>
-     <td align="right"><%= button_to 'Voltar', new_gerenciar_path %></td>
+     <td width="8%"><%= button_to('Exibir',{:action => "show", :id =>@curso}, :method => "get") %></td>
+     <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
     </tr>
   </table>
 
 
-
-</div>
 

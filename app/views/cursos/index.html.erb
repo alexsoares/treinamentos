@@ -1,15 +1,14 @@
-<div id="conteudo2">
-<fieldset>
-  <legend><font size=6>Cadastro de Cursos</font></legend>
-  <br/>
-    <table>
-      <td> <%= button_to 'Novo curso', new_curso_path %></td>
-        <% if $var == 0 %>
-          <td><%= button_to 'Voltar', new_gerenciar_path %></td>
-    <% end %>
- </table>
-
-    <table border="2">
+ <br/>
+ <br/>
+ <table width="90%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Cursos Cadastrados</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <table border="2" width="100%">
       <tr>
         <th>Nome</th>
         <th>Ministrante</th>
@@ -23,7 +22,7 @@
        <td><center><%=h curso.nome %></center></td>
        <td><center><%=h curso.ministrante %></center></td>
        <td><center><%=h curso.tipo %></center></td>
-       <td><center><%=h curso.carga_horaria.strftime("%H:%M") %> horas</center></td>
+       <td><center><%=h curso.carga_horaria %> horas</center></td>
        <td><center><%=h curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %></center></td>
        <td><center><%=h curso.obs %></center></td>
     </tr>
@@ -41,13 +40,14 @@
     <% end %>
  </table>
 
-  <br />
+     </td>
+   </tr>
+  </table>
+   <table width="90%" align="center">
+    <tr>
+     <td width="8%"><%= button_to 'Novo curso', new_curso_path %></td>
+      <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"}%></td>
+    </tr>
+  </table>
 
-</fieldset>
-    <table>
-      <td> <%= button_to 'Novo curso', new_curso_path %></td>
-        <% if $var == 0 %>
-          <td><%= button_to 'Voltar', new_gerenciar_path %></td>
-    <% end %>
- </table>
-</div>
+

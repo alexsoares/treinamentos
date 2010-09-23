@@ -21,10 +21,9 @@ display: none;
   <div id ="contents">
     <div id="header">
       <div id="topo">
-        <br/><br/><br/>
-        <h4 align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font></h4>
+     
+
       </div>
-    </div>
     <div id="menu">
       <div class="botao">
          <p style="color: red"><%= flash[:notice] %></p>
@@ -62,10 +61,16 @@ display: none;
             <ul class="sub">
               <li><%= link_to_remote('Sobre', :url => { :action => "sobresis", :controller => 'gerenciar'}) %></li>
             </ul>
-           </li>
+           </li>              
           </ul>
       </div>
+    <table width="100%">
+       <tr>
+          <td align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font>
+        </tr>
+      </table>
     </div>
+         </div>
     <div id="principal"><%= yield %></div>
   </div>
 </body>

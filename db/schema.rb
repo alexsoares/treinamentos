@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20100909123350) do
     t.string   "nome"
     t.string   "ministrante"
     t.string   "tipo"
-    t.time     "carga_horaria"
+    t.string   "carga_horaria"
     t.string   "obs"
     t.datetime "data_hora"
     t.datetime "created_at"

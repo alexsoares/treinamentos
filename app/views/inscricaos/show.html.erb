@@ -1,33 +1,49 @@
-<div id="conteudo">
-<fieldset> <legend><font size=6>Confirmação da Inscrição</font></legend>
- 
-  <td width="400">
-   <table>
-     <br/>
-     <tr>
-       <td><b>Participante:</b></td>
-       <td>  <%=h  @inscricao.participante.nome %> </td>
-     </tr>
-     <tr>
-       <td><b>Curso:</b></td>
-       <td>  <%=h  @inscricao.curso.nome %> </td>
-     </tr>
-     <tr>
-       <td><b>Data_hora:</b></td>
-       <td>  <%=h  @inscricao.curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %> </td>
-     </tr>
-     <tr>
-       <td><b>Observações:</b></td>
-       <td>  <%=h  @inscricao.curso.obs %> </td>
-     </tr>
-     <tr>
-       <td><b>Data da Inscrição:</b></td>
-       <td>  <%=h  @inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
-     </tr>
-    <br/>
-   </table>
- 
-</fieldset>
- <%= button_to 'Voltar', new_inscricao_path %>
+ <br/>
+ <br/>
+ <table width="50%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Confirmação da Inscrição</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+       <table>
+         <br/>
+           <tr>
+             <td><b>Participante:</b></td>
+             <td>  <%=h  @inscricao.participante.nome %> </td>
+          </tr>
+          <tr>
+            <td><b>Curso:</b></td>
+           <td>  <%=h  @inscricao.curso.nome %> </td>
+          </tr>
+          <tr>
+             <td><b>Data_hora:</b></td>
+             <td>  <%=h  @inscricao.curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %> </td>
+          </tr>
+          <tr>
+             <td><b>Observações:</b></td>
+             <td>  <%=h  @inscricao.curso.obs %> </td>
+          </tr>
+          <tr>
+              <td><b>Data da Inscrição:</b></td>
+              <td>  <%=h  @inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
+          </tr>
+          <br/>
+       </table>
+     </td>
+   </tr>
+  </table>
+   <table width="50%" align="center">
+    <tr>
+      <td><%= button_to 'Voltar', new_inscricao_path %></td>
+    </tr>
+  </table>
+
+
+
+  
+
 
 </div>

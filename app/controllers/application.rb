@@ -16,14 +16,14 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless admin?
-      flash[:notice] = "Unauthorized access"
+      flash[:notice] = "ACESSO NÃO AUTORIZADO"
       redirect_to login_path
       false
     end
   end
 
   def admin?
-    if session[:password] == 'xpto'
+    if session[:password] == 'xpto010'
       true
     else
       false

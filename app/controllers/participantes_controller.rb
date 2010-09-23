@@ -68,7 +68,7 @@ class ParticipantesController < ApplicationController
 
     respond_to do |format|
       if @participante.save
-        flash[:notice] = 'Participante was successfully created.'
+        flash[:notice] = 'PARTICIPANTE CADASTRADO COM SUCESSO.'
         format.html { redirect_to(@participante) }
         format.xml  { render :xml => @participante, :status => :created, :location => @participante }
       else
@@ -85,7 +85,7 @@ class ParticipantesController < ApplicationController
 
     respond_to do |format|
       if @participante.update_attributes(params[:participante])
-        flash[:notice] = 'Participante was successfully updated.'
+        flash[:notice] = 'PARTICIPANTE ATUALIZADO COM SUCESSO.'
         format.html { redirect_to(@participante) }
         format.xml  { head :ok }
       else
@@ -112,22 +112,6 @@ class ParticipantesController < ApplicationController
     end
   end
 
-
-  def soma_dias
-    @soma_dias = Trabalhado.find_by_sql('Select sum(total_dias_trab) from trabalhados where professor_id = '+$professor)
-    return @soma_dias
-  end
-
-  def nome_professor
-    $professor = params[:professor_professor_id]
-    @professors = Professor.find(:all, :conditions => ['id=' + $professor ])
-    #render :partial => 'lista_professor'
-    render :update do |page|
-      page.replace_html 'titula', :text => ''
-      page.replace_html 'dados_professor', :partial => 'lista_professor'
-    end
-
-  end
 def consulta
     render :partial => 'consultas'
   end
@@ -137,5 +121,12 @@ def consulta
     $participante = params[:participante_participante_id]
     @participantes = Participante.find(:all, :conditions => ['id=' + $participante ])
     render :partial => 'lista_participantes'
+  end
+
+
+  def lista_participante_index
+    $participante = params[:participante_participante_id]
+    @participantes = Participante.find(:all, :conditions => ['id=' + $participante ])
+       format.html { render :action => "index" }
   end
 end

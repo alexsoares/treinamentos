@@ -51,7 +51,7 @@ class CursosController < ApplicationController
 
     respond_to do |format|
       if @curso.save
-        flash[:notice] = 'Curso cadastrado com suscesso.'
+        flash[:notice] = 'CURSO CADASTRADO COM SUCESSO.'
         format.html { redirect_to(@curso) }
         format.xml  { render :xml => @curso, :status => :created, :location => @curso }
       else
@@ -68,7 +68,7 @@ class CursosController < ApplicationController
 
     respond_to do |format|
       if @curso.update_attributes(params[:curso])
-        flash[:notice] = 'Curso atualizado com sucesso'
+        flash[:notice] = 'CURSO ATUALIZADO COM SUCESSO'
         format.html { redirect_to(@curso) }
         format.xml  { head :ok }
       else

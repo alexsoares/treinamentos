@@ -19,14 +19,15 @@
             5) Caso participante já inscrito surgirá tela informando que a inscrição já foi realizada<br/>
            </b>
           </font>
+          <br/>
          </tr>
          <tr>
-           <td width="50" valign="top">
-             <table border="1">
+          <% form_for(@inscricao) do |f| %>
+          <%= f.error_messages %>
+           <td valign="top">
+             <table border="1" >
                <tr>
-                 <% form_for(@inscricao) do |f| %>
-                 <%= f.error_messages %>
-                 <td valign="top"> Participante:</td>
+                 <td> Participante:</td>
                  <td><%= f.collection_select :participante_id, @participantes, :id, :nome, :include_blank => ' -- Selecione -- ' %>
                     <%= observe_field 'inscricao_participante_id',
                    :with => :inscricao_participante_id,
@@ -41,7 +42,7 @@
           <td valign="top">
             <table border="1">
               <tr>
-               <td >Atividade:</td>
+               <td>Atividade:</td>
                <td><%= f.collection_select :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- ' %>
                    <%= observe_field 'inscricao_curso_id',
                     :frequency => 0.5,
@@ -67,7 +68,12 @@
    </table>
    <table width="60%" align="center">
     <tr>
-      <td><%= button_to 'Cadastrar Participante', new_participante_path %></td>
-      <td align="right"><%= button_to 'Voltar', root_path, {:method => 'get'}%></td>
+      <td width="8%"><%= button_to 'Cadastrar Participante', new_participante_path %></td>
+      <td> <% if $Var == 1 %>
+             <%= button_to 'Voltar', gerenciars_path, {:method => 'get'}%>
+           <%else%>
+             <%= button_to 'Voltar', root_path, {:method => 'get'}%>
+           <%end%>
+      </td>
     </tr>
   </table>

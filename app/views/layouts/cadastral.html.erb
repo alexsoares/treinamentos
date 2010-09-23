@@ -21,10 +21,14 @@ display: none;
   <div id ="contents">
     <div id="header">
       <div id="topo">
-        <br/><br/><br/>
-        <h4 align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font></h4>
+       
       </div>
       <p style="color: red"><%= flash[:notice] %></p>
+          <table width="100%">
+       <tr>
+          <td align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font>
+        </tr>
+      </table>
     </div>
     <div id="principal"><%= yield %></div>
   </div>

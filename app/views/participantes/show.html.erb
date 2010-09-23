@@ -3,7 +3,7 @@
  <table width="60%" border="1" align="center">
    <tr>
      <td>
-        <h1 align="center">Inscrição</h1>
+        <h1 align="center">Participante</h1>
       </td>
    </tr>
    <tr>
@@ -54,12 +54,15 @@
      </table>
    </tr>
   </table>
+  
   <table width="60%" align="center">
     <tr>
-      <td> <%= button_to('Editar',{:action => "edit", :id => @participante}, :method => "get") %></td>
-      <td align="right"> <%= button_to 'Voltar', new_participante_path %> </td>
-      <td align="right"><%= button_to 'Novo Participante', new_participante_path %></td>
-      <td align="right"> <%= button_to 'Inscrição', new_inscricao_path %></td>
+          <td width="8%"> <%= button_to('Editar',{:action => "edit", :id => @participante}, :method => "get") %></td>
+          <% if $Var == 1 %>
+              <td  width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+          <% end %>
+      <td width="8%" ><%= button_to 'Novo Participante', new_participante_path %></td>
+      <td> <%= button_to 'Inscrição', new_inscricao_path %></td>
     </tr>
   </table>
  

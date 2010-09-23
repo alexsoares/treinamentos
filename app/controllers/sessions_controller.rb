@@ -6,14 +6,16 @@ class SessionsController < ApplicationController
   def create
     session[:password] = params[:password]
     $teste = params[:password]
-    flash[:notice] = 'Bem vindo ao setor gerencial'
+    flash[:notice] = 'BEM VINDO AO GERENCIAMENTO DO SISTEMA'
     redirect_to gerenciars_path
+    $Var = 1
   end
 
   def destroy
     reset_session
-    flash[:notice] = 'Saída do sistema realizada com sucesso'
+    flash[:notice] = 'VOCÊ ESTÁ SAINDO DO GERENCIAMENTO DO SISTEMA'
     redirect_to root_path
+    $Var = 0
   end
 
 end
