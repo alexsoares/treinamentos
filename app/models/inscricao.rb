@@ -35,4 +35,5 @@ def self.tamanho_inscricao(curso)
   find(:all, :conditions => ["curso_id = ?",curso]).length
 end
 
+
 end

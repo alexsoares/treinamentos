@@ -101,6 +101,21 @@ class CursosController < ApplicationController
     render :partial => 'lista_cursos'
   end
 
+   def mesmo_nome
+    $nome = params[:curso_nome]
+    @verifica = Curso.find_by_nome($nome)
+    if @verifica then
+      render :update do |page|
+        page.replace_html 'nome_aviso', :text => 'CURSO JÁ CADASTRADO NO SISTEMA'
+        page.replace_html 'Certeza', :text => "CURSO JÁ CADASTRADO NO SISTEMA"
+    end
+    else
+      render :update do |page|
+        page.replace_html 'nome_aviso', :text => ''
+      end
+
+    end
+  end
 
    	
 end

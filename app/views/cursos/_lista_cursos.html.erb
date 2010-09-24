@@ -1,14 +1,15 @@
 <br/>
 <font size="4"><b><u> Resultado da Consulta</b</u></font>
   <br/>  <br/>
+
    <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
       <tr>
-        <th>Nome</th>
-        <th>Ministrante</th>
-        <th>Tipo </th>
-        <th>Carga Horaria</th>
-        <th>Data/Hora</th>
-        <th>Observações</th>
+        <th bgcolor="gray">Nome</th>
+        <th bgcolor="gray">Ministrante</th>
+        <th bgcolor="gray">Tipo </th>
+        <th bgcolor="gray">Carga Horaria</th>
+        <th bgcolor="gray">Data/Hora</th>
+        <th bgcolor="gray">Observações</th>
       </tr>
      <% for curso in @cursos %>
      <tr>
@@ -19,7 +20,9 @@
        <td><center><%=h curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %></center></td>
        <td><center><%=h curso.obs %></center></td>
     </tr>
+ 
     <% end %>
+   
    </table>
 
 

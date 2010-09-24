@@ -1,6 +1,6 @@
  <br/>
  <br/>
- <table width="60%" border="1" align="center">
+ <table width="90%" border="1" align="center">
    <tr>
      <td>
         <h1 align="center">Consulta Participante</h1>
@@ -10,7 +10,6 @@
       <td>
         <font size="4"> Selecione um participante para consultar: <%= collection_select :participante, :participante_id, @participantes, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
          <%= observe_field 'participante_participante_id',
-           :frequency => 0.5,
            :update => "listagem",
            :url    => { :action => 'lista_participante' },
            :with   => 'participante_participante_id' %>
@@ -19,7 +18,7 @@
 
    </tr>
   </table>
-   <table width="60%" align="center">
+   <table width="90%" align="center">
     <tr>
        <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
     </tr>

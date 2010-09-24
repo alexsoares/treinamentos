@@ -11,7 +11,6 @@
         <br/>
         <font size="4"> Selecione curso: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
            <%= observe_field 'curso_curso_id',
-            :frequency => 0.5,
             :update => "listagem",
             :url    => { :action => 'lista_inscricao' },
             :with   => 'curso_curso_id' %>

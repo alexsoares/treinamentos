@@ -11,13 +11,13 @@
        <table border="3">
          <tr align="Left"><font size=4>
            <br/>
-           <b><u>Para efetuar a inscrição:</u> <br/>
-            1) Cadastrar participante - Clicar botão Cadastrar Participante  <br/>
-            2) Selecionar participante <br/>
-            3) Selecionar curso<br/>
+           <b><u>Para efetuar a inscrição:</u></b><br/>
+            1) Selecionar participante <br/>
+            <font size=3>1.1) Caso o nome não constar na lista, clicar Cadastrar Participante</font><br/>
+            2) Selecionar curso<br/>
             4) Confirmar inscrição<br/>
             5) Caso participante já inscrito surgirá tela informando que a inscrição já foi realizada<br/>
-           </b>
+    
           </font>
           <br/>
          </tr>
@@ -45,7 +45,6 @@
                <td>Atividade:</td>
                <td><%= f.collection_select :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- ' %>
                    <%= observe_field 'inscricao_curso_id',
-                    :frequency => 0.5,
                     :with => :curso_inscricao_curso_id,
                     :url => { :action => 'sel_curso' } %>
                </td>

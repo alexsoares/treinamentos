@@ -3,7 +3,7 @@
  <table width="90%" border="1" align="center">
    <tr>
      <td>
-        <h1 align="center">Cursos</h1>
+        <h1 align="center">Cadastrar Cursos</h1>
       </td>
    </tr>
    <tr>
@@ -16,8 +16,19 @@
              <br/>
              <tr>
                 <td><b>Nome</b></td>
-                <td><%= f.text_field :nome %></td>
-             </tr>
+                <td><%= f.text_field :nome %>
+                    <%= observe_field :curso_nome,
+                     :with => :curso_nome,
+                     :url => { :action => 'mesmo_nome' } %>
+            </tr>
+            <tr>
+               <td colspan="2">
+                 <font size="4" color="red">
+                 <div id='nome_aviso'></div>
+                 </font>
+              </td>
+            </tr>
+             
             <tr>
               <td><b>Ministrante</b></td>
               <td><%= f.text_field :ministrante %></td>
@@ -37,12 +48,19 @@
               <td><%= f.text_area(:obs, :cols =>"45", :rows => "5") %></td>
            </tr>
            <tr>
-              <td colspan="2" align="right"><%= f.submit "Salvar" %></td>
+              <td colspan="2" align="right">
+                <font size="4" color="red">
+                <div id='Certeza'>
+                    <%= f.submit "Salvar" %>
+                </div>
+                </font>
+              </td>
            </tr>
         </table>
        <% end %>
        <td VALIGN=TOP>
-         <font size="4" color="red"><u>OBSERVAÇÕES:</u></font> <br /> <br />
+         <br />
+         <font size="4" color="red"><u>Observações:</u></font> <br /> <br />
          <font color="red">
           1. UTILIZAR  SOMENTE LETRAS MAIÚSCULAS<br />
           2. DIGITAR SEMPRE DADOS COMPLETOS<br/>

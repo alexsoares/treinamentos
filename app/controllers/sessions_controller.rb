@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    flash[:notice] = 'VOCÊ ESTÁ SAINDO DO GERENCIAMENTO DO SISTEMA'
+    flash[:notice] = 'SAIDA DO GERENCIAMENTO DO SISTEMA => VOLTE SEMPRE <='
     redirect_to root_path
     $Var = 0
   end

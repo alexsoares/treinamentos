@@ -1,28 +1,47 @@
 <br/>
-<font size="4"><b><u> Resultado da Consulta</b</u></font>
+<font size="4"><b><u> Resultado da Consulta</u></b></font>
   <br/>  <br/>
    <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
-     <tr>
-       <th>Nome</th>
-       <th>Fone Residencial</th>
-       <th>Fone Comecial</th>
-       <th>Fone Celular</th>
-       <th>e-mail</th>
-       <th>Trabalho</th>
-       <th>Matricula</th>
-       <th>Observações</th>
-    </tr>
-    <% for participante in @participantes %>
-    <tr>
-      <td><%=h participante.nome %></td>
-      <td><%=h participante.foneres %></td>
-      <td><%=h participante.fonecom %></td>
-      <td><%=h participante.cel %></td>
-      <td><%=h participante.email %></td>
-      <td><%=h participante.trabalho %></td>
-      <td><%=h participante.matricula %></td>
-      <td><%=h participante.obs %></td>
-   </tr>
+          <tr>
+            <th bgcolor="gray">Nome</th>
+            <th bgcolor="gray">Endereço</th>
+            <th bgcolor="gray">Cidade</th>
+            <th bgcolor="gray">Bairro</th>
+            <th bgcolor="gray">Estado</th>
+            <th bgcolor="gray">Fone Residencial</th>
+            <th bgcolor="gray">Fone Celular</th>
+
+         </tr>
+         <% for participante in @participantes %>
+         <tr>
+           <td><b><center><%=h participante.nome %></b></center></td>
+           <td><center><%=h participante.endereco %></center></td>
+           <td><center><%=h participante.cidade %></center></td>
+           <td><center><%=h participante.bairro %></center></td>
+           <td><center><%=h participante.estado %></center></td>
+           <td><center><%=h participante.foneres %></center>>/td>
+           <td><center><%=h participante.cel %></center></td>
+
+        </tr>
+        <tr>
+            <th bgcolor="gray"></th>
+            <th bgcolor="gray"><center>e-mail</center></th>
+            <th bgcolor="gray"><center>Trabalho</center></th>
+            <th bgcolor="gray"><center>Fone Comecial</center></th>
+            <th bgcolor="gray"><center>Matricula</center></th>
+            <th bgcolor="gray" colspan="2"><center>Observações</center></th>
+       </tr>
+         <% for participant in @participantes %>
+        <tr  >
+           <th bgcolor="gray"></th>
+           <td><center><%=h participant.email %></center></td>
+           <td><center><%=h participant.trabalho %></center></td>
+           <td><center><%=h participante.fonecom %></center></td>
+           <td><center><%=h participant.matricula %><c/enter></td>
+           <td colspan="2"><center><%=h participant.obs %></center></td>
+
+        </tr>
+       <% end %>
   <% end %>
  </table>
 

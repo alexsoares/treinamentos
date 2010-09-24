@@ -129,4 +129,21 @@ def consulta
     @participantes = Participante.find(:all, :conditions => ['id=' + $participante ])
        format.html { render :action => "index" }
   end
+
+    def mesmo_nome
+    $nome = params[:participante_nome]
+    @verifica = Participante.find_by_nome($nome)
+    if @verifica then
+      render :update do |page|
+        page.replace_html 'nome_aviso', :text => 'NOME JÁ CONSTA NO SISTEMA'
+        page.replace_html 'Certeza', :text => "PARTICIPANTE JÁ CADASTRADO "
+    end
+    else
+      render :update do |page|
+        page.replace_html 'nome_aviso', :text => ''
+      end
+
+    end
+  end
+
 end

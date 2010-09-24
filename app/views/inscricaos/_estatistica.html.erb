@@ -1,4 +1,10 @@
- <br/>
+<script Language="JavaScript">
+   function Imprimir(){ window.print(); }
+</script>
+<style media="print">
+  .botao {display: none;}
+</style>
+<br/>
  <br/>
  <table width="60%" border="1" align="center">
    <tr>
@@ -8,8 +14,9 @@
    </tr>
    <tr>
       <td>
+        <%  $contador = 0 %>
         <table  border="1" width="100%" cellspacing="1">
-         <font size=4><b><tr>Nome co curso</tr></font></b>
+         <font size=4><tr><b>Nome do curso</b></tr></font>
          <% for curso in @cursos %>
           <tr>
             <td>
@@ -19,19 +26,28 @@
             </td>
             <td>
              <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
-                <tr><%= Inscricao.tamanho_inscricao(curso) %>  </tr>
+                <tr>
+                  <td align="center"><%= Inscricao.tamanho_inscricao(curso) %></td>
+                  <% $parcial = Inscricao.tamanho_inscricao(curso) %>
+                </tr>
+
+
              </table>
             </td>
           </tr>
-         <% end %>
-        </table>
-
-  </td>
+        <%  $contador = $contador + $parcial %>
+        <% end %>
+       </table>
+    </td>
+   </tr>
+   <tr>
+     <td colspan="2"><b> Total de inscrições: <%= $contador %></b> </td>
    </tr>
   </table>
-   <table width="60%" align="center">
+     <table width="60%" align="center">
     <tr>
-        <td><%= button_to 'Voltar', gerenciars_path, {:method => 'get'}%></td>
+      <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
     </tr>
   </table>
+ 
 

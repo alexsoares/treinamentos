@@ -5,17 +5,17 @@
    <br/>
     <table border="2">
       <tr>
-        <td>Participante</td>
-        <td>Curso</td>
-        <td>Tipo</td>
-          <td>Data da Inscrição:</td>
+        <td bgcolor="gray">Participante</td>
+        <td bgcolor="gray">Curso</td>
+        <td bgcolor="gray">Tipo</td>
+         <td bgcolor="gray">Data da Inscrição:</td>
       </tr>
       <% for inscricao in @inscricaos %>
       <tr>
-       <td><%=h inscricao.participante.nome %></td>
-       <td><%=h inscricao.curso.nome %></td>
-       <td><%=h inscricao.curso.tipo %></td>
-       <td><%=h inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
+       <td bgcolor="gray"><%=h inscricao.participante.nome %></td>
+       <td bgcolor="gray"><%=h inscricao.curso.nome %></td>
+       <td bgcolor="gray"><%=h inscricao.curso.tipo %></td>
+       <td bgcolor="gray"><%=h inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
      </tr>
      <tr>
        <td bgcolor="gray"colspan="5">

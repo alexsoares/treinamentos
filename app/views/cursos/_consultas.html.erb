@@ -1,5 +1,5 @@
 <br/><br/><br/><br/>
- <table width="60%" border="1" align="center">
+ <table width="90%" border="1" align="center">
    <tr>
      <td>
         <h1 align="center">Consulta Cursos</h1>
@@ -9,7 +9,6 @@
       <td>
         <font size="4"> Selecione uma unidade para consultar: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
          <%= observe_field 'curso_curso_id',
-           :frequency => 0.5,
            :update => "listagem",
            :url    => { :action => 'lista_curso' },
            :with   => 'curso_curso_id' %>
@@ -17,7 +16,7 @@
      </td>
    </tr>
   </table>
-  <table width="60%" align="center">
+  <table width="90%" align="center">
     <tr>
         <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
     </tr>

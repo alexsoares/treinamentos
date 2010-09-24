@@ -74,13 +74,23 @@ border-right: double;
 
 #caixasobre {
 background-image:url(Imagens/caixa.jpg);
-height:480px;
-background-position: center;
+background-repeat: no-repeat;
+   text-align: center;
+   color:white;
+   height:650px;
+   width:950px;
+   margin:0;
+   font:bold;
+   border-color:black;
+   border-left: double;
+   border-bottom: double;
+   border-top: double;
+   border-right: double;
 }
 #posicaosobre {
-width:35%;
-margin-top:-25px;
-margin-left: 440px;
+width:40%;
+margin-top: 50px;
+margin-left: 300px;
 }
 
 #contents{

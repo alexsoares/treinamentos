@@ -1,5 +1,6 @@
  <br/>
  <br/>
+    <%  $contador = 0 %>
  <table width="90%" border="1" align="center">
    <tr>
      <td>
@@ -10,12 +11,12 @@
       <td>
          <table border="2" width="100%">
       <tr>
-        <th>Nome</th>
-        <th>Ministrante</th>
-        <th>Tipo</th>
-        <th>Carga Horaria</th>
-        <th>Data/Hora</th>
-        <th>Observações</th>
+        <th bgcolor="gray">Nome</th>
+        <th bgcolor="gray">Ministrante</th>
+        <th bgcolor="gray">Tipo</th>
+        <th bgcolor="gray">Carga Horaria</th>
+        <th bgcolor="gray">Data/Hora</th>
+        <th bgcolor="gray">Observações</th>
       </tr>
      <% for curso in @cursos %>
      <tr>
@@ -37,7 +38,11 @@
 
        </td>
     </tr>
+    <%  $contador = $contador + 1 %>
     <% end %>
+    <tr>
+     <td colspan="6"><b> Total de cursos cadastrados: <%= $contador %></b> </td>
+</tr>
  </table>
 
      </td>
