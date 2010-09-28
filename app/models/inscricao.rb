@@ -3,6 +3,7 @@ class Inscricao < ActiveRecord::Base
   belongs_to :curso
 
 
+
 validate :jainscrito
 validate :limite
 

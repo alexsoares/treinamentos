@@ -19,17 +19,25 @@
           <%=h @curso.ministrante %>
       </p>
      <p>
-        <b>Tipo</b>
+        <b>Tipo:</b>
           <%=h @curso.tipo %>
       </p>
 
       <p>
         <b>Carga Horaria:</b>
-          <%=h @curso.carga_horaria%> horas
+         <%  if @curso.carga_horaria.nil? then %>
+             00:00
+         <%else%>
+             <%=h @curso.carga_horaria%> horas
+         <%end%>
       </p>
       <p>
         <b>Data e Horário:</b>
-          <%=h @curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %>
+         <%  if @curso.data_hora.nil? then %>
+             00/00/00 - 0:00
+         <%else%>
+            <%=h @curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %>
+         <%end%>
       </p>
       <p>
         <b>Observações:</b>

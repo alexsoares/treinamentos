@@ -9,7 +9,11 @@ class CursosController < ApplicationController
   end
 
   def index
-    @cursos = Curso.find(:all)
+    if (params[:search].nil? || params[:search].empty?)
+       @cursos = Curso.find(:all)
+    else
+       @cursos = Curso.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"], :order => 'nome ASC')
+    end
 
     respond_to do |format|
       format.html # index.html.erb

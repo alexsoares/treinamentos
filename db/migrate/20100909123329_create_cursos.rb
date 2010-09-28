@@ -4,9 +4,9 @@ class CreateCursos < ActiveRecord::Migration
       t.string :nome
       t.string :ministrante
       t.string :tipo
-      t.string :carga_horaria
+      t.string :carga_horaria 
       t.string :obs
-      t.datetime :data_hora
+      t.datetime :data_hora 
 
       t.timestamps
     end

@@ -7,8 +7,16 @@
    </tr>
    <tr>
       <td>
-        <font size="4"> Selecione uma unidade para consultar: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
-         <%= observe_field 'curso_curso_id',
+        <div class="botao">
+        <table>
+          <tr>
+            <td>
+                <font size="4"> Selecione uma unidade para consultar: <%= collection_select :curso, :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
+             </td>
+          </tr>
+        </table>
+        </div>
+<%= observe_field 'curso_curso_id',
            :update => "listagem",
            :url    => { :action => 'lista_curso' },
            :with   => 'curso_curso_id' %>
@@ -16,10 +24,14 @@
      </td>
    </tr>
   </table>
-  <table width="90%" align="center">
+  <div class="botao">
+   <table width="90%" align="center">
     <tr>
-        <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+       <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+       <td><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
     </tr>
   </table>
+ </div>
 
+  
 

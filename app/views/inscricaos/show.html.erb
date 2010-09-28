@@ -1,6 +1,6 @@
  <br/>
  <br/>
- <table width="50%" border="1" align="center">
+ <table width="70%" border="1" align="center">
    <tr>
      <td>
         <h1 align="center">Confirmação da Inscrição</h1>
@@ -20,7 +20,12 @@
           </tr>
           <tr>
              <td><b>Data_hora:</b></td>
-             <td>  <%=h  @inscricao.curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %> </td>
+                 <%  if @inscricao.curso.data_hora.nil? then %>
+                    <td> 00/00/00 - 0:00 </td>
+                 <%else%>
+                    <td> <%=h  @inscricao.curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %> </td>
+                 <%end%>
+             
           </tr>
           <tr>
              <td><b>Observações:</b></td>
@@ -35,15 +40,17 @@
      </td>
    </tr>
   </table>
-   <table width="50%" align="center">
+  <div class="botao">
+   <table width="70%" align="center">
     <tr>
-      <td><%= button_to 'Voltar', new_inscricao_path %></td>
+       <td width="8%"><%= button_to 'Voltar', new_inscricao_path  %></td>
+       <td><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
     </tr>
   </table>
+ </div>
 
 
 
-  
 
 
-</div>
+

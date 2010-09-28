@@ -26,7 +26,11 @@ class ParticipantesController < ApplicationController
   end
 
   def index
-    @participantes = Participante.find(:all)
+    if (params[:search].nil? || params[:search].empty?)
+       @participantes = Participante.find(:all)
+    else
+       @participantes = Participante.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"], :order => 'nome ASC')
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -145,5 +149,10 @@ def consulta
 
     end
   end
+
+
+
+
+  
 
 end

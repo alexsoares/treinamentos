@@ -8,6 +8,7 @@
    </tr>
    <tr>
      <td>
+     <div class="botao">
      <table>
        <tr>
           <td><%= button_to 'Novo Participante', new_participante_path %> </td>
@@ -19,10 +20,30 @@
                   <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
                <% end %>
             </td>
+            <td><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
         </tr>
     </table>
+    </div>
     </td>
    </tr>
+   
+    <tr>
+      <td align="right">
+      <% form_tag participantes_path, :method => 'get' do %>
+      <div class="botao">
+        <table>
+        <tr>
+        <td align="right"><font size="4"> Digite nome do Professor:</font>
+           <%= text_field_tag :search, params[:search] %>
+           <%= submit_tag "Filtrar", :name => nil %>
+        </td>
+        </tr>
+        </table>
+       </div>
+     <% end %>
+     </td>
+    </tr>
+ 
    <tr>
      <td>
         <%  $contador = 0 %>
@@ -50,11 +71,13 @@
         </tr>
         <tr>
           <td bgcolor="gray"colspan="12">
+            <div class="botao">
             <table>
                <td><%= button_to('Exibir',{:action => "show", :id => participante}, :method => "get") %></td>
                <td> <%= button_to('Editar',{:action => "edit", :id => participante}, :method => "get") %></td>
                <td><%= button_to('Excluir',{:action => "destroy", :id => participante}, :confirm => 'Confirma exclusão?', :method => "delete")%></td>
            </table>
+           </div>
           </td>
         </tr>
        <%  $contador = $contador + 1 %>
@@ -66,19 +89,21 @@
      <td colspan="8"><b> Total de participantes cadastrados: <%= $contador %></b> </td>
    </tr>
   </table>
+   <div class="botao">
    <table width="90%" align="center">
     <tr>
        <td width="8%"><%= button_to 'Novo Participante', new_participante_path %> </td>
        <td  width="8%" ><%= button_to 'Inscrição', new_inscricao_path %></td>
-       <td>
+       <td width="8%">
           <% if $var == 0 %>
              <%= button_to 'Voltar', new_gerenciar_path %>
           <%else%>
              <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
           <% end %>
         </td>
+           <td><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
     </tr>
   </table>
-
+  </div>
 
 
