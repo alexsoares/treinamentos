@@ -1,11 +1,9 @@
 class Inscricao < ActiveRecord::Base
   belongs_to :participante
-  belongs_to :curso
+  has_many :cursos_inscricaos
 
-
-
-validate :jainscrito
-validate :limite
+  validate :jainscrito
+  validate :limite
 
   private
 

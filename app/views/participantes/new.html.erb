@@ -26,7 +26,15 @@
                  </font>
               </td>
            </tr>
+           <tr>
+              <td> <b>Matrícula</b><font color="red" size="6">*</font> <br/>(Se Func.Público)</td>
+              <td> <%= f.text_field :matricula%></td>
            </tr>
+           </tr>
+              <tr>
+               <td align="left"><b>Unidade:</b></td>
+               <td align="left"><%= collection_select  :participante, :unidade_id, @unidades, :id, :nome, :include_blank => ' --- Selecione opção ---'  %></td>
+            </tr>
            <tr>
               <td>  <b>Endereço</b></td>
               <td>  <%= f.text_field :endereco %></td>
@@ -40,28 +48,12 @@
               <td>  <%= f.text_field :cidade %></td>
            </tr>
            <tr>
-              <td>  <b>Estado</b></td>
-              <td>  <%= f.text_field :estado, :size => 2 %></td>
-           </tr>
-           <tr>
-              <td>  <b>Fone Residencial</b></td>
+              <td>  <b>Fone:</b></td>
               <td>  <%= f.text_field :foneres, :size => 10 %></td>
-           </tr>
-           <tr>
-              <td>  <b>Fone Comercial</b></td>
-              <td>  <%= f.text_field :fonecom, :size => 10 %></td>
            </tr>
            <tr>
                <td> <b>Celular</b><font color="red" size="6">*</font> </td>
                <td> <%= f.text_field :cel, :size => 10 %></td>
-           </tr>
-           <tr>
-              <td> <b>Local Trabalho</b></td>
-              <td> <%= f.text_field :trabalho %></td>
-           </tr>
-           <tr>
-              <td> <b>Número Matrícula</b><font color="red" size="6">*</font> <br/>(Se Func.Público)</td>
-              <td> <%= f.text_field :matricula%></td>
            </tr>
            <tr>
               <td> <b>E-mail</b></td>
@@ -71,17 +63,7 @@
                <td>  <b>Observações</b></td>
                <td>  <%= f.text_field :obs %></td>
            </tr>
-           <tr>
-              <td colspan="2" align="right">
-                <font size="4" color="red">
-                <div id='Certeza'>
-                    <%= f.submit "Salvar" %>
-                </div>
-                </font>
-              </td>
-           <tr/>
          </table>
-        <% end %>
     </td>
     <td VALIGN=TOP>
          <br/>
@@ -94,22 +76,26 @@
           5. TELEFONES SOMENTE NÚMEROS<br />
           6. EM OBSERVAÇÕES INFORMAR A FUNÇÃO EXERCIDA<br/>
           7. <font color="red" size="6">*</font> CAMPOS OBRIGATÓRIOS<br/>
-
- 
         </font>
       </td>
       </table>
      </td>
     </tr>
-  </table>
-  <table width="90%" align="center">
-    <tr>
-          <td width="8%"><%= button_to 'Voltar', new_inscricao_path %></td>
-          <% if $Var == 1 %>
-              <td><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+</table>
+ <table width="90%" border="1" align="center">
+  <tr>
+    <td colspan="2" >
+      <table>
+       <tr>
+          <td width="1%" align="left"><%= f.submit "Salvar" %></td>
           <% end %>
-
-    </tr>
-  </table>
-
-
+          <% if $var == 0 %>
+             <td align="left"><%= button_to 'Voltar', new_gerenciar_path %></td>
+         <%else%>
+            <td align="left"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+         <% end %>
+      </tr>
+    </table>
+   </td>
+  </tr>
+</table>

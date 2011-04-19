@@ -4,6 +4,17 @@ class ParticipantesController < ApplicationController
   before_filter :load_participantes
   layout :logado?
 
+  before_filter :load_unidades
+  before_filter :load_professors
+
+  def load_professors
+    @professors = Professor.find(:all, :order => 'nome ASC')
+  end
+
+  def load_unidades
+    @unidades = Unidade.find(:all, :order => 'nome ASC')
+  end
+
   def logado?
     if admin?
       "gerenciar"

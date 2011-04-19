@@ -8,20 +8,14 @@
    </tr>
    <tr>
       <td>
-       <table border="3">
-         <tr align="Left"><font size=4>
-           <br/>
-           <b><u>Para efetuar a inscrição:</u></b><br/>
-            1) Selecionar participante <br/>
-            <font size=3>1.1) Caso o nome não constar na lista, clicar Cadastrar Participante</font><br/>
-            2) Selecionar curso<br/>
-            3) Confirmar inscrição<br/>
-            4) Não poderá haver mais de uma inscrição ppor curso<br/>
-            5) Após incrição, imprimir comporvante de inscrição<br/>
-            <font size=3>5.1) Clicar botão <b>Imprimir</b> na tela de Confirmação de Inscrição</font><br/>
-    
-          </font>
-          <br/>
+       <table border="3" width="100%">
+         <tr align="Left">           
+           <td>
+              \zz\
+           </td>
+           <td>
+                xzcxzcxz
+           </td>
          </tr>
          <tr>
           <% form_for(@inscricao) do |f| %>
@@ -44,8 +38,8 @@
           <td valign="top">
             <table border="1">
               <tr>
-               <td>Atividade:</td>
-               <td><%= f.collection_select :curso_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- ' %>
+               <td>Curso:</td>
+               <td><%= f.collection_select :cursos_inscricao_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- ' %>
                    <%= observe_field 'inscricao_curso_id',
                     :with => :curso_inscricao_curso_id,
                     :url => { :action => 'sel_curso' } %>

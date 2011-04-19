@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  tipo: 1
+  regiao: 
+
+two:
+  nome: MyString
+  tipo: 1
+  regiao: 

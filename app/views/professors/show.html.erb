@@ -1,0 +1,58 @@
+<br/>
+ <br/>
+ <table width="40%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Professor</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+        <table align="center" border="2" width="100%">
+          <td>
+           <table>
+             <tr>
+               <td><b>Nome:</b><%=h @professor.nome %></td>
+             </tr>
+             <tr>
+               <td><b>Matricula:</b><%=h @professor.matricula %></td>
+             </tr>
+             <tr>
+               <td><b>Nome:</b><%=h @professor.sede_id %></td>
+             </tr>
+             <tr>
+               <td><b>Endereço:</b> <%=h @professor.endres %></td>
+             </tr>
+             <tr>
+               <td><b>Complemento:</b> <%=h @professor.complemento %></td>
+             </tr>
+             <tr>
+               <td><b>Bairro:</b> <%=h @professor.bairro %></td>
+             </tr>
+             <tr>
+               <td><b>Cidade:</b> <%=h @professor.cidade %></td>
+             </tr>
+            <tr>
+               <td><b>Telefone:</b> <%=h @professor.telefone %></td>
+            </tr>
+            <tr>
+             <td><b>Observações:</b> <%=h @professor.obs %></td>
+           </tr>
+        </table>
+      </td>
+     </table>
+     <br/>
+      <table width="60%" align="left">
+        <tr>
+              <td width="8%"> <%= button_to('Editar',{:action => "edit", :id => @professor}, :method => "get") %></td>
+              <% if $var == 0 %>
+                    <td width="8%"><%= button_to 'Voltar', new_gerenciar_path %></td>
+              <%else%>
+                    <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+               <% end %>
+          <td width="8%" ><%= button_to 'Cadastrar', new_professor_path %></td>
+          <td> <%= button_to 'Inscrição', new_inscricao_path %></td>
+        </tr>
+      </table>
+   </tr>
+  </table>

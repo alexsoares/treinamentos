@@ -1,58 +1,69 @@
 <br/>
  <br/>
- <table width="60%" border="1" align="center">
+ <table width="40%" border="1" align="center">
    <tr>
      <td>
         <h1 align="center">Curso</h1>
       </td>
    </tr>
    <tr>
-      <td>
-    <table border="2" align="center">
-      <td>
-     <p>
-       <b>Nome:</b>
-         <%=h @curso.nome %>
-     </p>
-      <p>
-        <b>Ministrante:</b>
-          <%=h @curso.ministrante %>
-      </p>
-     <p>
-        <b>Tipo:</b>
-          <%=h @curso.tipo %>
-      </p>
-
-      <p>
-        <b>Carga Horaria:</b>
-         <%  if @curso.carga_horaria.nil? then %>
-             00:00
+    <td>
+    <table border="2" width="100%">
+      <tr>
+        <td><b>Nome:</b></td>
+        <td><%=h @curso.nome %></td>
+     </tr>
+     <tr>
+        <td><b>Ministrante:</b></td>
+        <td><%=h @curso.ministrante %></td>
+      </tr>
+     <tr>
+        <td><b>Tipo:</b></td>
+        <td><%=h @curso.tipo %></td>
+      </tr>
+      <tr>
+        <td><b>Carga Horaria:</b></td>
+        <%  if @curso.carga_horaria.nil? then %>
+            <td>00:00</td>
          <%else%>
-             <%=h @curso.carga_horaria%> horas
+             <td><%=h @curso.carga_horaria%> horas</td>
          <%end%>
-      </p>
-      <p>
-        <b>Data e Horário:</b>
+      </tr>
+      <tr>
+        <td><b>Data e Horário:</b></td>
          <%  if @curso.data_hora.nil? then %>
-             00/00/00 - 0:00
+             <td>00/00/00 - 0:00</td>
          <%else%>
-            <%=h @curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %>
+            <td><%=h @curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %></td>
          <%end%>
-      </p>
-      <p>
-        <b>Observações:</b>
-          <%=h @curso.obs %>
-      </p>
+      </tr>
+      <tr>
+        <td><b>Ementa:</b></td>
+        <td>  <%=h @curso.ementa %></td>
+      </tr>
+      <tr>
+        <td><b>Observações:</b></td>
+        <td>  <%=h @curso.obs %></td>
+      </tr>
+     </table>
      </td>
+    </tr>
    </table>
+   <table width="40%" border="1" align="center">
+   <tr>
+     <td>
+       <table>
+        <tr>
+            <td width="8%"> <%= button_to('Editar', {:action => "edit", :id => @curso}, :method => "get") %></td>
+              <% if $var == 0 %>
+                    <td width="8%"><%= button_to 'Voltar', new_gerenciar_path %></td>
+              <%else%>
+                    <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+               <% end %>
+
+         <td> <%= button_to 'Novo curso', new_curso_path %></td>
+        </tr>
+       </table>
      </td>
-   </tr>
-  </table>
-  <table width="60%" align="center">
-    <tr>
-     <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
-     <td width="8%"> <%= button_to('Editar', {:action => "edit", :id => @curso}, :method => "get") %></td>
-     <td> <%= button_to 'Novo curso', new_curso_path %></td>
     </tr>
   </table>
-

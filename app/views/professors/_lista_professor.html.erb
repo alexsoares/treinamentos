@@ -1,0 +1,26 @@
+<br/>
+<font size="4"><b><u> Resultado da Consulta</u></b></font>
+  <br/>  <br/>
+   <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+          <tr>
+            <th bgcolor="gray">Matricula</th>
+            <th bgcolor="gray">Nome</th>
+            <th bgcolor="gray">Sede</th>
+            <th bgcolor="gray">Fone</th>
+
+         </tr>
+          <% for prof in @professors %>
+         <tr>
+             <td><%=h prof.matricula %></td>
+             <td><%=h prof.nome %></td>
+             <td><%=h prof.sede_id %></td>
+             <td><%=h prof.telefone%></td>
+
+        </tr>
+        <% end %>
+ </table>
+
+
+
+
+

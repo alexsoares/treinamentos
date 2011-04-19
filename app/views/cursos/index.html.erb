@@ -1,98 +1,114 @@
  <br/>
  <br/>
-    <%  $contador = 0 %>
  <table width="90%" border="1" align="center">
    <tr>
      <td>
         <h1 align="center">Cursos Cadastrados</h1>
       </td>
    </tr>
-    <tr>
-    <tr>
+   <tr>
      <td>
-      <div class="botao">
-      <table width="100%" align="center">
-       <tr>
-         <td width="8%"><%= button_to 'Novo curso', new_curso_path %></td>
-         <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"}%></td>
-         <td><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
-       </tr>
-      </table>
-      </div>
-     </td>
-    </tr>
-     <td align="right">
      <div class="botao">
      <table>
+       <tr>
+          <td width="8%"><%= button_to 'Cadastrar', new_curso_path %> </td>
+           <td width="8%">
+              <% if $var == 0 %>
+                  <%= button_to 'Voltar', new_gerenciar_path %>
+              <%else%>
+                  <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
+               <% end %>
+            </td>
+            <td width="11%"><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
+            <td align="right">
+              <table width="100%">
+                <td align="right">
+                      <% form_tag cursos_path, :method => 'get' do %>
+                        <font size="4"> Curso:</font>
+                        <%= text_field_tag :search, params[:search] %>
+                        <%= submit_tag "Filtrar", :name => nil %>
+                      <% end %>
+               </td>
+             </table>
+           </td>
+        </tr>
+    </table>
+    </div>
+    </td>
+   </tr>
+   <tr>
+     <td>
+        <%  $contador = 0 %>
+        <table border="2" width="100%">
+          <tr>
+            <th bgcolor="gray">Nome</th>
+            <th bgcolor="gray">Ministrante</th>
+            <th bgcolor="gray">Tipo</th>
+            <th bgcolor="gray">Carga Horaria</th>
+            <th bgcolor="gray">Data/Hora</th>
+            <th bgcolor="gray">Ementa</th>
+            <th bgcolor="gray">Observações</th>
+          </tr>
+          <% for curso in @cursos %>
+          <tr>
+             <td><center><%=h curso.nome %></center></td>
+             <td><center><%=h curso.ministrante %></center></td>
+             <td><center><%=h curso.tipo %></center></td>
+                <%if curso.carga_horaria.nil? then %>
+                   <td><center>00 horas</center></td>
+                <%else%>
+                    <td><center><%=h curso.carga_horaria %> horas</center></td>
+                <%end%>
+                <%if curso.data_hora.nil? then %>
+                   <td><center> 00/00/00 - 00:00 horas</center></td>
+                <%else%>
+                   <td><center><%=h curso.data_hora.strftime("%d/%m/%Y - %H:%M horas") %></center></td>
+                <%end%>
+             <td><center><%=h curso.ementa %></center></td>
+             <td><center><%=h curso.obs %></center></td>
+          </tr>
+
         <tr>
-        <% form_tag cursos_path, :method => 'get' do %>
-        <td align="right"><font size="4"> Digite Curso:</font>
-           <%= text_field_tag :search, params[:search] %>
-           <%= submit_tag "Filtrar", :name => nil %>
-        </td>
-        <% end %>
+          <td colspan="8">
+            <div class="botao">
+            <table>
+               <td><%= button_to('Exibir',{:action => "show", :id => curso}, :method => "get") %></td>
+               <td> <%= button_to('Editar',{:action => "edit", :id => curso}, :method => "get") %></td>
+               <td><%= button_to('Excluir',{:action => "destroy", :id => curso}, :confirm => 'Confirma exclusão?', :method => "delete")%></td>
+           </table>
+           </div>
+          </td>
+        </tr>
+       <%  $contador = $contador + 1 %>
+       <% end %>
+       </table>
+      </td>
+   </tr>
+   <tr>
+    <td>
+     <div class="botao">
+     <table>
+       <tr>
+          <td width="8%"><%= button_to 'Cadastrar', new_curso_path %> </td>
+           <td width="8%">
+              <% if $var == 0 %>
+                  <%= button_to 'Voltar', new_gerenciar_path %>
+              <%else%>
+                  <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
+               <% end %>
+            </td>
+            <td width="18%"><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
+            <td align="right">
+              <table width="100%">
+                <td align="right"><b> Total de cursos cadastrados: <%= $contador %></b></td>
+             </table>
+           </td>
         </tr>
      </table>
      </div>
-     </td>
     </tr>
-    
-   <tr>
-      <td>
-         <table border="2" width="100%">
-      <tr>
-        <th bgcolor="gray">Nome</th>
-        <th bgcolor="gray">Ministrante</th>
-        <th bgcolor="gray">Tipo</th>
-        <th bgcolor="gray">Carga Horaria</th>
-        <th bgcolor="gray">Data/Hora</th>
-        <th bgcolor="gray">Observações</th>
-      </tr>
-     <% for curso in @cursos %>
-     <tr>
-       <td><center><%=h curso.nome %></center></td>
-       <td><center><%=h curso.ministrante %></center></td>
-       <td><center><%=h curso.tipo %></center></td>
-          <%if curso.carga_horaria.nil? then %>
-             <td><center>00 horas</center></td>
-          <%else%>
-              <td><center><%=h curso.carga_horaria %> horas</center></td>
-          <%end%>
-          <%if curso.data_hora.nil? then %>
-             <td><center> 00/00/00 - 00:00 horas</center></td>
-          <%else%>
-             <td><center><%=h curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %></center></td>
-          <%end%>
-       <td><center><%=h curso.obs %></center></td>
-    </tr>
-    <tr>
-       <td bgcolor="gray"colspan="6">
-        <div class="botao">
-        <table>
-          <td><%= button_to('Exibir',{:action => "show", :id =>curso}, :method => "get") %></td>
-          <td> <%= button_to('Editar',{:action => "edit", :id =>curso}, :method => "get") %></td>
-          <td><%= button_to('Excluir',{:action => "destroy", :id =>curso}, :confirm => 'Confirma exclusão?', :method => "delete")%></td>
-        </table>
-        </div>
-       </td>
-    </tr>
-    <%  $contador = $contador + 1 %>
-    <% end %>
-    <tr>
-     <td colspan="6"><b> Total de cursos cadastrados: <%= $contador %></b> </td>
-</tr>
- </table>
+  </table>
 
-     </td>
-   </tr>
-  </table>
-  <div class="botao">
-   <table width="90%" align="center">
-    <tr>
-     <td width="8%"><%= button_to 'Novo curso', new_curso_path %></td>
-      <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"}%></td>
-      <td><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
-    </tr>
-  </table>
-  </div>
+
+
 

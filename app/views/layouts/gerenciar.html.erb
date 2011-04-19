@@ -33,7 +33,7 @@ display: none;
            <li class="top"><a href="#nogo53" id="sair" class="top_link"><span class="down">Arquivo</span></a>
              <ul class="sub">
                <li><%= link_to 'Inicio', root_path %></li>
-               <li><%= link_to 'Sair', logout_path,:confirm => "Deseja sair do sistema?" %></li>
+               <li><%= link_to 'Sair', logout_path,:confirm => "Deseja sair do gerenciamento do sistema?" %></li>
              </ul>
            </li>
            <li class="top"><a href="#nogo27" id="executar" class="top_link"><span class="down">Cursos</span></a>
@@ -50,9 +50,16 @@ display: none;
                <li><%= link_to_remote('Consultar', :update => "tela", :url => { :action => "consulta", :controller => 'participantes'}) %></li>
              </ul>
            </li>
+           <li class="top"><a href="#nogo2" id="cadastrar" class="top_link"><span class="down">Professores</span></a>
+             <ul class="sub">
+               <li><%= link_to "Cadastrar",  new_professor_path %></li>
+               <li><%= link_to "Cadastrados", professors_path %></li>
+               <li><%= link_to_remote('Consultar', :update => "tela", :url => { :action => "consulta", :controller => 'professors'}) %></li>
+             </ul>
+           </li>
            <li class="top"><a href="#nogo2" id="incrições" class="top_link"><span class="down">Inscrições</span></a>
              <ul class="sub">
-              <li><%= link_to "Inscrever-se",  new_inscricao_path %></li>
+              <li><%= link_to "Inscrever",  new_inscricao_path %></li>
               <li><%= link_to_remote('Por curso', :update => "tela", :url => { :action => "consulta", :controller => 'inscricaos'}) %></li>
               <li><%= link_to_remote('Estatistica', :update => "tela", :url => { :action => "estatistica", :controller => 'inscricaos'}) %></li>
              </ul>

@@ -1,0 +1,45 @@
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+ <br/>
+ <br/>
+ <table width="90%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Consulta Professor</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+        <div class="botao">
+        <table>
+          <tr>
+            <td>
+               <font size="4"> Selecione um professor para consultar: <%= collection_select :professor, :professor_id, @professors, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
+             </td>
+          </tr>
+        </table>
+        </div>
+         <%= observe_field 'professor_professor_id',
+           :update => "listagem",
+           :url    => { :action => 'lista_professor' },
+           :with   => 'professor_professor_id' %>
+         <div id="listagem"> </div>
+      </td>
+   </tr>
+   <tr>
+     <td>
+         <div class="botao">
+           <table width="100%" align="left">
+            <tr>
+               <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+               <td><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
+            </tr>
+          </table>
+         </div>
+     </td>
+   </tr>
+  </table>
+

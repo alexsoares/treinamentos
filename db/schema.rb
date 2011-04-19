@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100909123350) do
+ActiveRecord::Schema.define(:version => 20110418162522) do
 
   create_table "cursos", :force => true do |t|
     t.string   "nome"
@@ -44,6 +44,52 @@ ActiveRecord::Schema.define(:version => 20100909123350) do
     t.string   "email"
     t.string   "trabalho"
     t.string   "obs"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "professors", :force => true do |t|
+    t.integer  "matricula",                                                                      :null => false
+    t.string   "nome",                                                                           :null => false
+    t.datetime "dt_atual"
+    t.datetime "dt_ingresso"
+    t.datetime "dt_nasc"
+    t.string   "RG",               :limit => 20,                                :default => "0"
+    t.string   "CPF",              :limit => 20,                                :default => "0"
+    t.integer  "INEP",                                                          :default => 0
+    t.integer  "RD",                                                            :default => 0
+    t.integer  "n_filhos",                                                      :default => 0
+    t.integer  "sede_id",                                                                        :null => false
+    t.integer  "jornada_sem",                                                   :default => 0
+    t.string   "funcao",                                                                         :null => false
+    t.string   "endres"
+    t.string   "complemento"
+    t.string   "bairro"
+    t.integer  "num"
+    t.integer  "telefone"
+    t.string   "cidade"
+    t.string   "obs"
+    t.decimal  "total_trabalhado",               :precision => 10, :scale => 3, :default => 0.0
+    t.decimal  "total_titulacao",                :precision => 10, :scale => 3, :default => 0.0
+    t.decimal  "pontuacao_final",                :precision => 10, :scale => 3, :default => 0.0
+    t.integer  "flag",                                                          :default => 0,   :null => false
+    t.integer  "sede_id_ant"
+    t.string   "log_user",         :limit => 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "titulo_arrumado"
+  end
+
+  create_table "regiaos", :force => true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "unidades", :force => true do |t|
+    t.string   "nome"
+    t.integer  "tipo"
+    t.integer  "regiao_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
