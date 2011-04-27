@@ -9,22 +9,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110418162522) do
+ActiveRecord::Schema.define(:version => 20110425102918) do
 
   create_table "cursos", :force => true do |t|
+    t.string   "nome_curto"
     t.string   "nome"
     t.string   "ministrante"
-    t.string   "tipo"
     t.string   "carga_horaria"
-    t.string   "obs"
+    t.text     "ementa"
+    t.text     "obs"
     t.datetime "data_hora"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "cursos_inscricaos", :id => false, :force => true do |t|
+    t.integer "curso_id",     :null => false
+    t.integer "inscricao_id", :null => false
+  end
+
   create_table "inscricaos", :force => true do |t|
-    t.integer  "participante_id", :null => false
-    t.integer  "curso_id",        :null => false
+    t.integer  "participante_id",     :null => false
+    t.integer  "cursos_inscricao_id", :null => false
     t.date     "data_inscricao"
     t.string   "inscrito"
     t.datetime "created_at"
@@ -34,50 +40,51 @@ ActiveRecord::Schema.define(:version => 20110418162522) do
   create_table "participantes", :force => true do |t|
     t.string   "nome"
     t.integer  "matricula"
+    t.integer  "unidade_id"
+    t.string   "funcao"
     t.string   "endereco"
-    t.string   "cidade"
+    t.string   "num"
+    t.string   "complemento"
     t.string   "bairro"
-    t.string   "estado"
-    t.integer  "foneres"
-    t.integer  "fonecom"
+    t.string   "cidade"
+    t.string   "telefone"
     t.integer  "cel"
     t.string   "email"
-    t.string   "trabalho"
     t.string   "obs"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tipo_participante"
   end
 
   create_table "professors", :force => true do |t|
-    t.integer  "matricula",                                                                      :null => false
-    t.string   "nome",                                                                           :null => false
+    t.integer  "matricula"
+    t.string   "nome"
     t.datetime "dt_atual"
     t.datetime "dt_ingresso"
     t.datetime "dt_nasc"
-    t.string   "RG",               :limit => 20,                                :default => "0"
-    t.string   "CPF",              :limit => 20,                                :default => "0"
-    t.integer  "INEP",                                                          :default => 0
-    t.integer  "RD",                                                            :default => 0
-    t.integer  "n_filhos",                                                      :default => 0
-    t.integer  "sede_id",                                                                        :null => false
-    t.integer  "jornada_sem",                                                   :default => 0
-    t.string   "funcao",                                                                         :null => false
+    t.integer  "RG"
+    t.integer  "CPF"
+    t.integer  "INEP"
+    t.integer  "RD"
+    t.integer  "n_filhos"
+    t.integer  "sede_id"
+    t.integer  "jornada_sem"
+    t.string   "funcao"
     t.string   "endres"
     t.string   "complemento"
     t.string   "bairro"
-    t.integer  "num"
-    t.integer  "telefone"
+    t.string   "num"
+    t.string   "telefone"
     t.string   "cidade"
     t.string   "obs"
-    t.decimal  "total_trabalhado",               :precision => 10, :scale => 3, :default => 0.0
-    t.decimal  "total_titulacao",                :precision => 10, :scale => 3, :default => 0.0
-    t.decimal  "pontuacao_final",                :precision => 10, :scale => 3, :default => 0.0
-    t.integer  "flag",                                                          :default => 0,   :null => false
-    t.integer  "sede_id_ant"
-    t.string   "log_user",         :limit => 30
+    t.integer  "total_trabalhado", :limit => 10, :precision => 10, :scale => 0
+    t.integer  "total_titulacao",  :limit => 10, :precision => 10, :scale => 0
+    t.integer  "pontuacao_final",  :limit => 10, :precision => 10, :scale => 0
+    t.integer  "flag"
+    t.integer  "sede_id_ant_id"
+    t.string   "log_user"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "titulo_arrumado"
   end
 
   create_table "regiaos", :force => true do |t|

@@ -1,0 +1,96 @@
+      <% form_for(@participante) do |f| %>
+        <%= f.error_messages %>
+          <table>
+            <tr>
+              <td>
+                <b>Nome</b><font color="red" size="6">*</font>
+              </td>
+              <td>
+                <%= f.text_field :nome %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Interno</b><%= f.radio_button(:tipo_participante,1,:checked => true) %>
+                <b>Externo</b><%= f.radio_button(:tipo_participante,2) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Matrícula</b><font color="red" size="6">*</font>(Se Func.Público)
+              </td>
+              <td>
+                <%= f.text_field :matricula%>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Unidade:</b>
+              </td>
+              <td>
+                <%= f.collection_select :unidade_id, @unidades, :id, :nome, :include_blank => ' --- Selecione opção ---'  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Endereço</b>
+              </td>
+              <td>
+                <%= f.text_field :endereco %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Bairro</b>
+              </td>
+              <td>
+                <%= f.text_field :bairro, :size => 20 %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Cidade</b>
+              </td>
+              <td>
+                <%= f.text_field :cidade %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Fone:</b>
+              </td>
+              <td>
+                <%= f.text_field :telefone, :size => 10 %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Celular</b><font color="red" size="6">*</font>
+              </td>
+              <td>
+                <%= f.text_field :cel, :size => 10 %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <b>E-mail</b>
+              </td>
+              <td>
+                  <%= f.text_field :email, :size => 20 %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Observações</b>
+              </td>
+              <td>
+                <%= f.text_field :obs %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= f.submit "Salvar" %>
+              </td>
+            </tr>
+          </table>
+      <%end%>

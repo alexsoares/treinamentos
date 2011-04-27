@@ -30,4 +30,3 @@ class ApplicationController < ActionController::Base
     end
   end
 end
-TIPO = {'Curso' => 'Curso', 'Palestra' => 'Palestra', 'Teatro' => 'Teatro', 'Oficina' => 'Oficina', 'Outros' => 'Outros'}

@@ -4,12 +4,9 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Controle de Inscrições: <%= controller.action_name %></title>
-    <%= stylesheet_link_tag 'scaffold' %>
-    <%= stylesheet_link_tag 'SemEduc' %>
-    <%= stylesheet_link_tag 'menu' %>
-    <%= javascript_include_tag :all %>
-    <%= javascript_include_tag 'ui.datepicker-pt-BR' %>
-    <%= javascript_include_tag :defaults %>
+    <%= stylesheet_link_tag 'scaffold','treinamento','menu' %>
+    <%= javascript_include_tag 'jquery-1.4.2.js','jquery-ui','jquery.tools.min.js','jrails' %>
+    
 <style media="print">
 .botao {
 display: none;
@@ -20,14 +17,12 @@ display: none;
 <body>
   <div id ="contents">
     <div id="header">
-      <div id="topo">
-       
-      </div>
+      <div id="topo"></div>
       <p style="color: red"><%= flash[:notice] %></p>
-          <table width="100%">
-       <tr>
-          <td align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font>
-        </tr>
+       <table width="100%">
+         <tr>
+            <td align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font>
+         </tr>
       </table>
     </div>
     <div id="principal"><%= yield %></div>

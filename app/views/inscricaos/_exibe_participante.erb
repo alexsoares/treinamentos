@@ -1,10 +1,7 @@
-<% for participante in @dadosparticipa %>
-     <b>Nome:<%=h participante.nome %><br/>
-        Cidade:<%=h participante.cidade %><br/>
-        Fone Celular:<%=h participante.cel %><br/>
-        Trabalho: <%=h participante.trabalho %><br/>
-        Matricula: <%=h participante.matricula %><br/>
-        Observações: <%=h participante.obs %><br/>
+     <b>
+        Matricula: <%=h @dadosparticipa.matricula %><br/>
+        Nome:<%=h @dadosparticipa.nome %><br/>
+        Cidade:<%=h @dadosparticipa.cidade %><br/>
+        Observações: <%=h @dadosparticipa.obs %><br/>
+        <%=link_to "Alterar Participante", edit_participante_path(@dadosparticipa)%>
      </b>
-<% end %>
-

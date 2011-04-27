@@ -1,20 +1,23 @@
-<h1>Editing inscricao</h1>
-
-<% form_for(@inscricao) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :participante_id %><br />
-    <%= f.text_field :participante_id %>
-  </p>
-  <p>
-    <%= f.label :curso_id %><br />
-    <%= f.text_field :curso_id %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @inscricao %> |
-<%= link_to 'Back', inscricaos_path %>
+ <br/>
+ <br/>
+ <table width="90%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Alterar Inscrição</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <table border="3" width="100%">
+           <tr>
+            <td>
+              <%= render "form" %>
+            </td>
+           </tr>
+         </table>
+      </td>
+   </tr>
+  </table>
+  <script>
+    $("#demo input[title]").tooltip();
+  </script>

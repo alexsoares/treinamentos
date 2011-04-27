@@ -1,15 +1,27 @@
-     <table width="75%">
+     <table width="100%">
        <tr>
-         <td align="left">
+         <td align="center">
            <br/>
-            <%=  button_to "INSCREVER-SE", new_inscricao_path, {:method => 'get'} %>
+           <div id="inscrever">
+             <div id=title>
+                Inscreva-se Já
+             </div>
+             <div id="botao">
+                <%=  button_to "Inscreva-se já", new_inscricao_path, {:method => 'get'} %>
+             </div>
+             <div id="texto">
+                Clique no botão acima para inscrever-se nos minicursos oferecido pela Informática da Secretaria de Educação.
+             </div>
+
+           </div>
          </td>
         </tr>
         <tr>
-         <td align="left">
-          <%=  button_to "GERENCIAR", gerenciars_path, {:method => 'get'} %>
+         <td align="right">
+          <%=  link_to "Sou Administrador", gerenciars_path, {:method => 'get'} %>
          </td>
       </tr>
     </table>
+
 
 

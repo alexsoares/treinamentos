@@ -34,13 +34,6 @@
               <td><%= f.text_field :ministrante, :size => 40 %></td>
            </tr>
            <tr>
-              <td><b>Tipo</b></td>
-              <td><%= f.select :tipo, TIPO, :include_blank => '--Selecionar--'%>
-                 <font size="1"> ............</font>
-                 <b>Carga Horária</b>
-                 <%= f.text_field :carga_horaria, :size => 8 %> - horas</td>
-           </tr>
-           <tr>
                <td><b>Dia e Horário</b></td>
                <td><%= f.datetime_select :data_hora, :order => [:day, :month, :year], :include_blank => '' %> horas</td>
            </tr>

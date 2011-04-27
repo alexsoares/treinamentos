@@ -17,7 +17,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: SemEduc_development
+  database: treinamento_development
   pool: 5
   username: root
   password: s3inf0
@@ -29,7 +29,7 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: SemEduc_test
+  database: treinamento_test
   pool: 5
   username: root
   password: s3inf0
@@ -38,9 +38,9 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: SemEduc_production
+  database: treinamento_production
   pool: 5
   username: root
-  password: s3inf0
+  password: s3inf05
   socket: /var/run/mysqld/mysqld.sock
 

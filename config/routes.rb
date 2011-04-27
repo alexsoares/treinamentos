@@ -1,11 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :cursos_inscricaos
+  map.resources :pesquisas
 
   map.resources :unidades
 
   map.resources :regiaos
-
-  map.resources :professors
 
   map.resources :sessions
 
@@ -13,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :homes
 
-  map.resources :inscricaos, :collection => {:voltarinscricao => :get}
+  map.resources :inscricaos, :collection => {:voltarinscricao => :get, :tipo_opcao => :get}
 
   map.resources :cursos, :collection => {:voltar => :get}
 

@@ -1,0 +1,137 @@
+.tooltip {
+	display:none;
+    background:transparent url(Imagens/black_arrow.png);
+	font-size:12px;
+	height:232px;
+	width:240px;
+	padding:25px;
+	color:#fff;
+}
+
+/* style the trigger elements */
+#demo img {
+	border:0;
+	cursor:pointer;
+	margin:0 10px;
+}
+
+logo{
+margin:90px 0px;
+background-image:url(Imagens/logo.jpg);
+background-repeat: no-repeat;
+height:120px;
+}
+#menu {
+   position:inherit;
+   left: 280px;
+   top: 20px;;
+}
+body {
+margin:0;
+background-color:#c4c4c4;
+}
+
+a:hover {
+  color:white;
+  background-color:gray;
+}
+#alinha{
+margin:25px;
+}
+
+#conteudo {
+   position:absolute;
+   left: 430px;
+   top: 250px;;
+}
+#topo {
+text-align: center;
+color:white;
+width:100%;
+height:80px;
+margin:0;
+font:bold;
+}
+
+#rodape{
+    background-image:url(Imagens/fundo_rodape.jpg);
+    margin:25px;
+  	position:relative;
+    top: 589px;
+    width:96%;
+    color:white;
+    text-align:center;
+}
+
+#caixasobre {
+background-image:url(Imagens/caixa.jpg);
+background-repeat: no-repeat;
+   text-align: center;
+   color:white;
+   height:650px;
+   width:950px;
+   margin:0;
+   font:bold;
+   border-color:black;
+   border-left: double;
+   border-bottom: double;
+   border-top: double;
+   border-right: double;
+}
+#inscrever{
+   position: absolute;
+   border: 1px solid #1E679A;
+   width: 280px;
+   left: 762px;
+   top: 385px;;
+
+}
+
+#title{
+   background-color: orange;
+   font-weight: bold;
+   color: #ffffff;
+   padding: 2px;
+}
+#botao{
+   padding: 6px;
+   background-color: #ffffcc;
+} 
+#texto{
+   padding: 15px;
+   background-color: #ffffcc;
+   color:black;
+}
+
+#posicaosobre {
+width:40%;
+margin-top: 50px;
+margin-left: 300px;
+}
+
+#contents{
+    margin:0 auto;
+    background-image:url(Imagens/body.jpg);
+    height:700px;
+    width:950px;
+
+}
+
+#principal{
+    float:right;
+    height:700px;
+    width:950px;
+    background-image:url(Imagens/principal_body.gif);
+    font-size:10px;
+}
+#back{
+   background-image:url(Imagens/panfleto.jpg);
+   background-repeat: no-repeat;
+   text-align: center;
+   color:white;
+   height:700px;
+   width:950px;
+   margin:0;
+   font:bold;
+}
+

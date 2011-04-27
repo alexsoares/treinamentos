@@ -8,34 +8,42 @@
    </tr>
    <tr>
       <td>
-       <table>
+       <table width="100%" border="1">
          <br/>
            <tr>
-             <td><b>Participante:</b></td>
-             <td>  <%=h  @inscricao.participante.nome %> </td>
-          </tr>
-          <tr>
-            <td><b>Curso:</b></td>
-           <td>  <%=h  @inscricao.curso.nome %> </td>
-          </tr>
-          <tr>
-             <td><b>Data_hora:</b></td>
-                 <%  if @inscricao.curso.data_hora.nil? then %>
-                    <td> 00/00/00 - 0:00 </td>
-                 <%else%>
-                    <td> <%=h  @inscricao.curso.data_hora.strftime("%d de %B de %Y - %H:%M horas") %> </td>
-                 <%end%>
-             
-          </tr>
-          <tr>
-             <td><b>Observações:</b></td>
-             <td>  <%=h  @inscricao.curso.obs %> </td>
-          </tr>
+             <th colspan="2"><b>Participante:</b></th>
+           </tr>
+           <tr>
+             <td colspan="2">
+              <%=h  @inscricao.participante.nome %>
+             </td>
+           </tr>
+      <tr>
+          <th colspan="2">Cursos:</th>
+      </tr>
+          <% @inscricao.cursos.each do |curso| %>
+              <tr>
+                <td colspan="2" align="center">
+                  <b><%=h curso.nome %></b>
+                </td>
+              </tr>
+            <tr>
+               <td width="30%"><b>Observações:</b></td>
+               <td>  <%=h  curso.obs %> </td>
+            </tr>
+            <tr>
+              <td><b>Data do Curso:</b></td>
+              <%if !curso.data_hora.present?%>
+                <td align="center">Horário a Definir</td>
+              <%else%>
+                <td><%=h curso.data_hora.strftime("%d de %B de %Y") %></td>
+              <%end%>
+            </tr>
+          <% end %>
           <tr>
               <td><b>Data da Inscrição:</b></td>
               <td>  <%=h  @inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
           </tr>
-          <br/>
        </table>
      </td>
    </tr>
@@ -43,7 +51,7 @@
   <div class="botao">
    <table width="70%" align="center">
     <tr>
-       <td width="8%"><%= button_to 'Voltar', new_inscricao_path  %></td>
+       <td width="8%"><%= button_to 'Nova Inscrição', new_inscricao_path  %></td>
        <td><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
     </tr>
   </table>

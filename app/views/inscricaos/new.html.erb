@@ -1,6 +1,6 @@
  <br/>
  <br/>
- <table width="60%" border="1" align="center">
+ <table width="90%" border="1" align="center">
    <tr>
      <td>
         <h1 align="center">Inscrição</h1>
@@ -8,67 +8,15 @@
    </tr>
    <tr>
       <td>
-       <table border="3" width="100%">
-         <tr align="Left">           
-           <td>
-              \zz\
-           </td>
-           <td>
-                xzcxzcxz
-           </td>
-         </tr>
-         <tr>
-          <% form_for(@inscricao) do |f| %>
-          <%= f.error_messages %>
-           <td valign="top">
-             <table border="1" >
-               <tr>
-                 <td> Participante:</td>
-                 <td><%= f.collection_select :participante_id, @participantes, :id, :nome, :include_blank => ' -- Selecione -- ' %>
-                    <%= observe_field 'inscricao_participante_id',
-                   :with => :inscricao_participante_id,
-                   :url => { :action => 'sel_participa' } %>
-                 </td>
-               </tr>
-               <tr>
-                 <td colspan="3"><div id="dadosparticipa"></div></td>
-              </tr>
-            </table>
-          </td>
-          <td valign="top">
-            <table border="1">
-              <tr>
-               <td>Curso:</td>
-               <td><%= f.collection_select :cursos_inscricao_id, @cursos, :id, :nome, :include_blank => ' -- Selecione -- ' %>
-                   <%= observe_field 'inscricao_curso_id',
-                    :with => :curso_inscricao_curso_id,
-                    :url => { :action => 'sel_curso' } %>
-               </td>
-              </tr>
-              <tr>
-                <td colspan="3"><div id="curso"></div></td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" align="right">
-             <%= f.submit "Confirmar Inscrição" %>
-         </td>
-        </tr>
-        <% end %>
-      </table>
-     </td>
-   </tr>
-   </table>
+         <table border="3" width="100%">
+         <%= render "form" %>
+         </table>
    <table width="60%" align="center">
     <tr>
-      <td width="8%"><%= button_to 'Cadastrar Participante', new_participante_path %></td>
-      <td> <% if $Var == 1 %>
-             <%= button_to 'Voltar', gerenciars_path, {:method => 'get'}%>
-           <%else%>
-             <%= button_to 'Voltar', root_path, {:method => 'get'}%>
-           <%end%>
-      </td>
+      <td width="8%">Ainda não está cadastrado <%= link_to 'clique aki', new_participante_path %> para efetuar seu cadastro.</td>
     </tr>
+   </table>
   </table>
+  <script>
+    $("#demo input[title]").tooltip();
+  </script>

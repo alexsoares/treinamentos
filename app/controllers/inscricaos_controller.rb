@@ -6,29 +6,6 @@ class InscricaosController < ApplicationController
     before_filter :load_inscricaos
     layout :logado?
 
-  def logado?
-    if admin?
-      "gerenciar"
-    else
-      "cadastral"
-    end
-  end
-
-  def load_inscricaos
-    @inscricaos = Inscricao.find(:all)
-  end
-
-
-  def load_cursos
-    @cursos = Curso.find(:all, :order => 'nome ASC')
-  end
-
-
-  def load_participantes
-    @participantes = Participante.find(:all, :order => 'nome ASC')
-  end
-  
-
   def sel_curso
    $cur = params[:curso_inscricao_curso_id]
    @cursosparticipa = Curso.find(:all, :include => 'inscricaos', :conditions => ['id =?',$cur])
@@ -38,18 +15,6 @@ class InscricaosController < ApplicationController
     end
   end
 
-
-
-  def sel_participa
-    $part = params[:inscricao_participante_id]
-    @dadosparticipa = Participante.find(:all, :include => 'inscricaos', :conditions => ['id =?',$part])
-    $participante= Participante.find_by_id($part).nome
-     render :update do |page|
-        page.replace_html 'dadosparticipa', :partial => 'exibe_participante'
-
-
-    end
-  end
 
   def index
     @inscricaos = Inscricao.find(:all)
@@ -75,13 +40,17 @@ class InscricaosController < ApplicationController
   # GET /inscricaos/new
   # GET /inscricaos/new.xml
   def new
-    @inscricao = Inscricao.new
-    @inscricao.inscrito = 'x'
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @inscricao }
+    @inscricao = Inscricao.find_by_participante_id(params[:participante])
+    if @inscricao.present?
+      @participante = Participante.find(@inscricao.participante_id)
+      redirect_to(edit_inscricao_path(@inscricao))
+    else
+      @inscricao = Inscricao.new
+      respond_to do |format|
+        format.html # new.html.erb
+        format.xml  { render :xml => @inscricao }
+      end
     end
-
   end
 
   # GET /inscricaos/1/edit
@@ -89,12 +58,16 @@ class InscricaosController < ApplicationController
     @inscricao = Inscricao.find(params[:id])
   end
 
+
+  def sel_participa
+    @dadosparticipa = Participante.find(params[:inscricao_participante_id])
+    render :partial => 'exibe_participante'
+  end
   # POST /inscricaos
   # POST /inscricaos.xml
   def create
     @inscricao = Inscricao.new(params[:inscricao])
     @inscricao.data_inscricao = Time.now
-
     respond_to do |format|
       if @inscricao.save
         flash[:notice] = 'INSCRIÇÃO CONFIRMADA COM SUCESSO.'
@@ -160,4 +133,35 @@ class InscricaosController < ApplicationController
     @participantes = Participante.find(:all, :order => 'nome ASC')
     render :partial => 'estatistica'
   end
+
+private
+
+  def logado?
+    if admin?
+      "gerenciar"
+    else
+      "cadastral"
+    end
+  end
+
+
+protected
+
+  def load_inscricaos
+    @inscricaos = Inscricao.find(:all)
+  end
+
+  def load_cursos
+    @cursos = Curso.find(:all, :order => 'nome ASC')
+  end
+
+
+  def load_participantes
+    if params[:participante].present?
+      @participante = Participante.find(params[:participante], :order => 'nome ASC')
+    else
+      @participantes = Participante.find(:all, :order => 'nome ASC')
+    end
+  end
+
 end

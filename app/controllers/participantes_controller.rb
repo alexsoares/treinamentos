@@ -1,15 +1,15 @@
 class ParticipantesController < ApplicationController
   # GET /participantes
   # GET /participantes.xml
+
+  # Tipo participante
+  # 1 - Interno
+  # 2 - Externo
+
   before_filter :load_participantes
   layout :logado?
 
   before_filter :load_unidades
-  before_filter :load_professors
-
-  def load_professors
-    @professors = Professor.find(:all, :order => 'nome ASC')
-  end
 
   def load_unidades
     @unidades = Unidade.find(:all, :order => 'nome ASC')
@@ -97,7 +97,6 @@ class ParticipantesController < ApplicationController
   # PUT /participantes/1.xml
   def update
     @participante = Participante.find(params[:id])
-
     respond_to do |format|
       if @participante.update_attributes(params[:participante])
         flash[:notice] = 'PARTICIPANTE ATUALIZADO COM SUCESSO.'
@@ -114,11 +113,6 @@ class ParticipantesController < ApplicationController
   # DELETE /participantes/1.xml
   def destroy
     @participante = Participante.find(params[:id])
-     $part_id = params[:id]
-     @inscricao = Inscricao.find(:all, :conditions => ['participante_id = ' + $part_id])
-     for inscri in @inscricao
-      inscri.destroy
-     end
     @participante.destroy
 
     respond_to do |format|
@@ -133,37 +127,27 @@ def consulta
 
 
   def lista_participante
-    $participante = params[:participante_participante_id]
-    @participantes = Participante.find(:all, :conditions => ['id=' + $participante ])
+    @participantes = Participante.find(:all, :conditions => ["id = ",params[:participante_participante_id]])
     render :partial => 'lista_participantes'
   end
 
 
   def lista_participante_index
-    $participante = params[:participante_participante_id]
-    @participantes = Participante.find(:all, :conditions => ['id=' + $participante ])
+    @participantes = Participante.find(:all, :conditions => ["id = ?",params[:participante_participante_id] ])
        format.html { render :action => "index" }
   end
 
-    def mesmo_nome
-    $nome = params[:participante_nome]
-    @verifica = Participante.find_by_nome($nome)
+  def mesmo_nome
+    @verifica = Participante.find_by_nome(params[:participante_nome])
     if @verifica then
       render :update do |page|
         page.replace_html 'nome_aviso', :text => 'NOME JÁ CONSTA NO SISTEMA'
         page.replace_html 'Certeza', :text => "PARTICIPANTE JÁ CADASTRADO "
-    end
+      end
     else
       render :update do |page|
         page.replace_html 'nome_aviso', :text => ''
       end
-
     end
   end
-
-
-
-
-  
-
 end
