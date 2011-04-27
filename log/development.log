@@ -22913,3 +22913,16 @@ Processing HomesController#index (for 127.0.0.1 at 2011-04-27 14:20:16) [GET]
 Rendering template within layouts/application
 Rendering homes/index
 Completed in 29ms (View: 19, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (79.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateParticipantes (20100909123311)
+Migrating to CreateCursos (20100909123329)
+Migrating to CreateInscricaos (20100909123350)
+Migrating to CreateRegiaos (20110418162329)
+Migrating to CreateUnidades (20110418162522)
+Migrating to AddTipoparticipanteToParticipantes (20110420124958)
+Migrating to CursosInscricaos (20110425102918)
+Migrating to AddTipoParticipanteToParticipantes (20110427132006)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Duplicate column name 'tipo_participante': ALTER TABLE `participantes` ADD `tipo_participante` int(11) DEFAULT 1[0m
