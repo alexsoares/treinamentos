@@ -4,17 +4,7 @@ class InscricaosController < ApplicationController
     before_filter :load_cursos
     before_filter :load_participantes
     before_filter :load_inscricaos
-    layout :logado?
-
-  def sel_curso
-   $cur = params[:curso_inscricao_curso_id]
-   @cursosparticipa = Curso.find(:all, :include => 'inscricaos', :conditions => ['id =?',$cur])
-   $curso= Curso.find_by_id($cur).nome
-     render :update do |page|
-       page.replace_html 'curso', :partial => 'exibe_cursos'
-    end
-  end
-
+    layout 'cadastral'
 
   def index
     @inscricaos = Inscricao.find(:all)
@@ -111,41 +101,41 @@ class InscricaosController < ApplicationController
     end
   end
 
- def consulta
-    render :partial => 'consultas'
-  end
 
-
- def consulta
-    render :partial => 'consultas'
-  end
+ def por_curso
+   @search = Inscricao.search(params[:search])
+   if (params[:search]).present?
+    @curso = @search.paginate(:all,:page=>params[:page],:per_page =>20, :order => sort_column + " " + sort_direction)
+   end
+   render :action => 'por_curso'
+ end
 
 
  def lista_inscricao
     $curso = params[:curso_curso_id]
     @inscricaos = Inscricao.find(:all, :conditions => ['curso_id=' + $curso ])
     render :partial => 'lista_inscricao'
-  end
+ end
 
  def estatistica
     @cursos = Curso.find(:all, :order => 'nome ASC')
-    @inscricaos = Inscricao.find(:all)
-    @participantes = Participante.find(:all, :order => 'nome ASC')
-    render :partial => 'estatistica'
+    @inscricaos = Inscricao.all
   end
 
 private
 
-  def logado?
-    if admin?
-      "gerenciar"
-    else
-      "cadastral"
-    end
+  def sort_column
+    Inscricao.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
 
+
 protected
+
 
   def load_inscricaos
     @inscricaos = Inscricao.find(:all)

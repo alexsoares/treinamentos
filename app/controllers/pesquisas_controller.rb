@@ -1,4 +1,5 @@
 class PesquisasController < ApplicationController
+  layout 'cadastral'
   # GET /pesquisas
   # GET /pesquisas.xml
   def index
@@ -25,7 +26,10 @@ class PesquisasController < ApplicationController
   # GET /pesquisas/new.xml
   def new
     @pesquisa = Pesquisa.new
-
+    1.times do
+      pergunta = @pesquisa.perguntas.build
+      4.times { pergunta.respostas.build }
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @pesquisa }

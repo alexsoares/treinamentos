@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Controle de Inscrições: <%= controller.action_name %></title>
     <%= stylesheet_link_tag 'scaffold','treinamento','menu' %>
-    <%= javascript_include_tag 'jquery-1.4.2.js','jquery-ui','jquery.tools.min.js','jrails' %>
+    <%= javascript_include_tag 'jquery-1.4.2.js','jquery.tools.min.js','jquery-ui','jrails','application.js' %>
 <style media="print">
 .botao {
 display: none;
@@ -42,18 +42,11 @@ display: none;
                  <li><%= link_to_remote('Consultar', :update => "tela", :url => { :action => "consulta", :controller => 'participantes'}) %></li>
                </ul>
              </li>
-             <li class="top"><a href="#nogo2" id="cadastrar" class="top_link"><span class="down">Professores</span></a>
-               <ul class="sub">
-                 <li><%= link_to "Cadastrar",  new_professor_path %></li>
-                 <li><%= link_to "Cadastrados", professors_path %></li>
-                 <li><%= link_to_remote('Consultar', :update => "tela", :url => { :action => "consulta", :controller => 'professors'}) %></li>
-               </ul>
-             </li>
              <li class="top"><a href="#nogo2" id="incrições" class="top_link"><span class="down">Inscrições</span></a>
                <ul class="sub">
                 <li><%= link_to "Inscrever",  new_inscricao_path %></li>
-                <li><%= link_to_remote('Por curso', :update => "tela", :url => { :action => "consulta", :controller => 'inscricaos'}) %></li>
-                <li><%= link_to_remote('Estatistica', :update => "tela", :url => { :action => "estatistica", :controller => 'inscricaos'}) %></li>
+                <li><%= link_to "Consulta por Curso", por_curso_inscricaos_path %></li>
+                <li><%= link_to 'Estatistica', estatistica_inscricaos_path %></li>
                </ul>
              </li>
              <li class="top"><a href="#nogo2" id="sobre" class="top_link"><span class="down">Sobre</span></a>

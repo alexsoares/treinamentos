@@ -12,15 +12,13 @@
              <div id="texto">
                 Clique no botão acima para inscrever-se nos minicursos oferecido pela Informática da Secretaria de Educação.
              </div>
-
+             <div id="line"></div>
+             <div id="admin">
+              <%=  link_to "Sou Administrador", gerenciars_path, {:method => 'get'} %>
+             </div>
            </div>
          </td>
         </tr>
-        <tr>
-         <td align="right">
-          <%=  link_to "Sou Administrador", gerenciars_path, {:method => 'get'} %>
-         </td>
-      </tr>
     </table>
 
 

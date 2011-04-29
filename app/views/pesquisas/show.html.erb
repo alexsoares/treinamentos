@@ -2,7 +2,18 @@
   <b>Nome:</b>
   <%=h @pesquisa.nome %>
 </p>
-
+<ol>
+  <% @pesquisa.perguntas.each do |pergunta| %>
+    <li>
+      <%=h pergunta.conteudo%>
+      <ul>
+        <% pergunta.respostas.each do |sugestao| %>
+          <%=h sugestao.conteudo%><br/>
+        <%end%>
+      </ul>
+    </li>
+  <%end%>
+</ol>
 
 <%= link_to 'Edit', edit_pesquisa_path(@pesquisa) %> |
 <%= link_to 'Back', pesquisas_path %>

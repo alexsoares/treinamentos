@@ -1,0 +1,63 @@
+ <br/>
+ <br/>
+     <table width="100%">
+      <tr>
+        <% form_for @search do |f| %>
+          <tr>
+            <td align="right">
+              <%= f.label :cursos_id_equals, "Curso" %>
+              <%= f.select :cursos_id_equals, Curso.all.collect {|p| [ p.nome_curto, p.id ]}, :include_blank => true%>
+            </td>
+            <td align="center" colspan="2">
+              <%= f.submit "Buscar" %>
+            </td>
+          </tr>
+        <% end %>
+      </tr>
+    </table>
+    
+      <table width="100%"  class="tabelas">
+        <tr style="font-size:12px">
+         <br/>
+        </tr>
+
+        <%if @curso.present? %>
+            <h1 align="center">Inscrições para o curso:  <%= params[:search] ? Curso.find(params[:search][:cursos_id_equals]).nome_curto : "Selecione" %></h1>
+            <tr>
+              <th>Matricula</th>
+              <th>Nome</th>
+              <th>Pertence a Unidade</th>
+            </tr>
+            <% @curso.each do |inscricao| %>
+              <tr>
+                <td align="center"><%=h inscricao.participante.matricula %></td>
+                <td align="center"><%=h inscricao.participante.nome %></td>
+                <%  if inscricao.participante.tipo_participante == 2 %>
+                  <td align="center"><%=h "Externo" %></td>
+                <%else%>
+                  <td align="center"><%=h inscricao.participante.unidade.nome %></td>
+                <%end%>
+              </tr>
+            <%end%>
+        <tr>
+          <td colspan="3"><br/></td>
+        </tr>
+        <tr>
+          <td colspan="3" align="center"> <b><%= "Existe(m) #{@curso.count} participante(s) inscrito(s) neste curso" %></b></td>
+        </tr>
+      <% end %>
+      </table>
+
+      <%= @curso ? (will_paginate @curso) : "" %>
+
+  <div class="botao">
+   <table width="100%" align="center">
+    <tr>
+      <br/>
+      <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => 'get'}%></td>
+    </tr>
+  </table>
+  </div>
+
+
+

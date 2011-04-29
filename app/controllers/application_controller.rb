@@ -2,7 +2,10 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
+include AuthenticatedSystem
+  # You can move this into a different controller, if you wish.  This module gives you the require_role helpers, and others.
+  include RoleRequirementSystem
+
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -12,21 +15,4 @@ class ApplicationController < ActionController::Base
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
-    helper_method :admin?
-
-  def authorize
-    unless admin?
-      flash[:notice] =  "ACESSO NÃO AUTORIZADO"
-      redirect_to simples_path
-      false
-    end
-  end
-
-  def admin?
-    if session[:password] == 'teste'
-      true
-    else
-      false
-    end
-  end
 end

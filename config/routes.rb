@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.register '/register', :controller => 'users', :action => 'create'
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.resources :users
+
+  map.resource :session
+
   map.resources :pesquisas
 
   map.resources :unidades
@@ -7,11 +15,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :sessions
 
-  map.resources :gerenciars
+  map.resources :gerenciars, :as => "gerencial"
 
   map.resources :homes
 
-  map.resources :inscricaos, :collection => {:voltarinscricao => :get, :tipo_opcao => :get}
+  map.resources :inscricaos, :collection => {:estatistica => :get, :voltarinscricao => :get, :tipo_opcao => :get, :por_curso => :get}
 
   map.resources :cursos, :collection => {:voltar => :get}
 

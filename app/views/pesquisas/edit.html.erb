@@ -1,16 +1,6 @@
-<h1>Editing pesquisa</h1>
+<h1>Alterar Pesquisa</h1>
 
-<% form_for(@pesquisa) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+<%= render "form" %>
 
 <%= link_to 'Show', @pesquisa %> |
 <%= link_to 'Back', pesquisas_path %>

@@ -1,5 +1,6 @@
 class GerenciarsController < ApplicationController
-  before_filter :authorize
+  before_filter :login_required
+  
   before_filter :load_cursos
   before_filter :load_participantes
   layout 'gerenciar'

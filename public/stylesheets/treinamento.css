@@ -79,12 +79,16 @@ background-repeat: no-repeat;
    border-right: double;
 }
 #inscrever{
-   position: absolute;
+   position: relative;
    border: 1px solid #1E679A;
-   width: 280px;
-   left: 762px;
-   top: 385px;;
+   width: 187px;
+   left: 380px;
+   top: 352px;
+   height:200px;
+}
 
+#line{
+    border: 1px solid black;
 }
 
 #title{
@@ -94,11 +98,16 @@ background-repeat: no-repeat;
    padding: 2px;
 }
 #botao{
-   padding: 6px;
+   padding: 2px;
    background-color: #ffffcc;
 } 
 #texto{
-   padding: 15px;
+   padding: 12px;
+   background-color: #ffffcc;
+   color:black;
+}
+#admin{
+   padding: 17px;
    background-color: #ffffcc;
    color:black;
 }
@@ -135,3 +144,61 @@ margin-left: 300px;
    font:bold;
 }
 
+#entrar{
+    float:left;
+    height:300px;
+    width:950px;
+    background-image:url(Imagens/principal_body.gif);
+    font-size:10px;
+}
+#box{
+   text-align:center;
+   position: relative;
+   border: 1px solid black;
+   width: 200px;
+   left: 380px;
+   top: 30px;
+   height:210px;
+}
+
+.tabelas {
+  border: solid 1px #666;
+  border-collapse: separate;  
+}
+
+
+.hide {
+    display:none;
+}
+.tabelas th {
+  font-size: 10px;
+  color: white;
+  background-color: orange;
+  padding: 4px 8px;
+  padding-bottom: 4px;
+  text-align: center;
+}
+.tabelas th.titulo {
+    background-color: yellow;
+}
+.tabelas th.titulo h1{
+    color:#000;
+}
+
+
+.tabelas td {
+  padding: 4px 8px;
+  background-color: white;
+}
+
+.tabelas td:hover {
+  background-color: white;
+}
+
+.tabelas .even td {
+  background-color: #E3E6FF;
+}
+
+.tabelas .odd td {
+  background-color: #D1D8F6;
+}

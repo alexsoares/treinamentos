@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110425102918) do
+ActiveRecord::Schema.define(:version => 20110428170610) do
 
   create_table "cursos", :force => true do |t|
     t.string   "nome_curto"
@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(:version => 20110425102918) do
   end
 
   create_table "inscricaos", :force => true do |t|
-    t.integer  "participante_id",     :null => false
-    t.integer  "cursos_inscricao_id", :null => false
+    t.integer  "participante_id", :null => false
     t.date     "data_inscricao"
     t.string   "inscrito"
     t.datetime "created_at"
@@ -56,33 +55,15 @@ ActiveRecord::Schema.define(:version => 20110425102918) do
     t.integer  "tipo_participante"
   end
 
-  create_table "professors", :force => true do |t|
-    t.integer  "matricula"
+  create_table "perguntas", :force => true do |t|
+    t.integer  "pesquisa_id"
+    t.text     "conteudo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pesquisas", :force => true do |t|
     t.string   "nome"
-    t.datetime "dt_atual"
-    t.datetime "dt_ingresso"
-    t.datetime "dt_nasc"
-    t.integer  "RG"
-    t.integer  "CPF"
-    t.integer  "INEP"
-    t.integer  "RD"
-    t.integer  "n_filhos"
-    t.integer  "sede_id"
-    t.integer  "jornada_sem"
-    t.string   "funcao"
-    t.string   "endres"
-    t.string   "complemento"
-    t.string   "bairro"
-    t.string   "num"
-    t.string   "telefone"
-    t.string   "cidade"
-    t.string   "obs"
-    t.integer  "total_trabalhado", :limit => 10, :precision => 10, :scale => 0
-    t.integer  "total_titulacao",  :limit => 10, :precision => 10, :scale => 0
-    t.integer  "pontuacao_final",  :limit => 10, :precision => 10, :scale => 0
-    t.integer  "flag"
-    t.integer  "sede_id_ant_id"
-    t.string   "log_user"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -93,6 +74,25 @@ ActiveRecord::Schema.define(:version => 20110425102918) do
     t.datetime "updated_at"
   end
 
+  create_table "respostas", :force => true do |t|
+    t.integer  "pergunta_id"
+    t.string   "conteudo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
+  add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
+  add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
+
   create_table "unidades", :force => true do |t|
     t.string   "nome"
     t.integer  "tipo"
@@ -100,5 +100,19 @@ ActiveRecord::Schema.define(:version => 20110425102918) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "login",                     :limit => 40
+    t.string   "name",                      :limit => 100, :default => ""
+    t.string   "email",                     :limit => 100
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
+  end
+
+  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end

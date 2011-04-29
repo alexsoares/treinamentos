@@ -1,24 +1,17 @@
-    <br/>
-    <br/>
-   <table width="60%" border="1" align="center">
-     <tr>
-       <td>
-         <h2 align="center">Favor inserir senha gerencial</h2>
-       </td>
-     </tr>
-      <tr>
-        <% form_tag sessions_path do %>
-          <td align="center">
-            <p><%= label :password, "Password" %></p>
-            <p><%= password_field_tag :password%></p>
-          </td>
-        <%end%>
-      </tr>
-   </table>
-     <table width="60%" align="center">
-    <tr>
-      <td><%= button_to "Voltar", root_path, {:method => 'get'} %></td>
-    </tr>
-  </table>
-   
+<div id="box">
+  <h1>Entrar</h1>
+  <% form_tag session_path do -%>
+  <p><%= label_tag 'login' %><br />
+  <%= text_field_tag 'login', @login %></p>
 
+  <p><%= label_tag 'password', "Senha" %><br/>
+  <%= password_field_tag 'password', nil %></p>
+
+
+  <p><%= label_tag 'remember_me', 'Salvar Senha' %>
+  <%= check_box_tag 'remember_me', '1', @remember_me %></p>
+
+
+  <p><%= submit_tag 'Entrar' %></p>
+  <% end -%>
+</div>
