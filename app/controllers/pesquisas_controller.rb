@@ -28,7 +28,7 @@ class PesquisasController < ApplicationController
     @pesquisa = Pesquisa.new
     1.times do
       pergunta = @pesquisa.perguntas.build
-      4.times { pergunta.respostas.build }
+      2.times { pergunta.respostas.build }
     end
     respond_to do |format|
       format.html # new.html.erb

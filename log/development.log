@@ -1,0 +1,2448 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2011-04-29 14:01:57) [GET]
+Rendering template within layouts/application
+Rendering homes/index
+Completed in 134ms (View: 125, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GerenciarsController#index (for 127.0.0.1 at 2011-04-29 14:02:06) [GET]
+  Parameters: {"authenticity_token"=>"6x/lLVHgQhlfGb5mk7KMVrUBtxiq+m+XeZYueARTfHU="}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mCurso Load (0.8ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (45.7ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+Rendering template within layouts/gerenciar
+Rendering gerenciars/index
+Completed in 365ms (View: 59, DB: 49) | 200 OK [http://localhost/gerencial]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-04-29 14:02:16) [GET]
+Redirected to http://localhost:3000/
+Completed in 31ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2011-04-29 14:02:16) [GET]
+Rendering template within layouts/application
+Rendering homes/index
+Completed in 25ms (View: 16, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GerenciarsController#index (for 127.0.0.1 at 2011-04-29 14:02:19) [GET]
+  Parameters: {"authenticity_token"=>"zic5RuXYQ6mOPnPwCb3zIOfgcbdzBXWgICDweTwFEZ4="}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/gerencial]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-04-29 14:02:19) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 48ms (View: 38, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GerenciarsController#index (for 127.0.0.1 at 2011-04-29 14:02:45) [GET]
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/gerencial]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-04-29 14:02:45) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 23ms (View: 14, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-04-29 14:03:19) [POST]
+  Parameters: {"remember_me"=>"1", "commit"=>"Entrar", "authenticity_token"=>"zic5RuXYQ6mOPnPwCb3zIOfgcbdzBXWgICDweTwFEZ4=", "login"=>"alexandre", "password"=>"22121985"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'alexandre') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-04-29 17:03:20', `remember_token_expires_at` = '2011-05-13 17:03:19', `remember_token` = '2947e11950eaacbf382ff0bda649919cbf4403d3' WHERE `id` = 1[0m
+  [4;36;1mSQL (137.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/gerencial
+Completed in 475ms (DB: 141) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GerenciarsController#index (for 127.0.0.1 at 2011-04-29 14:03:20) [GET]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (1.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+Rendering template within layouts/gerenciar
+Rendering gerenciars/index
+Completed in 136ms (View: 17, DB: 4) | 200 OK [http://localhost/gerencial]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2011-04-29 14:03:25) [GET]
+Redirected to http://localhost:3000/
+Completed in 31ms (DB: 0) | 302 Found [http://localhost/logout]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2011-04-29 14:03:25) [GET]
+Rendering template within layouts/application
+Rendering homes/index
+Completed in 33ms (View: 19, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GerenciarsController#index (for 127.0.0.1 at 2011-04-29 14:03:27) [GET]
+  Parameters: {"authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4="}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/gerencial]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-04-29 14:03:27) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 25ms (View: 15, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2011-04-29 14:26:23) [GET]
+Rendering template within layouts/application
+Rendering homes/index
+Completed in 27ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#edit (for 127.0.0.1 at 2011-04-29 14:29:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPesquisa Load (0.3ms)[0m   [0;1mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 2) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/edit
+  [4;35;1mPergunta Load (0.5ms)[0m   [0mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 2) [0m
+  [4;36;1mPergunta Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Load (0.4ms)[0m   [0mSELECT * FROM `respostas` WHERE (`respostas`.pergunta_id = 4) [0m
+Rendered pesquisas/_campos_pergunta (19.5ms)
+Rendered pesquisas/_form (68.0ms)
+Completed in 221ms (View: 193, DB: 4) | 200 OK [http://localhost/pesquisas/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#update (for 127.0.0.1 at 2011-04-29 14:29:07) [PUT]
+  Parameters: {"pesquisa"=>{"perguntas_attributes"=>{"0"=>{"id"=>"4", "conteudo"=>"teste1", "_destroy"=>""}}, "nome"=>"Teste"}, "commit"=>"Salvar", "authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4=", "id"=>"2"}
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPesquisa Load (0.1ms)[0m   [0mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 2) [0m
+  [4;36;1mPergunta Load (0.2ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 2) [0m
+  [4;35;1mPergunta Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/pesquisas/2
+Completed in 72ms (DB: 3) | 302 Found [http://localhost/pesquisas/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#show (for 127.0.0.1 at 2011-04-29 14:29:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPesquisa Load (0.1ms)[0m   [0mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 2) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/show
+  [4;36;1mPergunta Load (0.2ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 2) [0m
+  [4;35;1mPergunta Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Load (0.2ms)[0m   [0;1mSELECT * FROM `respostas` WHERE (`respostas`.pergunta_id = 4) [0m
+Completed in 83ms (View: 56, DB: 3) | 200 OK [http://localhost/pesquisas/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#edit (for 127.0.0.1 at 2011-04-29 14:29:12) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPesquisa Load (0.1ms)[0m   [0;1mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 2) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/edit
+  [4;35;1mPergunta Load (0.2ms)[0m   [0mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 2) [0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Load (0.2ms)[0m   [0mSELECT * FROM `respostas` WHERE (`respostas`.pergunta_id = 4) [0m
+Rendered pesquisas/_campos_pergunta (29.7ms)
+Rendered pesquisas/_form (140.7ms)
+Completed in 175ms (View: 149, DB: 3) | 200 OK [http://localhost/pesquisas/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#edit (for 127.0.0.1 at 2011-04-29 14:36:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPesquisa Load (0.1ms)[0m   [0mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 2) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/edit
+  [4;36;1mPergunta Load (0.2ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 2) [0m
+  [4;35;1mPergunta Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+
+ActionView::TemplateError (undefined method `has_role?' for nil:NilClass) on line #4 of app/views/pesquisas/_campos_pergunta.html.erb:
+1: <div class="fields">
+2:   <p>
+3:     <%= f.label :conteudo, "Pergunta"%>
+4:     <% if current_user.has_role?('administrador') %>
+5:       <%= link_to_remove_fields "remove",f %><br/>
+6:     <%end%>
+7:     <%= f.text_area :conteudo, :rows => 3 %>
+
+    app/views/pesquisas/_campos_pergunta.html.erb:4
+    app/views/pesquisas/_form.html.erb:10
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+    /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/pesquisas/_form.html.erb:9
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/pesquisas/_form.html.erb:1
+    app/views/pesquisas/edit.html.erb:3
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/lib/ruby-debug.rb:96:in `debug_load'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/lib/ruby-debug.rb:96:in `main'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/bin/rdebug-ide:76
+    /usr/bin/rdebug-ide:19:in `load'
+    /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (357.1ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2011-04-29 14:37:43) [GET]
+Rendering template within layouts/application
+Rendering homes/index
+Completed in 68ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GerenciarsController#index (for 127.0.0.1 at 2011-04-29 14:37:45) [GET]
+  Parameters: {"authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4="}
+Redirected to http://localhost:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/gerencial]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2011-04-29 14:37:45) [GET]
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 49ms (View: 40, DB: 0) | 200 OK [http://localhost/session/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-04-29 14:37:52) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4=", "login"=>"alexandre", "password"=>""}
+Failed login for 'alexandre' from 127.0.0.1 at Fri Apr 29 17:37:52 UTC 2011
+Rendering template within layouts/login
+Rendering sessions/new
+Completed in 48ms (View: 13, DB: 0) | 200 OK [http://localhost/session]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2011-04-29 14:37:57) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4=", "login"=>"alexandre", "password"=>"22121985"}
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'alexandre') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2011-04-29 17:37:57', `remember_token_expires_at` = NULL, `remember_token` = NULL WHERE `id` = 1[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/gerencial
+Completed in 184ms (DB: 6) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing GerenciarsController#index (for 127.0.0.1 at 2011-04-29 14:37:58) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (1.5ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+Rendering template within layouts/gerenciar
+Rendering gerenciars/index
+Completed in 229ms (View: 45, DB: 3) | 200 OK [http://localhost/gerencial]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#edit (for 127.0.0.1 at 2011-04-29 14:38:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPesquisa Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPesquisa Load (0.1ms)[0m   [0;1mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 2) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/edit
+  [4;35;1mPergunta Load (0.2ms)[0m   [0mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 2) [0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.4ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mResposta Load (0.2ms)[0m   [0;1mSELECT * FROM `respostas` WHERE (`respostas`.pergunta_id = 4) [0m
+  [4;35;1mResposta Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+
+ActionView::TemplateError (Missing template pesquisas/_resposta_fields.erb in view path app/views) on line #12 of app/views/pesquisas/_campos_pergunta.html.erb:
+9:   <% f.fields_for :respostas do |builder| %>
+10:     <%= render "campos_sugestao", :f => builder %>
+11:   <%end%>
+12:   <%= link_to_add_fields "Adiciona Sugestão", f, :respostas %>
+13: </div>
+
+    app/helpers/application_helper.rb:10:in `link_to_add_fields'
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    app/helpers/application_helper.rb:9:in `link_to_add_fields'
+    app/views/pesquisas/_campos_pergunta.html.erb:12
+    app/views/pesquisas/_form.html.erb:10
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+    /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/pesquisas/_form.html.erb:9
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/pesquisas/_form.html.erb:1
+    app/views/pesquisas/edit.html.erb:3
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/lib/ruby-debug.rb:96:in `debug_load'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/lib/ruby-debug.rb:96:in `main'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/bin/rdebug-ide:76
+    /usr/bin/rdebug-ide:19:in `load'
+    /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (234.2ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#edit (for 127.0.0.1 at 2011-04-29 14:46:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPesquisa Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPesquisa Load (0.1ms)[0m   [0mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 2) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/edit
+  [4;36;1mPergunta Load (0.1ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 2) [0m
+  [4;35;1mPergunta Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mResposta Load (0.1ms)[0m   [0mSELECT * FROM `respostas` WHERE (`respostas`.pergunta_id = 4) [0m
+  [4;36;1mResposta Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+
+ActionView::TemplateError (Missing template pesquisas/_respostacampos_.erb in view path app/views) on line #12 of app/views/pesquisas/_campos_pergunta.html.erb:
+9:   <% f.fields_for :respostas do |builder| %>
+10:     <%= render "campos_resposta", :f => builder %>
+11:   <%end%>
+12:   <%= link_to_add_fields "Adiciona Sugestão", f, :respostas %>
+13: </div>
+
+    app/helpers/application_helper.rb:10:in `link_to_add_fields'
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    app/helpers/application_helper.rb:9:in `link_to_add_fields'
+    app/views/pesquisas/_campos_pergunta.html.erb:12
+    app/views/pesquisas/_form.html.erb:10
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+    /usr/lib/ruby/gems/1.8/gems/will_paginate-2.3.15/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/pesquisas/_form.html.erb:9
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:72:in `fields_for'
+    searchlogic (2.4.14) lib/searchlogic/rails_helpers.rb:61:in `form_for'
+    app/views/pesquisas/_form.html.erb:1
+    app/views/pesquisas/edit.html.erb:3
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/lib/ruby-debug.rb:96:in `debug_load'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/lib/ruby-debug.rb:96:in `main'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.3.1/bin/rdebug-ide:76
+    /usr/bin/rdebug-ide:19:in `load'
+    /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (231.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#edit (for 127.0.0.1 at 2011-04-29 14:47:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPesquisa Load (0.4ms)[0m   [0;1mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 2) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/edit
+  [4;35;1mPergunta Load (0.2ms)[0m   [0mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 2) [0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mResposta Load (0.2ms)[0m   [0;1mSELECT * FROM `respostas` WHERE (`respostas`.pergunta_id = 4) [0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendered pesquisas/_campos_resposta (12.6ms)
+Rendered pesquisas/_campos_pergunta (102.7ms)
+Rendered pesquisas/_form (140.9ms)
+Completed in 182ms (View: 150, DB: 8) | 200 OK [http://localhost/pesquisas/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 14:47:39) [GET]
+  [4;36;1mPesquisa Load (0.4ms)[0m   [0;1mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 92ms (View: 68, DB: 2) | 200 OK [http://localhost/pesquisas]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:47:42) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (6.5ms)
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_pergunta (106.7ms)
+Rendered pesquisas/_form (118.7ms)
+Completed in 199ms (View: 133, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:50:08) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (8.6ms)
+Rendered pesquisas/_campos_resposta (8.8ms)
+Rendered pesquisas/_campos_resposta (8.5ms)
+Rendered pesquisas/_campos_resposta (8.3ms)
+Rendered pesquisas/_campos_resposta (9.2ms)
+Rendered pesquisas/_campos_pergunta (214.1ms)
+Rendered pesquisas/_form (226.2ms)
+Completed in 297ms (View: 234, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:50:26) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (5.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_pergunta (91.0ms)
+Rendered pesquisas/_form (102.7ms)
+Completed in 169ms (View: 102, DB: 12) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:50:44) [GET]
+  [4;36;1mPesquisa Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_resposta (8.0ms)
+Rendered pesquisas/_campos_pergunta (110.0ms)
+Rendered pesquisas/_form (124.8ms)
+Completed in 305ms (View: 132, DB: 8) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:53:38) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_resposta (11.6ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_pergunta (102.1ms)
+Rendered pesquisas/_form (121.8ms)
+Completed in 188ms (View: 126, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:53:49) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (11.8ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (4.5ms)
+Rendered pesquisas/_campos_resposta (5.1ms)
+Rendered pesquisas/_campos_pergunta (95.7ms)
+Rendered pesquisas/_form (107.8ms)
+Completed in 178ms (View: 112, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:55:08) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.1ms)
+Rendered pesquisas/_campos_resposta (6.1ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_resposta (5.8ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_pergunta (181.6ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (22.0ms)
+Rendered pesquisas/_form (238.4ms)
+Completed in 315ms (View: 253, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:56:57) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (6.3ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (7.4ms)
+Rendered pesquisas/_campos_pergunta (104.1ms)
+Rendered pesquisas/_campos_resposta (7.9ms)
+Rendered pesquisas/_campos_pergunta (30.8ms)
+Rendered pesquisas/_form (166.1ms)
+Completed in 244ms (View: 179, DB: 8) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 14:57:18) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (7.8ms)
+Rendered pesquisas/_campos_pergunta (90.9ms)
+Rendered pesquisas/_campos_resposta (8.0ms)
+Rendered pesquisas/_campos_pergunta (27.2ms)
+Rendered pesquisas/_form (156.8ms)
+Completed in 228ms (View: 164, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:02:34) [GET]
+  [4;36;1mPesquisa Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_resposta (5.1ms)
+Rendered pesquisas/_campos_resposta (5.6ms)
+Rendered pesquisas/_campos_pergunta (85.0ms)
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_pergunta (20.2ms)
+Rendered pesquisas/_form (140.4ms)
+Completed in 312ms (View: 251, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:03:05) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (7.9ms)
+Rendered pesquisas/_campos_pergunta (92.8ms)
+Rendered pesquisas/_campos_resposta (8.1ms)
+Rendered pesquisas/_campos_pergunta (28.0ms)
+Rendered pesquisas/_form (161.6ms)
+Completed in 230ms (View: 166, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:04:13) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.9ms)
+Rendered pesquisas/_campos_resposta (4.9ms)
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_pergunta (83.3ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_pergunta (19.2ms)
+Rendered pesquisas/_form (132.7ms)
+Completed in 202ms (View: 137, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:04:23) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (6.3ms)
+Rendered pesquisas/_campos_pergunta (177.5ms)
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_pergunta (24.4ms)
+Rendered pesquisas/_form (237.0ms)
+Completed in 303ms (View: 243, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:05:12) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (4.9ms)
+Rendered pesquisas/_campos_resposta (5.3ms)
+Rendered pesquisas/_campos_pergunta (71.2ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_pergunta (20.5ms)
+Rendered pesquisas/_form (122.6ms)
+Completed in 193ms (View: 128, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:06:52) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_resposta (5.4ms)
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_pergunta (82.2ms)
+Rendered pesquisas/_campos_resposta (6.2ms)
+Rendered pesquisas/_campos_pergunta (19.9ms)
+Rendered pesquisas/_form (132.3ms)
+Completed in 201ms (View: 137, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:08:52) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.1ms)
+Rendered pesquisas/_campos_resposta (5.8ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_pergunta (161.3ms)
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_pergunta (24.6ms)
+Rendered pesquisas/_form (221.8ms)
+Completed in 291ms (View: 227, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:09:33) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.1ms)
+Rendered pesquisas/_campos_resposta (4.7ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_pergunta (70.9ms)
+Rendered pesquisas/_campos_resposta (5.5ms)
+Rendered pesquisas/_campos_pergunta (20.5ms)
+Rendered pesquisas/_form (122.9ms)
+Completed in 190ms (View: 128, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:09:42) [GET]
+  [4;36;1mPesquisa Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.9ms)
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (5.1ms)
+Rendered pesquisas/_campos_pergunta (64.7ms)
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_pergunta (19.4ms)
+Rendered pesquisas/_form (111.4ms)
+Completed in 162ms (View: 116, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:09:51) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.2ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (18.0ms)
+Rendered pesquisas/_campos_resposta (6.2ms)
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_pergunta (183.2ms)
+Rendered pesquisas/_campos_resposta (8.4ms)
+Rendered pesquisas/_campos_pergunta (29.1ms)
+Rendered pesquisas/_form (250.1ms)
+Completed in 319ms (View: 257, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:10:01) [GET]
+  [4;36;1mPesquisa Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.1ms)
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_resposta (7.5ms)
+Rendered pesquisas/_campos_pergunta (81.4ms)
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_pergunta (23.2ms)
+Rendered pesquisas/_form (135.8ms)
+Completed in 232ms (View: 141, DB: 11) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:10:08) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_pergunta (72.5ms)
+Rendered pesquisas/_campos_resposta (6.2ms)
+Rendered pesquisas/_campos_pergunta (20.7ms)
+Rendered pesquisas/_form (122.5ms)
+Completed in 291ms (View: 127, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:10:30) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (7.5ms)
+Rendered pesquisas/_campos_pergunta (90.8ms)
+Rendered pesquisas/_campos_resposta (8.0ms)
+Rendered pesquisas/_campos_pergunta (27.8ms)
+Rendered pesquisas/_form (239.6ms)
+Completed in 308ms (View: 246, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:10:35) [GET]
+  [4;36;1mPesquisa Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_pergunta (90.2ms)
+Rendered pesquisas/_campos_resposta (8.0ms)
+Rendered pesquisas/_campos_pergunta (31.3ms)
+Rendered pesquisas/_form (152.4ms)
+Completed in 224ms (View: 157, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:10:44) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_resposta (5.6ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_pergunta (74.1ms)
+Rendered pesquisas/_campos_resposta (6.5ms)
+Rendered pesquisas/_campos_pergunta (22.4ms)
+Rendered pesquisas/_form (126.7ms)
+Completed in 290ms (View: 135, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:10:53) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (7.4ms)
+Rendered pesquisas/_campos_pergunta (92.7ms)
+Rendered pesquisas/_campos_resposta (11.6ms)
+Rendered pesquisas/_campos_pergunta (28.7ms)
+Rendered pesquisas/_form (151.5ms)
+Completed in 219ms (View: 156, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:10:58) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (7.9ms)
+Rendered pesquisas/_campos_resposta (7.9ms)
+Rendered pesquisas/_campos_pergunta (93.4ms)
+Rendered pesquisas/_campos_resposta (5.8ms)
+Rendered pesquisas/_campos_pergunta (19.6ms)
+Rendered pesquisas/_form (144.6ms)
+Completed in 214ms (View: 150, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:11:04) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_resposta (6.1ms)
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_pergunta (176.9ms)
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_pergunta (25.8ms)
+Rendered pesquisas/_form (239.6ms)
+Completed in 307ms (View: 246, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:11:10) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.7ms)
+Rendered pesquisas/_campos_resposta (4.5ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_pergunta (70.4ms)
+Rendered pesquisas/_campos_resposta (5.5ms)
+Rendered pesquisas/_campos_pergunta (18.9ms)
+Rendered pesquisas/_form (119.6ms)
+Completed in 186ms (View: 125, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:11:26) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (7.4ms)
+Rendered pesquisas/_campos_pergunta (93.9ms)
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_pergunta (20.5ms)
+Rendered pesquisas/_form (145.9ms)
+Completed in 216ms (View: 151, DB: 8) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:12:17) [GET]
+  [4;36;1mPesquisa Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.5ms)
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_pergunta (146.0ms)
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_pergunta (25.6ms)
+Rendered pesquisas/_form (211.3ms)
+Completed in 261ms (View: 217, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:12:22) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (5.4ms)
+Rendered pesquisas/_campos_pergunta (99.0ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_pergunta (20.3ms)
+Rendered pesquisas/_form (149.4ms)
+Completed in 218ms (View: 154, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:13:14) [GET]
+  [4;36;1mPesquisa Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_pergunta (67.3ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_pergunta (19.8ms)
+Rendered pesquisas/_form (116.5ms)
+Completed in 171ms (View: 121, DB: 5) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:13:19) [GET]
+  [4;36;1mPesquisa Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (179.3ms)
+Rendered pesquisas/_campos_resposta (7.8ms)
+Rendered pesquisas/_campos_pergunta (27.4ms)
+Rendered pesquisas/_form (244.6ms)
+Completed in 313ms (View: 250, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:13:23) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.5ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (7.4ms)
+Rendered pesquisas/_campos_pergunta (91.0ms)
+Rendered pesquisas/_campos_resposta (8.2ms)
+Rendered pesquisas/_campos_pergunta (27.7ms)
+Rendered pesquisas/_form (150.1ms)
+Completed in 217ms (View: 155, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:13:38) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.5ms)
+Rendered pesquisas/_campos_resposta (5.3ms)
+Rendered pesquisas/_campos_resposta (5.8ms)
+Rendered pesquisas/_campos_pergunta (71.4ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_pergunta (21.4ms)
+Rendered pesquisas/_form (121.7ms)
+Completed in 293ms (View: 126, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:13:45) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (6.5ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_pergunta (85.2ms)
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_pergunta (20.0ms)
+Rendered pesquisas/_form (215.0ms)
+Completed in 285ms (View: 221, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:13:52) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (89.5ms)
+Rendered pesquisas/_campos_resposta (8.7ms)
+Rendered pesquisas/_campos_pergunta (27.9ms)
+Rendered pesquisas/_form (152.8ms)
+Completed in 225ms (View: 157, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:13:58) [GET]
+  [4;36;1mPesquisa Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_resposta (6.5ms)
+Rendered pesquisas/_campos_pergunta (90.8ms)
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_pergunta (24.8ms)
+Rendered pesquisas/_form (247.3ms)
+Completed in 312ms (View: 247, DB: 12) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:14:52) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (6.5ms)
+Rendered pesquisas/_campos_resposta (7.4ms)
+Rendered pesquisas/_campos_pergunta (85.6ms)
+Rendered pesquisas/_campos_resposta (5.8ms)
+Rendered pesquisas/_campos_pergunta (20.0ms)
+Rendered pesquisas/_form (135.4ms)
+Completed in 203ms (View: 140, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:15:04) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_resposta (8.0ms)
+Rendered pesquisas/_campos_resposta (7.4ms)
+Rendered pesquisas/_campos_pergunta (94.2ms)
+Rendered pesquisas/_campos_resposta (8.1ms)
+Rendered pesquisas/_campos_pergunta (28.3ms)
+Rendered pesquisas/_form (160.1ms)
+Completed in 233ms (View: 165, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:15:12) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.1ms)
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_pergunta (177.0ms)
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_pergunta (25.6ms)
+Rendered pesquisas/_form (238.6ms)
+Completed in 304ms (View: 244, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:17:03) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_resposta (6.3ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (90.0ms)
+Rendered pesquisas/_campos_resposta (9.0ms)
+Rendered pesquisas/_campos_pergunta (28.6ms)
+Rendered pesquisas/_form (164.1ms)
+Completed in 248ms (View: 178, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:29:32) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (7.8ms)
+Rendered pesquisas/_campos_pergunta (93.6ms)
+Rendered pesquisas/_campos_resposta (8.1ms)
+Rendered pesquisas/_campos_pergunta (28.7ms)
+Rendered pesquisas/_form (159.2ms)
+Completed in 242ms (View: 175, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:30:00) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (161.6ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (24.5ms)
+Rendered pesquisas/_form (221.8ms)
+Completed in 297ms (View: 237, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:31:27) [GET]
+  [4;36;1mPesquisa Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_pergunta (87.1ms)
+Rendered pesquisas/_campos_resposta (8.0ms)
+Rendered pesquisas/_campos_pergunta (27.8ms)
+Rendered pesquisas/_form (160.5ms)
+Completed in 234ms (View: 173, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:32:55) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (9.8ms)
+Rendered pesquisas/_campos_resposta (4.5ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_pergunta (82.8ms)
+Rendered pesquisas/_campos_resposta (5.6ms)
+Rendered pesquisas/_campos_pergunta (19.1ms)
+Rendered pesquisas/_form (134.8ms)
+Completed in 226ms (View: 158, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:34:57) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_pergunta (73.7ms)
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_pergunta (25.0ms)
+Rendered pesquisas/_form (132.7ms)
+Completed in 312ms (View: 250, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:35:29) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (8.0ms)
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (89.8ms)
+Rendered pesquisas/_campos_resposta (13.8ms)
+Rendered pesquisas/_campos_pergunta (29.6ms)
+Rendered pesquisas/_form (152.3ms)
+Completed in 227ms (View: 165, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:35:59) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.4ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (5.5ms)
+Rendered pesquisas/_campos_pergunta (85.5ms)
+Rendered pesquisas/_campos_resposta (5.5ms)
+Rendered pesquisas/_campos_pergunta (19.2ms)
+Rendered pesquisas/_form (138.3ms)
+Completed in 229ms (View: 163, DB: 13) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:36:20) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_resposta (5.4ms)
+Rendered pesquisas/_campos_pergunta (84.7ms)
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_pergunta (19.7ms)
+Rendered pesquisas/_form (138.9ms)
+Completed in 312ms (View: 148, DB: 13) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:37:04) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (10.8ms)
+Rendered pesquisas/_campos_resposta (87.2ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_pergunta (177.6ms)
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_pergunta (26.9ms)
+Rendered pesquisas/_form (255.2ms)
+Completed in 331ms (View: 270, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:38:24) [GET]
+  [4;36;1mPesquisa Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_resposta (11.3ms)
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_pergunta (91.9ms)
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_pergunta (20.0ms)
+Rendered pesquisas/_form (144.4ms)
+Completed in 226ms (View: 160, DB: 8) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:38:51) [GET]
+  [4;36;1mPesquisa Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_resposta (5.1ms)
+Rendered pesquisas/_campos_resposta (5.3ms)
+Rendered pesquisas/_campos_pergunta (66.9ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_pergunta (19.4ms)
+Rendered pesquisas/_form (115.4ms)
+Completed in 284ms (View: 127, DB: 8) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:39:19) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (6.2ms)
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_pergunta (182.6ms)
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_pergunta (26.4ms)
+Rendered pesquisas/_form (246.8ms)
+Completed in 326ms (View: 262, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:39:59) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (4.7ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_pergunta (73.7ms)
+Rendered pesquisas/_campos_resposta (5.6ms)
+Rendered pesquisas/_campos_pergunta (20.1ms)
+Rendered pesquisas/_form (129.9ms)
+Completed in 219ms (View: 154, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:40:34) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (5.8ms)
+Rendered pesquisas/_campos_resposta (5.3ms)
+Rendered pesquisas/_campos_pergunta (67.8ms)
+Rendered pesquisas/_campos_resposta (5.5ms)
+Rendered pesquisas/_campos_pergunta (20.2ms)
+Rendered pesquisas/_form (149.2ms)
+Completed in 242ms (View: 170, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:40:48) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.3ms)
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_pergunta (206.6ms)
+Rendered pesquisas/_campos_resposta (7.5ms)
+Rendered pesquisas/_campos_pergunta (26.2ms)
+Rendered pesquisas/_form (271.0ms)
+Completed in 348ms (View: 283, DB: 10) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:41:00) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_resposta (6.5ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (95.9ms)
+Rendered pesquisas/_campos_resposta (8.1ms)
+Rendered pesquisas/_campos_pergunta (27.1ms)
+Rendered pesquisas/_form (160.1ms)
+Completed in 247ms (View: 183, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:41:30) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (4.7ms)
+Rendered pesquisas/_campos_resposta (5.1ms)
+Rendered pesquisas/_campos_pergunta (64.8ms)
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_pergunta (21.5ms)
+Rendered pesquisas/_form (125.3ms)
+Completed in 205ms (View: 141, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#create (for 127.0.0.1 at 2011-04-29 15:41:32) [POST]
+  Parameters: {"pesquisa"=>{"perguntas_attributes"=>{"0"=>{"respostas_attributes"=>{"0"=>{"conteudo"=>"", "_destroy"=>""}, "1"=>{"conteudo"=>"", "_destroy"=>""}}, "conteudo"=>"", "_destroy"=>""}}, "nome"=>""}, "authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4="}
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPesquisa Create (42.6ms)[0m   [0;1mINSERT INTO `pesquisas` (`created_at`, `nome`, `updated_at`) VALUES('2011-04-29 18:41:32', '', '2011-04-29 18:41:32')[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/pesquisas/5
+Completed in 88ms (DB: 49) | 302 Found [http://localhost/pesquisas]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#show (for 127.0.0.1 at 2011-04-29 15:41:32) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPesquisa Load (0.4ms)[0m   [0mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 5) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/show
+  [4;36;1mPergunta Load (0.4ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 5) [0m
+Completed in 252ms (View: 225, DB: 2) | 200 OK [http://localhost/pesquisas/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:41:36) [GET]
+  [4;35;1mPesquisa Load (0.4ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 98ms (View: 70, DB: 2) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:41:47) [GET]
+  [4;35;1mPesquisa Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (8.9ms)
+Rendered pesquisas/_campos_resposta (4.5ms)
+Rendered pesquisas/_campos_resposta (5.1ms)
+Rendered pesquisas/_campos_pergunta (77.6ms)
+Rendered pesquisas/_campos_resposta (9.1ms)
+Rendered pesquisas/_campos_pergunta (134.9ms)
+Rendered pesquisas/_form (256.7ms)
+Completed in 335ms (View: 274, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#create (for 127.0.0.1 at 2011-04-29 15:41:50) [POST]
+  Parameters: {"pesquisa"=>{"perguntas_attributes"=>{"0"=>{"respostas_attributes"=>{"0"=>{"conteudo"=>"", "_destroy"=>""}, "1"=>{"conteudo"=>"", "_destroy"=>""}}, "conteudo"=>"", "_destroy"=>""}}, "nome"=>""}, "authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4="}
+  [4;35;1mPesquisa Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPesquisa Create (0.3ms)[0m   [0mINSERT INTO `pesquisas` (`created_at`, `nome`, `updated_at`) VALUES('2011-04-29 18:41:50', '', '2011-04-29 18:41:50')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/pesquisas/6
+Completed in 43ms (DB: 4) | 302 Found [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#show (for 127.0.0.1 at 2011-04-29 15:41:50) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mPesquisa Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPesquisa Load (0.3ms)[0m   [0;1mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 6) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/show
+  [4;35;1mPergunta Load (0.4ms)[0m   [0mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 6) [0m
+Completed in 58ms (View: 31, DB: 2) | 200 OK [http://localhost/pesquisas/6]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:41:55) [GET]
+  [4;36;1mPesquisa Load (0.3ms)[0m   [0;1mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;35;1mPesquisa Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 114ms (View: 86, DB: 2) | 200 OK [http://localhost/pesquisas]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:41:59) [GET]
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (5.4ms)
+Rendered pesquisas/_campos_pergunta (80.8ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_pergunta (19.4ms)
+Rendered pesquisas/_form (131.0ms)
+Completed in 203ms (View: 137, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:43:46) [GET]
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPergunta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mroles_users Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (0.1ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.0ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_pergunta (179.2ms)
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_pergunta (24.1ms)
+Rendered pesquisas/_form (243.6ms)
+Completed in 320ms (View: 258, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#create (for 127.0.0.1 at 2011-04-29 15:43:48) [POST]
+  Parameters: {"pesquisa"=>{"perguntas_attributes"=>{"0"=>{"respostas_attributes"=>{"0"=>{"conteudo"=>"", "_destroy"=>""}, "1"=>{"conteudo"=>"", "_destroy"=>""}}, "conteudo"=>"", "_destroy"=>""}}, "nome"=>""}, "authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4="}
+  [4;36;1mPesquisa Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mPesquisa Create (0.4ms)[0m   [0;1mINSERT INTO `pesquisas` (`created_at`, `nome`, `updated_at`) VALUES('2011-04-29 18:43:48', '', '2011-04-29 18:43:48')[0m
+  [4;35;1mSQL (14.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/pesquisas/7
+Completed in 84ms (DB: 18) | 302 Found [http://localhost/pesquisas]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#show (for 127.0.0.1 at 2011-04-29 15:43:48) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+  [4;35;1mPesquisa Load (0.4ms)[0m   [0mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 7) [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/show
+  [4;36;1mPergunta Load (0.4ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 7) [0m
+Completed in 61ms (View: 33, DB: 2) | 200 OK [http://localhost/pesquisas/7]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:43:59) [GET]
+  [4;35;1mPesquisa Load (0.4ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 225ms (View: 199, DB: 2) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#destroy (for 127.0.0.1 at 2011-04-29 15:44:03) [DELETE]
+  Parameters: {"authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4=", "id"=>"5"}
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPesquisa Load (0.3ms)[0m   [0;1mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 5) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPergunta Load (0.2ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 5) [0m
+  [4;35;1mPesquisa Destroy (50.8ms)[0m   [0mDELETE FROM `pesquisas` WHERE `id` = 5[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/pesquisas
+Completed in 112ms (DB: 57) | 302 Found [http://localhost/pesquisas/5]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:44:03) [GET]
+  [4;35;1mPesquisa Load (0.4ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 121ms (View: 92, DB: 2) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#destroy (for 127.0.0.1 at 2011-04-29 15:44:05) [DELETE]
+  Parameters: {"authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4=", "id"=>"6"}
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPesquisa Load (0.3ms)[0m   [0;1mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 6) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPergunta Load (0.2ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 6) [0m
+  [4;35;1mPesquisa Destroy (0.3ms)[0m   [0mDELETE FROM `pesquisas` WHERE `id` = 6[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/pesquisas
+Completed in 48ms (DB: 4) | 302 Found [http://localhost/pesquisas/6]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:44:05) [GET]
+  [4;35;1mPesquisa Load (0.3ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 217ms (View: 66, DB: 1) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#destroy (for 127.0.0.1 at 2011-04-29 15:44:07) [DELETE]
+  Parameters: {"authenticity_token"=>"HKoQKyBa+5r5I95fV9pYbO5dLzPhwHGsQb50gLYtyN4=", "id"=>"7"}
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPesquisa Load (0.3ms)[0m   [0;1mSELECT * FROM `pesquisas` WHERE (`pesquisas`.`id` = 7) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPergunta Load (1.4ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 7) [0m
+  [4;35;1mPesquisa Destroy (0.3ms)[0m   [0mDELETE FROM `pesquisas` WHERE `id` = 7[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/pesquisas
+Completed in 48ms (DB: 5) | 302 Found [http://localhost/pesquisas/7]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:44:07) [GET]
+  [4;35;1mPesquisa Load (0.4ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 113ms (View: 89, DB: 2) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:45:17) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.0ms)
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_pergunta (185.0ms)
+Rendered pesquisas/_campos_resposta (7.5ms)
+Rendered pesquisas/_campos_pergunta (25.3ms)
+Rendered pesquisas/_form (248.2ms)
+Completed in 315ms (View: 253, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:46:18) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.8ms)
+Rendered pesquisas/_campos_resposta (4.9ms)
+Rendered pesquisas/_campos_resposta (5.3ms)
+Rendered pesquisas/_campos_pergunta (66.6ms)
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_pergunta (20.6ms)
+Rendered pesquisas/_form (126.2ms)
+Completed in 203ms (View: 141, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:47:56) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (8.4ms)
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (92.9ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_pergunta (27.6ms)
+Rendered pesquisas/_form (154.8ms)
+Completed in 249ms (View: 183, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:48:09) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.2ms)
+Rendered pesquisas/_campos_resposta (7.1ms)
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_pergunta (79.0ms)
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_pergunta (26.2ms)
+Rendered pesquisas/_form (237.0ms)
+Completed in 332ms (View: 253, DB: 6) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:48:18) [GET]
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 102ms (View: 75, DB: 1) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:48:24) [GET]
+  [4;35;1mPesquisa Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.4ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_pergunta (164.8ms)
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_pergunta (27.3ms)
+Rendered pesquisas/_form (231.7ms)
+Completed in 300ms (View: 238, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:48:27) [GET]
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 84ms (View: 60, DB: 2) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:48:29) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.6ms)
+Rendered pesquisas/_campos_resposta (6.3ms)
+Rendered pesquisas/_campos_resposta (7.5ms)
+Rendered pesquisas/_campos_pergunta (192.8ms)
+Rendered pesquisas/_campos_resposta (7.9ms)
+Rendered pesquisas/_campos_pergunta (27.1ms)
+Rendered pesquisas/_form (257.5ms)
+Completed in 327ms (View: 263, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:48:31) [GET]
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 90ms (View: 63, DB: 1) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:49:29) [GET]
+  [4;35;1mPesquisa Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (14.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_resposta (6.1ms)
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_pergunta (173.7ms)
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_pergunta (26.9ms)
+Rendered pesquisas/_form (250.4ms)
+Completed in 328ms (View: 251, DB: 21) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:49:47) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.9ms)
+Rendered pesquisas/_campos_resposta (6.7ms)
+Rendered pesquisas/_campos_resposta (11.1ms)
+Rendered pesquisas/_campos_pergunta (91.1ms)
+Rendered pesquisas/_campos_resposta (5.8ms)
+Rendered pesquisas/_campos_pergunta (21.1ms)
+Rendered pesquisas/_form (148.1ms)
+Completed in 226ms (View: 162, DB: 8) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:50:01) [GET]
+  [4;35;1mPesquisa Load (0.1ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 71ms (View: 46, DB: 1) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#index (for 127.0.0.1 at 2011-04-29 15:50:37) [GET]
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` [0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/index
+  [4;36;1mPesquisa Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `pesquisas`[0m
+Completed in 81ms (View: 57, DB: 1) | 200 OK [http://localhost/pesquisas]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:50:39) [GET]
+  [4;35;1mPesquisa Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (11.9ms)
+Rendered pesquisas/_campos_resposta (21.5ms)
+Rendered pesquisas/_campos_resposta (17.1ms)
+Rendered pesquisas/_campos_pergunta (304.3ms)
+Rendered pesquisas/_campos_resposta (21.6ms)
+Rendered pesquisas/_campos_pergunta (64.8ms)
+Rendered pesquisas/_form (429.1ms)
+Completed in 514ms (View: 449, DB: 8) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:50:48) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.4ms)
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (7.3ms)
+Rendered pesquisas/_campos_pergunta (90.0ms)
+Rendered pesquisas/_campos_resposta (5.9ms)
+Rendered pesquisas/_campos_pergunta (20.6ms)
+Rendered pesquisas/_form (141.5ms)
+Completed in 209ms (View: 146, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:50:58) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_resposta (5.5ms)
+Rendered pesquisas/_campos_pergunta (81.2ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_pergunta (20.1ms)
+Rendered pesquisas/_form (133.7ms)
+Completed in 202ms (View: 138, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:52:46) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (4.7ms)
+Rendered pesquisas/_campos_resposta (86.2ms)
+Rendered pesquisas/_campos_resposta (5.7ms)
+Rendered pesquisas/_campos_pergunta (161.4ms)
+Rendered pesquisas/_campos_resposta (7.5ms)
+Rendered pesquisas/_campos_pergunta (25.7ms)
+Rendered pesquisas/_form (226.1ms)
+Completed in 295ms (View: 232, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:53:30) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.2ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_resposta (7.2ms)
+Rendered pesquisas/_campos_resposta (7.6ms)
+Rendered pesquisas/_campos_pergunta (96.8ms)
+Rendered pesquisas/_campos_resposta (8.4ms)
+Rendered pesquisas/_campos_pergunta (28.7ms)
+Rendered pesquisas/_form (171.4ms)
+Completed in 252ms (View: 189, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:53:46) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.6ms)
+Rendered pesquisas/_campos_resposta (5.2ms)
+Rendered pesquisas/_campos_resposta (5.4ms)
+Rendered pesquisas/_campos_pergunta (78.5ms)
+Rendered pesquisas/_campos_resposta (5.6ms)
+Rendered pesquisas/_campos_pergunta (19.9ms)
+Rendered pesquisas/_form (130.3ms)
+Completed in 327ms (View: 146, DB: 7) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:54:33) [GET]
+  [4;35;1mPesquisa Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (6.8ms)
+Rendered pesquisas/_campos_resposta (6.3ms)
+Rendered pesquisas/_campos_resposta (8.1ms)
+Rendered pesquisas/_campos_pergunta (184.8ms)
+Rendered pesquisas/_campos_resposta (7.8ms)
+Rendered pesquisas/_campos_pergunta (27.3ms)
+Rendered pesquisas/_form (255.9ms)
+Completed in 335ms (View: 271, DB: 8) | 200 OK [http://localhost/pesquisas/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PesquisasController#new (for 127.0.0.1 at 2011-04-29 15:59:35) [GET]
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `perguntas`[0m
+  [4;35;1mResposta Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendering template within layouts/cadastral
+Rendering pesquisas/new
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mroles_users Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (0.1ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_resposta (4.6ms)
+Rendered pesquisas/_campos_resposta (5.0ms)
+Rendered pesquisas/_campos_pergunta (66.1ms)
+Rendered pesquisas/_campos_resposta (5.5ms)
+Rendered pesquisas/_campos_pergunta (18.9ms)
+Rendered pesquisas/_form (119.2ms)
+Completed in 194ms (View: 133, DB: 7) | 200 OK [http://localhost/pesquisas/new]

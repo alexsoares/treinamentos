@@ -1,3 +1,21 @@
+.body_page {
+    font-size:12px;
+    font-style:italic;
+    width:500px;
+}
+
+.body_page #titulo {
+    position:absolute;
+    left: 95px;
+    top: 150px;
+    background-color:orange;
+    color:white;
+    height:30px;
+	width:945px;
+
+
+}
+
 .tooltip {
 	display:none;
     background:transparent url(Imagens/black_arrow.png);
@@ -16,10 +34,10 @@
 }
 
 logo{
-margin:90px 0px;
-background-image:url(Imagens/logo.jpg);
-background-repeat: no-repeat;
-height:120px;
+    margin:90px 0px;
+    background-image:url(Imagens/logo.jpg);
+    background-repeat: no-repeat;
+    height:120px;
 }
 #menu {
    position:inherit;
@@ -27,8 +45,8 @@ height:120px;
    top: 20px;;
 }
 body {
-margin:0;
-background-color:#c4c4c4;
+    margin:0;
+    background-color:#c4c4c4;
 }
 
 a:hover {
@@ -36,7 +54,7 @@ a:hover {
   background-color:gray;
 }
 #alinha{
-margin:25px;
+    margin:25px;
 }
 
 #conteudo {
@@ -50,7 +68,7 @@ color:white;
 width:100%;
 height:80px;
 margin:0;
-font:bold;
+
 }
 
 #rodape{
@@ -71,7 +89,7 @@ background-repeat: no-repeat;
    height:650px;
    width:950px;
    margin:0;
-   font:bold;
+   
    border-color:black;
    border-left: double;
    border-bottom: double;
@@ -141,7 +159,6 @@ margin-left: 300px;
    height:700px;
    width:950px;
    margin:0;
-   font:bold;
 }
 
 #entrar{

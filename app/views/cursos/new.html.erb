@@ -72,11 +72,7 @@
               <td width="1%" align="left"><%= f.submit "Salvar" %></td>
            </div>          
            <% end %>
-           <% if $var == 0 %>
-               <td align="left"><%= button_to 'Voltar', new_gerenciar_path %></td>
-           <%else%>
                <td align="left"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
-          <% end %>
        </tr>
      </table>
    </td>

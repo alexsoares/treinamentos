@@ -1,16 +1,30 @@
+
 <% form_for(@pesquisa) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </p>
-
-    <% f.fields_for :perguntas do |builder| %>
-      <%= render "campos_pergunta", :f => builder %>
-    <%end%>
-
-  <p>
-    <%= f.submit 'Salvar' %>
-  </p>
+  <tr>
+    <td colspan="2" align="center">
+      <%= f.label :nome,"Assunto" %><br/>
+      <%= f.text_field :nome %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <% f.fields_for :perguntas do |builder| %>
+        <%= render "campos_pergunta", :f => builder %>
+      <%end%>
+      <% if current_user.has_role?('administrador') %>
+        <%= link_to_add_fields "Adiciona Pergunta", f, :perguntas %>
+      <%end%>
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <%= f.submit 'Salvar' %>
+    </td>
+  
 <% end %>
+    <td align="center">
+      <%= button_to 'Voltar', pesquisas_path, {:method => "get"} %>
+    </td>
+  </tr>
