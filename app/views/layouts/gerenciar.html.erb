@@ -4,66 +4,58 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Controle de Inscrições: <%= controller.action_name %></title>
-    <%= stylesheet_link_tag 'scaffold','treinamento','menu' %>
+    <%= stylesheet_link_tag 'scaffold','treinamento','menu1' %>
     <%= javascript_include_tag 'jquery-1.4.2.js','jquery.tools.min.js','jquery-ui','jrails','application.js' %>
-<style media="print">
-.botao {
-display: none;
-}
-</style>
+
 </head>
 <body>
-  <div id ="contents">
-    <div id="header">
-      <div id="topo"></div>
-      <div id="menu">
-        <div class="botao">
-           <p style="color: red"><%= flash[:notice] %></p>
-           <span class="preload1"></span>
-           <span class="preload2"></span>
-           <ul id="nav">
-             <li class="top"><a href="#nogo53" id="sair" class="top_link"><span class="down">Arquivo</span></a>
-               <ul class="sub">
-                 <li><%= link_to 'Inicio', root_path %></li>
-                 <li><%= link_to 'Sair', logout_path,:confirm => "Deseja sair do gerenciamento do sistema?" %></li>
-               </ul>
-             </li>
-             <li class="top"><a href="#nogo27" id="executar" class="top_link"><span class="down">Cursos</span></a>
-               <ul class="sub">
-                 <li><%= link_to 'Cadastrar', new_curso_path%></li>
-                 <li><%= link_to 'Cadastrados', cursos_path %></li>
-                 <li><%= link_to_remote('Consultar', :update => "tela", :url => { :action => "consulta", :controller => 'cursos'}) %></li>
-               </ul>
-             </li>
-             <li class="top"><a href="#nogo2" id="cadastrar" class="top_link"><span class="down">Participantes</span></a>
-               <ul class="sub">
-                 <li><%= link_to "Cadastrar",  new_participante_path %></li>
-                 <li><%= link_to "Cadastrados", participantes_path %></li>
-                 <li><%= link_to_remote('Consultar', :update => "tela", :url => { :action => "consulta", :controller => 'participantes'}) %></li>
-               </ul>
-             </li>
-             <li class="top"><a href="#nogo2" id="incrições" class="top_link"><span class="down">Inscrições</span></a>
-               <ul class="sub">
-                <li><%= link_to "Inscrever",  new_inscricao_path %></li>
-                <li><%= link_to "Consulta por Curso", por_curso_inscricaos_path %></li>
-                <li><%= link_to 'Estatistica', estatistica_inscricaos_path %></li>
-               </ul>
-             </li>
-             <li class="top"><a href="#nogo2" id="sobre" class="top_link"><span class="down">Sobre</span></a>
-              <ul class="sub">
-                <li><%= link_to_remote('Sobre', :url => { :action => "sobresis", :controller => 'gerenciars'}) %></li>
-              </ul>
-             </li>
-            </ul>
-        </div>
-        <table width="100%">
-         <tr>
-           <td align="right"><font  color="black" size ="2"> Americana <%= Time.now.strftime("%d de %B de %Y") %></font>
-         </tr>
-        </table>
-      </div>
-    </div>
-    <div id="principal"><%= yield %></div>
+<div id="wrap">
+    <div id="header"></div>
+    <div id="right_clear"><%= yield %></div>
+    <div id="left">
+     <div style="float:left" > <!--This is the first division of left-->
+      <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
+            <%if logged_in? %>
+            <p class="menu_head">Cadastros</p>
+            <div class="menu_body">
+              <%= link_to 'Cursos', new_curso_path%>
+              <%= link_to "Participantes",  new_participante_path %>
+              <%= link_to "Inscrição",  new_inscricao_path %>
+            </div>
+            <p class="menu_head">Consultas</p>
+            <div class="menu_body">
+              <%= link_to "Por Curso", por_curso_inscricaos_path %>
+              <%= link_to_remote('Participantes', :update => "tela", :url => { :action => "consulta", :controller => 'participantes'}) %>
+              <%= link_to 'Estatistica', estatistica_inscricaos_path %>
+            </div>
+            <p class="menu_head">Listagem</p>
+            <div class="menu_body">
+              <%= link_to 'Cursos', cursos_path %>
+              <%= link_to "Cadastrados", participantes_path %>
+           </div>
+           <%else%>
+            <p class="menu_head">Administrador</p>
+            <div class="menu_body">
+              <%= link_to 'Acessar', login_path%>
+            </div>
+            <p class="menu_divisor"></p>
+            <p class="menu_head">Links Externos</p>
+            <div class="menu_body">
+              <%= link_to "Prefeitura", "http://www.americana.sp.gov.br" %>
+            </div>
+           <%end%>
+      </div>  <!--Code for menu ends here-->
+    <div id="left_down"><%= render "shared/show_results", :collection => @faq %></div>
   </div>
+<div style="clear: both;"> </div>
+</div>
+</div>
+
+
+
+
+
+
 </body>
 </html>
+

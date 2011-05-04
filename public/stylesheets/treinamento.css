@@ -1,3 +1,49 @@
+.sombra {
+    position:absolute;
+    width: 660px;
+    height:480px;
+    padding-top:5px;
+    background-color:gray
+}
+.formulario {
+   position:relative;
+   text-align:center;
+   border: 1px solid black;
+   width: 650px;
+   left: 0px;
+   top: 0px;
+
+}
+.formulario .form_title {
+   
+   background-color: blue;
+   border-bottom: 1px solid black;
+   font-weight: bold;
+   color: #ffffff;
+   padding: 10px;
+}
+.formulario .form_body {
+   padding-top:10px;
+   background-color: white;
+   font-weight: bold;
+   text-align:center;
+   color: black;
+   padding-left:0px;
+   padding-right:10px;
+   padding-bottom:20px;
+
+}
+
+.formulario .enquete {
+   padding:10px;
+   text-align:justify;
+   width:500px;
+   margin: 5px;
+   border: 1px solid black;
+   list-style:none;
+
+}
+
 .body_page {
     font-size:12px;
     font-style:italic;
@@ -41,44 +87,26 @@ logo{
 }
 #menu {
    position:inherit;
+   float:left;
    left: 280px;
-   top: 20px;;
 }
 body {
     margin:0;
-    background-color:#c4c4c4;
+    background-color:silver;
 }
 
 a:hover {
   color:white;
   background-color:gray;
 }
-#alinha{
-    margin:25px;
-}
 
-#conteudo {
-   position:absolute;
-   left: 430px;
-   top: 250px;;
-}
 #topo {
+background-image:url(Imagens/logo.jpg);
 text-align: center;
-color:white;
 width:100%;
-height:80px;
+height:100px;
 margin:0;
 
-}
-
-#rodape{
-    background-image:url(Imagens/fundo_rodape.jpg);
-    margin:25px;
-  	position:relative;
-    top: 589px;
-    width:96%;
-    color:white;
-    text-align:center;
 }
 
 #caixasobre {
@@ -89,7 +117,7 @@ background-repeat: no-repeat;
    height:650px;
    width:950px;
    margin:0;
-   
+
    border-color:black;
    border-left: double;
    border-bottom: double;
@@ -97,12 +125,14 @@ background-repeat: no-repeat;
    border-right: double;
 }
 #inscrever{
-   position: relative;
+   top:10px;
    border: 1px solid #1E679A;
-   width: 187px;
-   left: 380px;
-   top: 352px;
-   height:200px;
+   width: 146px;
+   left: 108px;
+   height:184px;
+}
+#firstpane {
+    margin-bottom:220px;
 }
 
 #line{
@@ -110,22 +140,23 @@ background-repeat: no-repeat;
 }
 
 #title{
-   background-color: orange;
+   background-color: blue;
    font-weight: bold;
    color: #ffffff;
    padding: 2px;
 }
 #botao{
-   padding: 2px;
+   padding:2px;;
    background-color: #ffffcc;
-} 
+}
 #texto{
+   font-size:8pt;
    padding: 12px;
    background-color: #ffffcc;
    color:black;
 }
 #admin{
-   padding: 17px;
+   padding: 11px;
    background-color: #ffffcc;
    color:black;
 }
@@ -134,31 +165,6 @@ background-repeat: no-repeat;
 width:40%;
 margin-top: 50px;
 margin-left: 300px;
-}
-
-#contents{
-    margin:0 auto;
-    background-image:url(Imagens/body.jpg);
-    height:700px;
-    width:950px;
-
-}
-
-#principal{
-    float:right;
-    height:700px;
-    width:950px;
-    background-image:url(Imagens/principal_body.gif);
-    font-size:10px;
-}
-#back{
-   background-image:url(Imagens/panfleto.jpg);
-   background-repeat: no-repeat;
-   text-align: center;
-   color:white;
-   height:700px;
-   width:950px;
-   margin:0;
 }
 
 #entrar{
@@ -173,14 +179,14 @@ margin-left: 300px;
    position: relative;
    border: 1px solid black;
    width: 200px;
-   left: 380px;
-   top: 30px;
-   height:210px;
+   left: 300px;
+   top: 120px;
+   height:310px;
 }
 
 .tabelas {
   border: solid 1px #666;
-  border-collapse: separate;  
+  border-collapse: separate;
 }
 
 
@@ -218,4 +224,165 @@ margin-left: 300px;
 
 .tabelas .odd td {
   background-color: #D1D8F6;
+}
+
+
+#notice {
+    float:right;
+    width: 400px;
+    height:21px;
+
+    text-align:center;
+    background-color:white;
+
+}
+
+
+.menu_list {
+	width: 150px;
+}
+.menu_head {
+	padding: 5px 10px;
+	cursor: pointer;
+	position: relative;
+	margin:1px;
+    font-weight:bold;
+    background: #eef4d3 url(images/left.png) center right no-repeat;
+}
+.menu_divisor {
+	padding: 3px 10px;
+	position: relative;
+	margin:1px;
+    font-weight:bold;
+    background: teal center right no-repeat;
+}
+
+.menu_body {
+	display:none;
+}
+.menu_body a{
+  display:block;
+  color:#006699;
+  background-color:#EFEFEF;
+  padding-left:10px;
+  font-weight:bold;
+  text-decoration:none;
+}
+.menu_body a:hover{
+  color: #000000;
+  text-decoration:underline;
+  }
+
+
+
+#header {
+    background: #FE7B09 url(Imagens/logo.jpg) repeat-x;
+    height: 100px;
+}
+#header h1 {
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: -1px;
+    padding: 22px 0 5px 10px;
+}
+#header h1 a {
+color: #fff;
+text-decoration: none;
+}
+#header h1 a:hover {
+color: #000;
+text-decoration: none;
+}
+#header h2 {
+color: #eee;
+font-size: 19px;
+font-weight: 100;
+padding: 0 0 0 11px;
+letter-spacing: -1px;
+line-height: 12px;
+}
+
+#wrap {
+        padding: 10px 10px 3px 10px;
+        width: 930px;
+        margin:20px auto; 
+        background: #fff;
+        height:700px;
+
+    }
+#left {
+        float: left;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        height:280px;
+        background-color:orange;
+        width:150px;
+    }
+#left_down {
+        margin-bottom: 15px;
+        margin-top: 10px;
+        height:285px;
+        background-color:#F0E68C;
+        width:150px;        
+    }
+.no_decorate{
+    text-decoration:none;
+}
+#left ul { padding: 5px 10px 10px 10px; margin: 0; }
+#right { 
+        margin-bottom: 10px;
+        float: right;
+        width: 745px;
+        height: 700px;
+        padding: 0 10px 10px 10px;
+        margin-top: 10px;
+        background-image:url(Imagens/panfleto.jpg);
+        background-repeat:no-repeat;
+
+    }
+#right_clear {
+        margin-bottom: 10px;
+        float: right;
+        width: 745px;
+        height: 570px;
+        padding: 0 10px 10px 10px;
+        margin-top: 10px;
+        background-image:url(Imagens/principal_body.jpg);
+        background-repeat:no-repeat;
+    }
+#middle {
+        margin-bottom: 10px;
+        float: none;
+        width: 910px;
+        height: 700px;
+        padding: 0 10px 10px 10px;
+        margin-top: 10px;
+        background-color:orange;
+    }
+  
+
+
+
+
+    
+
+
+
+
+.menuheader{
+	width:192px;
+	height:37px;
+	background-image:url(images/menutop.gif);
+	display:block;
+}
+.menucontent{
+	width:192px;
+	background-image:url(images/menumiddle.gif);
+	padding-top:10px;
+	background-repeat: repeat-y;
+}.menuheader h3{
+	padding: 10px 0px 0px 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
 }

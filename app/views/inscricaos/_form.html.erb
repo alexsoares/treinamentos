@@ -1,44 +1,41 @@
-          <% form_for(@inscricao) do |f| %>
-           <%= f.error_messages %>
-                    <tr>
-                      <td>
-                        <b>Participante:</b>
-                        <% if @participante.present? %>
-                          <%= @participante.nome %>
-                          <%= f.hidden_field(:participante_id,:value => @participante.id) %>
-                        <%else%>
-                          <%= f.collection_select :participante_id, @participantes, :id, :nome, :include_blank => ' -- Selecione -- ' %>
-                        <%end%>
-                        <%= observe_field  :inscricao_participante_id,
-                                           :with => :inscricao_participante_id,
-                                           :update => 'informacoes',
-                                           :url => { :action => 'sel_participa' } %>
-                      </td>
-                      <td>
-                        <%if @participante.present?%>
-                          Matricula: <%=h @participante.matricula %><br/>
-                          Nome:<%=h @participante.nome %><br/>
-                          Cidade:<%=h @participante.cidade %><br/>
-                          Observações: <%=h @participante.obs %><br/>
-                        <%else%>
-                          <div id="informacoes"></div>
-                        <%end%>
-                      </td>
+<% form_for(@inscricao) do |f| %>
+ <%= f.error_messages %>
+  <p>
+    <b>Participante:</b>
+    <% if @participante.present? %>
+      <%= @participante.nome %>
+      <%= f.hidden_field(:participante_id,:value => @participante.id) %>
+    <%else%>
+      <%= f.collection_select :participante_id, @participantes, :id, :nome, :include_blank => ' -- Selecione -- ' %>
+    <%end%>
+    <%= observe_field  :inscricao_participante_id,
+                       :with => :inscricao_participante_id,
+                       :update => 'informacoes',
+                       :url => { :action => 'sel_participa' } %>
+  </p>
+  <p>
+    <%if @participante.present?%>
+      Matricula: <%=h @participante.matricula %><br/>
+      Nome:<%=h @participante.nome %><br/>
+      Cidade:<%=h @participante.cidade %><br/>
+      Observações: <%=h @participante.obs %><br/>
+    <%else%>
+      <div id="informacoes"></div>
+    <%end%>
+  </p>
 
-                    </tr>
+  <table class="tabelas" align="center">
+    <th colspan="4">Cursos</th>
+    <% @cursos.in_groups_of(2, false) do |row_cursos| %>
+      <tr>
+        <% row_cursos.each do |curso| %>
+          <td id="demo" align="left"><%= check_box_tag "inscricao[curso_ids][]", curso.id, @inscricao.cursos.include?(curso), :title => "#{curso.ementa}"%><%= curso.nome_curto %></td>
 
-                <th colspan="4">Cursos</th>
-                <% @cursos.in_groups_of(2, false) do |row_cursos| %>
-                  <tr>
-                    <% row_cursos.each do |curso| %>
-                      <td id="demo"><%= check_box_tag "inscricao[curso_ids][]", curso.id, @inscricao.cursos.include?(curso), :title => "#{curso.ementa}"%><%= curso.nome_curto %></td>
-
-                    <% end %>
-                  </tr>
-                <%end%>
-           <tr>
-            <td colspan="2" align="right">
-              <%= f.submit "Confirmar" %>
-            </td>
-           </tr>
-          <%end%>
+        <% end %>
+      </tr>
+    <%end%>
+  </table>
+  <p>
+    <%= f.submit "Confirmar" %>
+  </p>
+<%end%>

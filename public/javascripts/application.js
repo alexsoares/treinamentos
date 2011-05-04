@@ -12,3 +12,13 @@ function hide_field(link,div) {
   $(div).toggle();
 }
 
+$(document).ready(function()
+{
+	//slides the element with class "menu_body" when paragraph with class "menu_head" is clicked
+	$("#firstpane p.menu_head").click(function()
+    {
+		$(this).css({backgroundImage:"url(/stylesheets/images/down.png)"}).next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+       	
+	});
+});
+

@@ -43,7 +43,6 @@
           <tr>
             <th bgcolor="gray">Nome</th>
             <th bgcolor="gray">Ministrante</th>
-            <th bgcolor="gray">Tipo</th>
             <th bgcolor="gray">Carga Horaria</th>
             <th bgcolor="gray">Data/Hora</th>
             <th bgcolor="gray">Ementa</th>
@@ -53,14 +52,8 @@
           <tr>
              <td><center><%=h curso.nome %></center></td>
              <td><center><%=h curso.ministrante %></center></td>
-             <td><center><%=h curso.tipo %></center></td>
-                <%if curso.carga_horaria.nil? then %>
-                   <td><center>00 horas</center></td>
-                <%else%>
-                    <td><center><%=h curso.carga_horaria %> horas</center></td>
-                <%end%>
                 <%if curso.data_hora.nil? then %>
-                   <td><center> 00/00/00 - 00:00 horas</center></td>
+                   <td><center> A Definir</center></td>
                 <%else%>
                    <td><center><%=h curso.data_hora.strftime("%d/%m/%Y - %H:%M horas") %></center></td>
                 <%end%>

@@ -3,6 +3,7 @@
 
 class ApplicationController < ActionController::Base
 include AuthenticatedSystem
+before_filter :load_pesquisas
   # You can move this into a different controller, if you wish.  This module gives you the require_role helpers, and others.
   include RoleRequirementSystem
 
@@ -15,4 +16,8 @@ include AuthenticatedSystem
   # Uncomment this to filter the contents of submitted sensitive data parameters
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
+  def load_pesquisas
+    @faq = Pesquisa.all(:limit => 1, :order => 'created_at desc')
+  end
+
 end

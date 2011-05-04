@@ -11,14 +11,10 @@
 <body>
 <div id="wrap">
     <div id="header"></div>
-    <%if logged_in?%>
-      <div id="right_clear"></div>
-    <%else%>
-      <div id="right"></div>
-    <%end%>
+    <div id="right"></div>
     <div id="left">
      <div style="float:left" > <!--This is the first division of left-->
-      <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->        
+      <div id="firstpane" class="menu_list"> <!--Code for menu starts here-->
             <%if logged_in? %>
             <p class="menu_head">Cadastros</p>
             <div class="menu_body">
@@ -49,19 +45,11 @@
             </div>
            <%end%>
       </div>  <!--Code for menu ends here-->
-    <div id="left_down"><%= render "shared/show_results", :collection => @faq %></div>
+    <div id="left_down"><%= render "shared/inscrever"%></div>
   </div>
-
- </div>
 <div style="clear: both;"> </div>
-
 </div>
-
-
-
-
-
-
+</div>
 </body>
 </html>
 

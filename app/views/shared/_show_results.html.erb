@@ -1,0 +1,17 @@
+  <div id="title">Ultimas Sugestões</div>
+      <%@faq.each do |faq|%>
+        <ol>
+          <% faq.perguntas.each do |pergunta| %>
+            <li>
+              <%=h pergunta.conteudo%>
+              <ul>
+                <% pergunta.respostas.each do |sugestao| %>
+                    <%=h truncate(sugestao.conteudo,:length => 15,:omission => "...")%>
+                <%end%>
+              </ul>
+            </li>
+          <%end%>
+        </ol>
+                <%= link_to "Sugestao", edit_pesquisa_path(faq) %>
+       <%end%>
+   

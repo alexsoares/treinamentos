@@ -1,20 +1,24 @@
-<h1>Listing pesquisas</h1>
+<div class="formulario">
+  <div class="form_title"><h1 align="center">Enquetes criadas</h1></div>
+  <div class="form_body">
+    <table border="1" width="100%" class="tabelas">
+      <tr>
+        <th>Pesquisa</th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Nome</th>
-  </tr>
+      <% @pesquisas.each do |pesquisa| %>
+        <tr>
+          <td width="70%"><%=h pesquisa.nome %></td>
+          <td><%= link_to logged_in? ? "Alterar" : "Responder", edit_pesquisa_path(pesquisa) %></td>
+          <%if logged_in? %>
+            <td><%= link_to 'Excluir', pesquisa, :confirm => 'Confirma?', :method => :delete %></td>
+          <%end%>
+        </tr>
+      <% end %>
+    </table>
+  
+    <br />
+  </div>
+</div>
 
-<% @pesquisas.each do |pesquisa| %>
-  <tr>
-    <td><%=h pesquisa.nome %></td>
-    <td><%= link_to 'Show', pesquisa %></td>
-    <td><%= link_to 'Edit', edit_pesquisa_path(pesquisa) %></td>
-    <td><%= link_to 'Destroy', pesquisa, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
-
-<%= link_to 'New pesquisa', new_pesquisa_path %>

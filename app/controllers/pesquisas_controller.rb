@@ -1,7 +1,15 @@
 class PesquisasController < ApplicationController
-  layout 'cadastral'
+  layout :define
   # GET /pesquisas
   # GET /pesquisas.xml
+
+  def define
+    if logged_in?
+      'gerenciar'
+    else
+      'cadastral'
+    end
+  end
   def index
     @pesquisas = Pesquisa.all
 
@@ -28,7 +36,6 @@ class PesquisasController < ApplicationController
     @pesquisa = Pesquisa.new
     1.times do
       pergunta = @pesquisa.perguntas.build
-      2.times { pergunta.respostas.build }
     end
     respond_to do |format|
       format.html # new.html.erb

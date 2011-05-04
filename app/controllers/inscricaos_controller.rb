@@ -4,7 +4,16 @@ class InscricaosController < ApplicationController
     before_filter :load_cursos
     before_filter :load_participantes
     before_filter :load_inscricaos
-    layout 'cadastral'
+    
+    layout :define
+
+  def define
+    if logged_in?
+      'gerenciar'
+    else
+      'cadastral'
+    end
+  end
 
   def index
     @inscricaos = Inscricao.find(:all)
@@ -153,5 +162,6 @@ protected
       @participantes = Participante.find(:all, :order => 'nome ASC')
     end
   end
+
 
 end

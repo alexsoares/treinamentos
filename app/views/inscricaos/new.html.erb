@@ -1,22 +1,17 @@
- <br/>
- <br/>
- <table width="90%" border="1" align="center">
-   <tr>
-     <td>
-        <h1 align="center">Inscrição</h1>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <table border="3" width="100%">
-         <%= render "form" %>
-         </table>
-   <table width="60%" align="center">
-    <tr>
-      <td width="8%">Ainda não está cadastrado <%= link_to 'clique aki', new_participante_path %> para efetuar seu cadastro.</td>
-    </tr>
-   </table>
-  </table>
+<br/>
+<div class="sombra">
+  <div class="formulario">
+    <div class="form_title"><h1 align="center">Inscrição</h1></div>
+    <div class="form_body">
+      <fieldset>
+        <%= render "form" %>
+      </fieldset>
+      <p>Ainda não está cadastrado <%= link_to 'clique aki', new_participante_path %> para efetuar seu cadastro.</p>
+    </div>
+  </div>
+</div>
+
+
   <script>
     $("#demo input[title]").tooltip();
   </script>

@@ -1,19 +1,25 @@
-<p>
-  <b>Nome:</b>
-  <%=h @pesquisa.nome %>
-</p>
-<ol>
-  <% @pesquisa.perguntas.each do |pergunta| %>
-    <li>
-      <%=h pergunta.conteudo%>
-      <ul>
-        <% pergunta.respostas.each do |sugestao| %>
-          <%=h sugestao.conteudo%><br/>
-        <%end%>
-      </ul>
-    </li>
-  <%end%>
-</ol>
-
-<%= link_to 'Edit', edit_pesquisa_path(@pesquisa) %> |
-<%= link_to 'Back', pesquisas_path %>
+<div class="formulario">
+  <div class="form_title">Exibição Enquete</div>
+  <div class="form_body">
+    <p>
+      <b>Nome:</b>
+      <%=h @pesquisa.nome %>
+    </p>
+    <ol>
+      <% @pesquisa.perguntas.each do |pergunta| %>
+        <li>
+          <%=h pergunta.conteudo%>
+          <ul>
+            <% pergunta.respostas.each do |sugestao| %>
+              <div class="enquete">
+                <p><%=h sugestao.conteudo%></p>
+              </div>
+            <%end%>
+          </ul>
+        </li>
+      <%end%>
+    </ol>
+  <%= link_to 'Responder Enquete', edit_pesquisa_path(@pesquisa) %> |
+  <%= link_to 'Retornar', pesquisas_path %>
+  </div>
+</div>

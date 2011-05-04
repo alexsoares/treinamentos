@@ -70,6 +70,14 @@ class CreateCursos < ActiveRecord::Migration
                  :ministrante => "Alexandre Soares / João Francisco / Naor Garcia"
 
                )
+               
+    Curso.create(:nome_curto => "Sistema GPD",
+                 :nome => "Modulo 10 – Sistema GPD – Utilização - Do Básico ao Avançado",
+                 :ementa => "Utilização Introdução, Básico e Avançado",
+                 :carga_horaria => 4,
+                 :ministrante => "Equipe Feeling TI"
+
+               )
 
   end
 
