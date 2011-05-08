@@ -1,29 +1,26 @@
-<table border="1" width="100%">
-  <tr>
-    <h1 align="center">Cadastro de Participantes</h1>
-  </tr>
-  <tr>
-    <td>
-      <%= render "form" %>
-    </td>
-    <td align="center">
-      <br/>
-      <b><font size="4"  color="red"><u>Observações:</u></font> </b><br /> <br />
-      <font color="red">
-          1. UTILIZAR  SOMENTE LETRAS MAIÚSCULAS<br />
-          2. DIGITAR SEMPRE DADOS COMPLETOS<br/>
-          3. NÃO UTILIZAR ACENTUAÇÃO, TIL E CEDILHA<br />
-          4. NÃO UTILIZAR ABREVIAÇÕES<br />
-          5. TELEFONES SOMENTE NÚMEROS<br />
-          6. EM OBSERVAÇÕES INFORMAR A FUNÇÃO EXERCIDA<br/>
-          7. <font color="red" size="6">*</font> CAMPOS OBRIGATÓRIOS<br/>
-      </font>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><%= button_to 'Voltar', :back %></td>
-  </tr>
-</table>
+<div class="sombra">
+  <div class="formulario">
+    <div class="form_title"><h1 align="center">Cadastro de Participantes</h1></div>
+    <div class="form_body" style="float:left" align="justify"><%= render "form" %></div>
+    <div class="form_body" style="float:right">
+      <%= render "shared/avisos" %>
+      <div class="form_rodape">
+        <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,36 @@
+    <p>
+      <% form_for(@curso) do |f| %>
+      <%= f.error_messages %>
+        <p><b>Nome</b><br/>
+        <%= f.text_field :nome, :size => 20 %>
+          <%= observe_field :curso_nome,
+            :with => :curso_nome,
+            :url => { :action => 'mesmo_nome' } %>
+        </p>
+        <p>
+          <font size="4" color="red">
+          <div id='nome_aviso'></div>
+          </font>
+        </p>
+
+        <p><b>Ministrante</b><br/>
+          <%= f.text_field :ministrante, :size => 40 %>
+        </p>
+
+        <p><b>Dia e Horário</b><br/>
+          <%= f.datetime_select :data_hora, :order => [:day, :month, :year], :include_blank => '' %>
+        </p>
+        <p>
+          <b>Ementa </b><br/>
+          <%= f.text_area(:ementa, :cols =>"36", :rows => "3") %>
+        </p>
+
+        <p>
+          <b>Observações </b><br/>
+          <%= f.text_area(:obs, :cols =>"36", :rows => "2") %><br/>
+
+            <%= f.submit "Salvar" %>
+        </p>
+    <% end %>
+</p>
+

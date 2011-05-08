@@ -1,81 +1,17 @@
- <br/>
- <br/>
- <table width="90%" border="1" align="center">
-   <tr>
-     <td>
-        <h1 align="center">Cadastrar Cursos</h1>
-      </td>
-   </tr>
-   <tr>
-      <td>
-        <table border="2" width="100%">
-          <td>
-            <% form_for(@curso) do |f| %>
-            <%= f.error_messages %>
-            <table>
-             <br/>
-             <tr>
-                <td><b>Nome</b></td>
-                <td><%= f.text_field :nome, :size => 40 %>
-                    <%= observe_field :curso_nome,
-                     :with => :curso_nome,
-                     :url => { :action => 'mesmo_nome' } %>
-            </tr>
-            <tr>
-               <td colspan="2">
-                 <font size="4" color="red">
-                 <div id='nome_aviso'></div>
-                 </font>
-              </td>
-            </tr>
-             
-            <tr>
-              <td><b>Ministrante</b></td>
-              <td><%= f.text_field :ministrante, :size => 40 %></td>
-           </tr>
-           <tr>
-               <td><b>Dia e Horário</b></td>
-               <td><%= f.datetime_select :data_hora, :order => [:day, :month, :year], :include_blank => '' %> horas</td>
-           </tr>
-           <tr>
-              <td valign="top"><b>Ementa </b></td>
-              <td><%= f.text_area(:ementa, :cols =>"51", :rows => "3") %></td>
-           </tr>
-           <tr>
-              <td valign="top"><b>Observações </b></td>
-              <td><%= f.text_area(:obs, :cols =>"51", :rows => "2") %></td>
-           </tr>
-        </table>
+<div class="sombra">
+  <div class="formulario">
+    <div class="form_title"><h1 align="center">Cadastrar Cursos</h1></div>
+    <div class="form_body" style="float:left" align="justify"><%= render "form" %></div>
+    <div class="form_body" style="float:right">
+      <%= render "shared/avisos" %>
+      <div class="form_rodape">
+        <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
+      </div>
+    </div>
+  </div>
+</div>
 
-       <td VALIGN=TOP>
-         <br />
-         <font size="4" color="red"><u>Observações:</u></font> <br /> <br />
-         <font color="red">
-          1. UTILIZAR  SOMENTE LETRAS MAIÚSCULAS<br />
-          2. DIGITAR SEMPRE DADOS COMPLETOS<br/>
-          3. NÃO UTILIZAR ACENTUAÇÃO, TIL E CEDILHA<br />
-          4. NÃO UTILIZAR ABREVIAÇÕES<br />
 
-         </font>
-        </td>
-       </td>
-      </table>
-    </td>
-  </tr>
- </table>
-<table width="90%" border="1" align="center">
-   <tr>
-    <td colspan="2" >
-      <table>
-        <tr>
-           <div id='Certeza'>
-              <td width="1%" align="left"><%= f.submit "Salvar" %></td>
-           </div>          
-           <% end %>
-               <td align="left"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
-       </tr>
-     </table>
-   </td>
-  </tr>
- </table>
 
+
+ 

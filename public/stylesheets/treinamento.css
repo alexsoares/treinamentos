@@ -1,6 +1,6 @@
 .sombra {
     position:absolute;
-    width: 660px;
+    width: 690px;
     height:480px;
     padding-top:5px;
     background-color:gray
@@ -9,9 +9,10 @@
    position:relative;
    text-align:center;
    border: 1px solid black;
-   width: 650px;
+   width: 680px;
    left: 0px;
    top: 0px;
+   background-color:white;
 
 }
 .formulario .form_title {
@@ -20,19 +21,32 @@
    border-bottom: 1px solid black;
    font-weight: bold;
    color: #ffffff;
-   padding: 10px;
+   padding: 5px;
 }
+
 .formulario .form_body {
-   padding-top:10px;
+   padding-top:0px;
+   background-color: white;
+   font-weight: bold;
+   text-align:justify;
+   color: black;
+   padding-left:5px;
+   padding-right:5px;
+   padding-bottom:10px;
+   border: 1px solid black;
+}
+
+.formulario .form_rodape {
+   padding-top:82px;
    background-color: white;
    font-weight: bold;
    text-align:center;
    color: black;
-   padding-left:0px;
-   padding-right:10px;
-   padding-bottom:20px;
-
+   padding-left:5px;
+   padding-right:5px;
+   padding-bottom:99px;
 }
+
 
 .formulario .enquete {
    padding:10px;

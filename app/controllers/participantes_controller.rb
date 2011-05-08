@@ -16,7 +16,7 @@ class ParticipantesController < ApplicationController
   end
 
   def logado?
-    if admin?
+    if logged_in?
       "gerenciar"
     else
       "cadastral"

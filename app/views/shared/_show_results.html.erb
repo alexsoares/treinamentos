@@ -1,5 +1,6 @@
   <div id="title">Ultimas Sugestões</div>
-      <%@faq.each do |faq|%>
+  <div id="texto">
+    <%@faq.each do |faq|%>
         <ol>
           <% faq.perguntas.each do |pergunta| %>
             <li>
@@ -14,4 +15,4 @@
         </ol>
                 <%= link_to "Sugestao", edit_pesquisa_path(faq) %>
        <%end%>
-   
+   </div>
