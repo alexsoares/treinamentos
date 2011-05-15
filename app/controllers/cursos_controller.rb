@@ -9,10 +9,11 @@ class CursosController < ApplicationController
   end
 
   def index
-    if (params[:search].nil? || params[:search].empty?)
-       @cursos = Curso.find(:all)
+    @cursos_count = Curso.all
+    if (params[:search].nil? || params[:search].empty?)      
+      @cursos = Curso.paginate(:all,:page=>params[:page],:per_page =>1)
     else
-       @cursos = Curso.find(:all, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"], :order => 'nome ASC')
+       @cursos = Curso.find(:all,:page=>params[:page],:per_page => 1, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"], :order => 'nome ASC')
     end
 
     respond_to do |format|

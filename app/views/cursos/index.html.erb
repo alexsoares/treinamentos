@@ -1,66 +1,34 @@
- <br/>
- <br/>
- <table width="90%" border="1" align="center">
-   <tr>
-     <td>
-        <h1 align="center">Cursos Cadastrados</h1>
-      </td>
-   </tr>
-   <tr>
-     <td>
-     <div class="botao">
-     <table>
-       <tr>
-          <td width="8%"><%= button_to 'Cadastrar', new_curso_path %> </td>
-           <td width="8%">
-              <% if $var == 0 %>
-                  <%= button_to 'Voltar', new_gerenciar_path %>
-              <%else%>
-                  <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
-               <% end %>
-            </td>
-            <td width="11%"><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
-            <td align="right">
-              <table width="100%">
-                <td align="right">
-                      <% form_tag cursos_path, :method => 'get' do %>
-                        <font size="4"> Curso:</font>
-                        <%= text_field_tag :search, params[:search] %>
-                        <%= submit_tag "Filtrar", :name => nil %>
-                      <% end %>
-               </td>
-             </table>
-           </td>
-        </tr>
-    </table>
+<div class="sombra">
+  <div class="formulario">
+    <div class="form_title">
+      <h1 align="center">Cursos Cadastrados</h1>
     </div>
-    </td>
-   </tr>
-   <tr>
-     <td>
-        <%  $contador = 0 %>
-        <table border="2" width="100%">
+    <% form_tag cursos_path, :method => 'get' do %>
+      <font size="4"> Curso:</font>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Filtrar", :name => nil %>
+    <% end %>
+    <div class="form_body" style="float:left">
+       <table width="100%" class="tabelas">
           <tr>
             <th bgcolor="gray">Nome</th>
             <th bgcolor="gray">Ministrante</th>
             <th bgcolor="gray">Carga Horaria</th>
             <th bgcolor="gray">Data/Hora</th>
             <th bgcolor="gray">Ementa</th>
-            <th bgcolor="gray">Observações</th>
           </tr>
           <% for curso in @cursos %>
           <tr>
-             <td><center><%=h curso.nome %></center></td>
+             <td><center><%=h curso.nome_curto %></center></td>
              <td><center><%=h curso.ministrante %></center></td>
+             <td><center><%=h curso.carga_horaria %> Horas</center></td>
                 <%if curso.data_hora.nil? then %>
                    <td><center> A Definir</center></td>
                 <%else%>
                    <td><center><%=h curso.data_hora.strftime("%d/%m/%Y - %H:%M horas") %></center></td>
                 <%end%>
-             <td><center><%=h curso.ementa %></center></td>
-             <td><center><%=h curso.obs %></center></td>
+             <td><center><%=h truncate(curso.ementa, :length => 150, :omission => "... ==> ") %><a href="#dialog" name="modal" style="color:blue">Ementa</a></center></td>
           </tr>
-
         <tr>
           <td colspan="8">
             <div class="botao">
@@ -72,35 +40,28 @@
            </div>
           </td>
         </tr>
-       <%  $contador = $contador + 1 %>
        <% end %>
-       </table>
-      </td>
-   </tr>
-   <tr>
-    <td>
-     <div class="botao">
-     <table>
-       <tr>
-          <td width="8%"><%= button_to 'Cadastrar', new_curso_path %> </td>
-           <td width="8%">
-              <% if $var == 0 %>
-                  <%= button_to 'Voltar', new_gerenciar_path %>
-              <%else%>
-                  <%= button_to 'Voltar', gerenciars_path, {:method => "get"} %>
-               <% end %>
-            </td>
-            <td width="18%"><input type="Button" Value="Imprimir" onclick="javascript:window.print()"></td>
-            <td align="right">
-              <table width="100%">
-                <td align="right"><b> Total de cursos cadastrados: <%= $contador %></b></td>
-             </table>
-           </td>
-        </tr>
      </table>
-     </div>
-    </tr>
-  </table>
+     <br/><br/><br/>
+     <%= logged_in? ? (button_to 'Voltar', gerenciars_path, {:method => "get"}) : (button_to 'Voltar', new_gerenciar_path)  %>
+     <br/><br/>
+     <%= will_paginate @cursos %><%= @cursos_count.count %>
+    </div>
+  </div>
+</div>
+<div id="boxes">
+<div id="dialog" class="window">
+  <a href="#" class="close">Fechar [X]</a><br />
+  <%= curso.ementa %>
+</div>
+</div>
+
+<!-- MÃ¡scara para cobrir a tela -->
+<div id="mask"></div>
+
+
+
+
 
 
 

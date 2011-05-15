@@ -1,7 +1,5 @@
 .sombra {
     position:absolute;
-    width: 690px;
-    height:480px;
     padding-top:5px;
     background-color:gray
 }
@@ -199,8 +197,9 @@ margin-left: 300px;
 }
 
 .tabelas {
-  border: solid 1px #666;
+  border: solid 1px;
   border-collapse: separate;
+  border-color:black;
 }
 
 
@@ -222,10 +221,9 @@ margin-left: 300px;
     color:#000;
 }
 
-
 .tabelas td {
   padding: 4px 8px;
-  background-color: white;
+  background-color: #F5DEB3;
 }
 
 .tabelas td:hover {
@@ -399,4 +397,36 @@ line-height: 12px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	font-weight: bold;
+}
+
+.pagination {
+padding: 3px;
+margin: 3px;
+}
+.pagination a {
+padding: 2px 5px 2px 5px;
+margin: 2px;
+border: 1px solid black;
+text-decoration: none;
+color: white;
+background-color:teal;
+}
+.pagination a:hover, .pagination a:active {
+border: 1px solid white;
+color: black;
+}
+.pagination span.current {
+padding: 2px 5px 2px 5px;
+margin: 2px;
+border: 1px solid black;
+font-weight: bold;
+background-color: gray;
+color: black;}
+
+.pagination span.disabled {
+padding: 2px 5px 2px 5px;
+margin: 2px;
+border: 1px solid #eee;
+color: #ddd;
+background-color:orange;
 }
