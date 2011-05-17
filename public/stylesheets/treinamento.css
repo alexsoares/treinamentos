@@ -7,7 +7,7 @@
    position:relative;
    text-align:center;
    border: 1px solid black;
-   width: 680px;
+   width: 710px;
    left: 0px;
    top: 0px;
    background-color:white;
@@ -22,6 +22,17 @@
    padding: 5px;
 }
 
+.formulario .form_cab {
+
+   background-color: orange;
+   border-bottom: 1px solid black;
+   font-weight: bold;
+   color: #ffffff;
+   padding: 5px;
+}
+
+
+
 .formulario .form_body {
    padding-top:0px;
    background-color: white;
@@ -33,6 +44,27 @@
    padding-bottom:10px;
    border: 1px solid black;
 }
+
+.formulario .form_cabecalho {
+   padding-top:0px;
+   background-color: white;   
+}
+
+#left{
+   padding-top:0px;
+   background-color: white;
+
+    float:left;
+    width:100px;
+}
+#right{
+       padding-top:0px;
+   background-color: white;
+
+    float:right;
+    width:300px;
+}
+
 
 .formulario .form_rodape {
    padding-top:82px;

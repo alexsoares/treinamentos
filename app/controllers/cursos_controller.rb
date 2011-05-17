@@ -11,7 +11,7 @@ class CursosController < ApplicationController
   def index
     @cursos_count = Curso.all
     if (params[:search].nil? || params[:search].empty?)      
-      @cursos = Curso.paginate(:all,:page=>params[:page],:per_page =>1)
+      @cursos = Curso.paginate(:all,:page=>params[:page],:per_page =>3)
     else
        @cursos = Curso.find(:all,:page=>params[:page],:per_page => 1, :conditions => ["nome like ?", "%" + params[:search].to_s + "%"], :order => 'nome ASC')
     end
