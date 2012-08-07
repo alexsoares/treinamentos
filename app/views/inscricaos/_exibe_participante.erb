@@ -2,6 +2,7 @@
      <b>
         Matricula: <%=h @dadosparticipa.matricula %> - <%=h @dadosparticipa.nome %><br/>
         Cidade:<%=h @dadosparticipa.cidade %> -Observações: <%=h @dadosparticipa.obs %><br/>
-        <%=link_to "Alterar Participante", edit_participante_path(@dadosparticipa)%>
+        Email: <%=h "#{@dadosparticipa.email.present? ? @dadosparticipa.email : 'Favor editar seus dados e acrescentar email para contato - '}"%>        <%=link_to "Clique Aqui", addemail_participante_path(@dadosparticipa)%><br/>
+        <%=link_to "Editar Participante", edit_participante_path(@dadosparticipa)%>
      </b>
   </p>

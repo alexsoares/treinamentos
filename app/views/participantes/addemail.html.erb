@@ -1,0 +1,38 @@
+<% form_tag(:action => "update_email", :controller => "participantes") do -%>
+<table width="100%" border="1">
+  <tr>
+    <h1 align="center">Cadastro de Participantes</h1>
+  </tr>
+  <tr>
+    <td colspan="4">
+      <p style="font-size: medium; color: white"><%= "Você está alterando dados de: #{@participante.matricula} - #{@participante.nome}" %> </p>
+    </td>
+  </tr>
+  <tr>    
+      <td>Email</td>
+      <td><%= text_field_tag(:email,@participante.existe_email ,:size => 15)%><br/></td>
+      <td><b><%= label_tag :email_confirmation, 'Confirme' %></b></td>
+      <td><%= text_field_tag :email_confirmation,@participante.existe_email, :size =>15 %></td>
+  </tr>
+  <tr>
+      <td><b>Residencial</b></td>
+      <td><%= text_field_tag(:telefone,'',:size => 10, :maxlength => 10)%><br/></td>
+      <td><b>Celular</b></td>
+      <td><%= text_field_tag(:cel,'',:size => 10, :maxlength => 10)%></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="4">
+      <br/>
+      <b style="font-size:larger; color: yellow" >INSTRUÇÕES<br/><br />
+          1 - INSIRA E CONFIRME SEU EMAIL PESSOAL<br/>
+          2 - INSIRA AO MENOS UM TELEFONE NO FORMATO EX. 1999999999<br/>
+          SOMENTE NUMEROS
+      </b>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left"><%= submit_tag 'Salvar' %></td>
+    <td colspan="2" align="right"><%= button_to 'Voltar', :back %></td>
+  </tr>
+</table>
+<%end -%>

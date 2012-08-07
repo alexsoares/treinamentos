@@ -10,7 +10,6 @@
     <%end%>
     <%= observe_field  :inscricao_participante_id,
                        :with => :inscricao_participante_id,
-                       :update => 'informacoes',
                        :url => { :action => 'sel_participa' } %>
   </p>
   <p>
@@ -18,6 +17,7 @@
       Matricula: <%=h @participante.matricula %><br/>
       Nome:<%=h @participante.nome %><br/>
       Cidade:<%=h @participante.cidade %><br/>
+      Email:<%=h @participante.email %><br/>
       Observações: <%=h @participante.obs %><br/>
     <%else%>
       <div id="informacoes"></div>
@@ -35,7 +35,22 @@
       </tr>
     <%end%>
   </table>
+
   <p>
-    <%= f.submit "Confirmar" %>
+    <fieldset><legend>Opção de unidades</legend>
+      <b>Opção 1</b>
+      <%= f.collection_select :opcao1, @locais, :id, :nome, :include_blank => ' -- Selecione -- ' %>
+      <b>Turno</b>
+      <%= f.select :periodo_opcao1, options_for_select(Inscricao::Periodo), :include_blank => "" %><br/>
+
+      <b>Opção 2</b>
+      <%= f.collection_select :opcao2, @locais, :id, :nome, :include_blank => ' -- Selecione -- ' %>
+      <b>Turno</b>
+      <%= f.select :periodo_opcao2, options_for_select(Inscricao::Periodo), :include_blank => "" %><br/>
+    </fieldset>
+  </p>
+
+  <p>
+    <div id="final"><%= f.submit "Salvar"  %></div>
   </p>
 <%end%>

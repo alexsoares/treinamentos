@@ -1,0 +1,44 @@
+<style media="print">
+.botao {
+display: none;
+}
+</style>
+ <br/>
+ <br/>
+ <table width="90%" border="1" align="center">
+   <tr>
+     <td>
+        <h1 align="center">Consulta Participante</h1>
+      </td>
+   </tr>
+   <tr>
+      <td>
+        <div class="botao">
+        <table>
+          <tr>
+            <td>
+               <font size="4"> Selecione um participante para consultar: <%= collection_select :participante, :participante_id, @participantes, :id, :nome, :include_blank => ' -- Selecione -- '  %></font>
+             </td>
+          </tr>
+        </table>
+        </div>
+         <%= observe_field 'participante_participante_id',
+           :update => "listagem",
+           :url    => { :action => 'lista_participante' },
+           :with   => 'participante_participante_id' %>
+         <div id="listagem"> </div>
+
+      </td>
+
+   </tr>
+  </table>
+  <div class="botao">
+   <table width="90%" align="center">
+    <tr>
+       <td width="8%"><%= button_to 'Voltar', gerenciars_path, {:method => "get"} %></td>
+       <td>
+         <input type="Button" Value="Imprimir" onclick="javascript:window.print()"></input>
+       </td>
+    </tr>
+  </table>
+ </div>

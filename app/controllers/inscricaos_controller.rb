@@ -4,6 +4,7 @@ class InscricaosController < ApplicationController
     before_filter :load_cursos
     before_filter :load_participantes
     before_filter :load_inscricaos
+    before_filter :load_locais
     
     layout :define
 
@@ -60,7 +61,14 @@ class InscricaosController < ApplicationController
 
   def sel_participa
     @dadosparticipa = Participante.find(params[:inscricao_participante_id])
-    render :partial => 'exibe_participante'
+    render :update do |page|
+      page.replace_html "informacoes", :partial => 'exibe_participante'
+      if @dadosparticipa.possuidadosobrigatorios?
+        page.replace_html "final", :text => "<input id='inscricao_submit' type='submit' value='Confirmar' name='commit'>"
+      else
+        page.replace_html "final", :text => "<a href='/participantes/#{params[:inscricao_participante_id]}/addemail'>Favor atualizar dados</a>"
+      end
+    end
   end
   # POST /inscricaos
   # POST /inscricaos.xml
@@ -145,6 +153,10 @@ private
 
 protected
 
+
+  def load_locais
+    @locais = Unidade.all(:conditions => ["id in (42,43,44,45,46,47,48,49,50,51)"])
+  end
 
   def load_inscricaos
     @inscricaos = Inscricao.find(:all)

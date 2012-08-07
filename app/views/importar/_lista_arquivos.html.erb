@@ -1,0 +1,30 @@
+       <table border="1" cellspacing="0" summary="Tabela de dados fictícios">
+       <%unless !@import.present?%>
+          <h1><%="Registros importados #{@import.count}."%></h1>
+          <thead>
+            <tr>
+              <th>Matricula</th>
+              <th>nome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for import in @import %>
+              <tr>
+                <td><%=h import.matricula %></td>
+                <td><%=h import.nome %></td>
+              </tr>
+            <%end%>
+          </tbody>
+          <tr>
+            <td>
+              <% form_tag({:action => 'efetivar_importacao'}) do %>
+                <%= submit_tag "Quero importar!" %>
+              <% end %>
+            </td>
+          </tr>
+
+        <%else%>
+          <h2><%="Não existe registro a serem importados.Faça Upload de um arquivo Texto."%></h2>
+          <h2><%= "Na estrutura: Matricula,Nome" %></h2>
+        <%end%>
+        </table>

@@ -10,9 +10,26 @@ class ParticipantesController < ApplicationController
   layout :logado?
 
   before_filter :load_unidades
+  def addemail
+    @participante = Participante.find(params[:id])
+  end
 
-  def load_unidades
-    @unidades = Unidade.find(:all, :order => 'nome ASC')
+  def update_email
+    @participante = Participante.find(params[:id])
+    respond_to do |format|
+      @participante.email = params[:email]
+      @participante.telefone = params[:telefone]
+      @participante.cel = params[:cel]
+      if @participante.save
+        flash[:notice] = 'EMAIL DO PARTICIPANTE ATUALIZADO COM SUCESSO.'
+        format.html { redirect_to(new_inscricao_path(:participante => @participante)) }
+        format.xml  { head :ok }
+      else
+        
+        format.html { render :action => "addemail" }
+        format.xml  { render :xml => @participante.errors, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def logado?
@@ -21,10 +38,6 @@ class ParticipantesController < ApplicationController
     else
       "cadastral"
     end
-  end
-
-   def load_participantes
-    @participantes = Participante.find(:all, :order => 'nome ASC')
   end
 
   def ger_index
@@ -150,4 +163,14 @@ def consulta
       end
     end
   end
+  
+  protected
+  def load_unidades
+    @unidades = Unidade.find(:all, :order => 'nome ASC')
+  end
+
+  def load_participantes
+    @participantes = Participante.find(:all, :order => 'nome ASC')
+  end
+
 end

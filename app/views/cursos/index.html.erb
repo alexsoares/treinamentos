@@ -11,52 +11,49 @@
     <div class="form_body" style="float:left">
        <table width="100%" class="tabelas">
           <tr>
-            <th width="25%" bgcolor="gray">Nome</th>
-            <th width="14%" bgcolor="gray">Carga Horaria</th>
-            <th width="12%" bgcolor="gray">Data/Hora</th>
-            <th width="48%" bgcolor="gray">Ementa</th>
-            <th width="1%" bgcolor="gray">Mais</th>
+            <th bgcolor="gray">Nome</th>
+            <th bgcolor="gray">Ministrante</th>
+            <th bgcolor="gray">Carga Horaria</th>
+            <th bgcolor="gray">Data/Hora</th>
+            <th bgcolor="gray">Ementa</th>
           </tr>
           <% for curso in @cursos %>
           <tr>
-             <td width="25%"><center><%=h curso.nome_curto %></center></td>
-             <td width="14%"><center><%=h curso.carga_horaria %> Horas</center></td>
+             <td><center><%=h curso.nome_curto %></center></td>
+             <td><center><%=h curso.ministrante %></center></td>
+             <td><center><%=h curso.carga_horaria %> Horas</center></td>
                 <%if curso.data_hora.nil? then %>
-                   <td width="12%"><center> A Definir</center></td>
+                   <td><center> A Definir</center></td>
                 <%else%>
-                   <td width="12%"><center><%=h curso.data_hora.strftime("%d/%m/%Y - %H:%M horas") %></center></td>
+                   <td><center><%=h curso.data_hora.strftime("%d/%m/%Y - %H:%M horas") %></center></td>
                 <%end%>
-             <td width="48%"><center><%=h truncate(curso.ementa, :length => 50, :omission => ".....") %></center></td>
-             <td align="center" width="1"><a href="#dialog_<%= curso.id %>" name=<%="modal"%> style="color:blue">Mais</a></td>
+             <td><center><%=h truncate(curso.ementa, :length => 150, :omission => "... ==> ") %><a href="#dialog" name="modal" style="color:blue">Ementa</a></center></td>
           </tr>
-       <div id="boxes">
-          <div id="dialog_<%= curso.id %>" class="window">
-              <a href="#" class="close">Fechar [X]</a><br />
-              <b bgcolor="gray">Curso: </b><br/>
-              <%= curso.id %><br/><br/>
-              <%= curso.nome_curto %><br/><br/>
-              <b bgcolor="gray">Ementa</b><br/>
-              <%= curso.ementa %><br/><br/>
-              <b bgcolor="gray">Ministrante</b><br/>
-              <b><center><%=h curso.ministrante %></center></b>
-          </div>
-       </div>
-
+        <tr>
+          <td colspan="8">
+            <div class="botao">
+            <table>
+               <td><%= button_to('Exibir',{:action => "show", :id => curso}, :method => "get") %></td>
+               <td> <%= button_to('Editar',{:action => "edit", :id => curso}, :method => "get") %></td>
+               <td><%= button_to('Excluir',{:action => "destroy", :id => curso}, :confirm => 'Confirma exclusão?', :method => "delete")%></td>
+           </table>
+           </div>
+          </td>
+        </tr>
        <% end %>
-      <div class="botao">
-       <tr>
-         <td colspan="2"><%= button_to('Exibir',{:action => "show", :id => curso}, :method => "get") %></td>
-         <td colspan="2"> <%= button_to('Editar',{:action => "edit", :id => curso}, :method => "get") %></td>
-         <td colspan="2"><%= button_to('Excluir',{:action => "destroy", :id => curso}, :confirm => 'Confirma exclusão?', :method => "delete")%></td>
-       </tr>
-     </div>
      </table>
      <br/><br/><br/>
      <%= logged_in? ? (button_to 'Voltar', gerenciars_path, {:method => "get"}) : (button_to 'Voltar', new_gerenciar_path)  %>
      <br/><br/>
-     <%= will_paginate @cursos %>
+     <%= will_paginate @cursos %><%= @cursos_count.count %>
     </div>
   </div>
+</div>
+<div id="boxes">
+<div id="dialog" class="window">
+  <a href="#" class="close">Fechar [X]</a><br />
+  <%= curso.ementa %>
+</div>
 </div>
 
 <!-- MÃ¡scara para cobrir a tela -->

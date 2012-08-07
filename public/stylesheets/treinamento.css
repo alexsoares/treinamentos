@@ -1,7 +1,8 @@
 .sombra {
     position:absolute;
     padding-top:5px;
-    background-color:gray
+    background-color:gray;
+    width: 740px;
 }
 .formulario {
    position:relative;
@@ -22,17 +23,6 @@
    padding: 5px;
 }
 
-.formulario .form_cab {
-
-   background-color: orange;
-   border-bottom: 1px solid black;
-   font-weight: bold;
-   color: #ffffff;
-   padding: 5px;
-}
-
-
-
 .formulario .form_body {
    padding-top:0px;
    background-color: white;
@@ -44,27 +34,6 @@
    padding-bottom:10px;
    border: 1px solid black;
 }
-
-.formulario .form_cabecalho {
-   padding-top:0px;
-   background-color: white;   
-}
-
-#left{
-   padding-top:0px;
-   background-color: white;
-
-    float:left;
-    width:100px;
-}
-#right{
-       padding-top:0px;
-   background-color: white;
-
-    float:right;
-    width:300px;
-}
-
 
 .formulario .form_rodape {
    padding-top:82px;
@@ -377,7 +346,7 @@ line-height: 12px;
         margin-bottom: 10px;
         float: right;
         width: 745px;
-        height: 700px;
+        height: 790px;
         padding: 0 10px 10px 10px;
         margin-top: 10px;
         background-image:url(Imagens/panfleto.jpg);
@@ -388,32 +357,23 @@ line-height: 12px;
         margin-bottom: 10px;
         float: right;
         width: 745px;
-        height: 570px;
+        height: 560px;
         padding: 0 10px 10px 10px;
         margin-top: 10px;
-        background-image:url(Imagens/principal_body.jpg);
+        
         background-repeat:no-repeat;
+        background-color:orange;
     }
 #middle {
         margin-bottom: 10px;
         float: none;
         width: 910px;
-        height: 700px;
+        height: 790px;
         padding: 0 10px 10px 10px;
         margin-top: 10px;
         background-color:orange;
     }
-  
-
-
-
-
-    
-
-
-
-
-.menuheader{
+ .menuheader{
 	width:192px;
 	height:37px;
 	background-image:url(images/menutop.gif);
