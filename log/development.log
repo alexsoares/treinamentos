@@ -9558,3 +9558,53 @@ Rendering template within layouts/inicial
 Rendering homes/index
 Rendered shared/_inscrever (0.9ms)
 Completed in 28ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2012-08-08 15:34:59) [GET]
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+Rendering template within layouts/inicial
+Rendering homes/index
+Rendered shared/_inscrever (7.9ms)
+Completed in 46ms (View: 26, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2012-08-08 15:41:51) [GET]
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+Rendering template within layouts/inicial
+Rendering homes/index
+Rendered shared/_inscrever (7.1ms)
+Completed in 43ms (View: 26, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2012-08-08 15:44:33) [GET]
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+Rendering template within layouts/inicial
+Rendering homes/index
+Rendered shared/_inscrever (6.6ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2012-08-08 15:46:14) [GET]
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+Rendering template within layouts/inicial
+Rendering homes/index
+Rendered shared/_inscrever (6.0ms)
+Completed in 37ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#index (for 127.0.0.1 at 2012-08-08 15:46:28) [GET]
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+Rendering template within layouts/inicial
+Rendering homes/index
+Rendered shared/_inscrever (6.4ms)
+Completed in 34ms (View: 18, DB: 0) | 200 OK [http://localhost/]

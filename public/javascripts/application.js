@@ -18,6 +18,7 @@ function valor(){
 
 $(document).ready(function()
 {
+$( ".button").button();
 $("#email_confirmation").focusout(function(){   
         if ($("#email").val() == $("#email_confirmation").val())
         {}
