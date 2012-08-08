@@ -79,3 +79,14 @@ Rails::Initializer.run do |config|
 end
 WillPaginate::ViewHelpers.pagination_options[:previous_label]=I18n.t("pagination.prev")
 WillPaginate::ViewHelpers.pagination_options[:next_label]=I18n.t("pagination.next")
+
+
+ActionMailer::Base.default_content_type = "text/html"
+ActionMailer::Base.smtp_settings = {
+   :enable_starttls_auto => true,
+   :address => "smtp.gmail.com",
+   :port => 587,
+   :authentication => :plain,
+   :user_name => "administrador@seducpma.com", #Você pode usar o Google Apps!
+   :password => 'infoseducpma'
+}

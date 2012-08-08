@@ -17,7 +17,7 @@ def before_save
     self.endereco.upcase!
     self.bairro.upcase!
     self.cidade.upcase!
-    self.obs.upcase!
+#    self.obs.upcase!
 end
 
 def existe_email
@@ -32,10 +32,8 @@ def verifica_email?
   e = self.email
   ec = self.email_confirmation
 end
-def possuidadosobrigatorios?
-  email = self.email.present?
-  telefone = self.telefone.present?
-  if email and telefone
+def possuidadosobrigatorios?  
+  if email
     true
   else
     false

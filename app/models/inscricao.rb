@@ -7,5 +7,5 @@ class Inscricao < ActiveRecord::Base
   accepts_nested_attributes_for :participante
   validates_presence_of :participante_id
   validates_uniqueness_of :participante_id, :message => " Error => Este participante já efetuou a inscrição"
-  Periodo = %w(Matutino Vespertino Noturno)
+  Periodo = %w(Matutino Vespertino Noturno Sabado_Matutino)
 end

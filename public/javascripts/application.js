@@ -12,9 +12,12 @@ function hide_field(link,div) {
   $(div).toggle();
 }
 
+function valor(){
+    alert('Teste JS interno');
+}
+
 $(document).ready(function()
 {
-
 $("#email_confirmation").focusout(function(){   
         if ($("#email").val() == $("#email_confirmation").val())
         {}

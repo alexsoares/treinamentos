@@ -1,4 +1,4 @@
-<% form_for(@participante) do |f| %>
+<% form_for(url_for(@participante), :html=>{:onsubmit=>"valor();"}) do |f| %>
   <%= f.error_messages %>
     <p>
       <b>Nome</b><font color="red" size="6">*</font>
@@ -41,6 +41,6 @@
       <%= f.text_field :obs %>
     </p>
     <p>
-      <%= f.submit "Salvar" %>
+      <%= f.submit "Salvar"%>
     </p>
 <%end%>

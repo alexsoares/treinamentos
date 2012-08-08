@@ -1,4 +1,4 @@
-<% form_tag(:action => "update_email", :controller => "participantes") do -%>
+<% form_tag({:action => "update_email", :controller => "participantes"},{:onSubmit => 'alert("Não clique novamente até a atualização da página")'}) do -%>
 <table width="100%" border="1">
   <tr>
     <h1 align="center">Cadastro de Participantes</h1>
