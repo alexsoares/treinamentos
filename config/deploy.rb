@@ -1,4 +1,4 @@
-set :application, "187.35.111.69"
+set :application, "192.168.0.122"
 set :repository, "git://github.com/alexsoares/treinamentos.git"
 set :user, "servidor"
 set :use_sudo, false
@@ -22,7 +22,7 @@ after "deploy:symlink", "deploy:update_crontab"
    task :custom_symlinks do
      run "rm -rf #{release_path}/config/database.yml"
      run "ln -s #{shared_path}/database.yml #{release_path}/config/database.yml"
-     run "ln -s #{shared_path}/503.html #{release_path}/public/503.html"
+#     run "ln -s #{shared_path}/503.html #{release_path}/public/503.html"
    end
 
    desc "Update the crontab file"
