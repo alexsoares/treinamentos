@@ -17,7 +17,7 @@
 }
 .formulario .form_title {
    
-   background-color: blue;
+   background-color: dimgray;
    border-bottom: 1px solid black;
    font-weight: bold;
    color: #ffffff;
@@ -26,7 +26,7 @@
 
 .formulario .form_body {
    padding-top:0px;
-   background-color: gainsboro;
+   background-color: cadetblue;
    font-weight: bold;
    text-align:justify;
    color: black;
@@ -212,7 +212,7 @@ margin-left: 300px;
 .tabelas th {
   font-size: 10px;
   color: white;
-  background-color: orange;
+  background-color: #F0E68C;
   padding: 4px 8px;
   padding-bottom: 4px;
   text-align: center;
@@ -330,7 +330,7 @@ line-height: 12px;
         margin-bottom: 10px;
         margin-top: 10px;
         height:280px;
-        background-color:orange;
+        background-color:#F0E68C;
         width:150px;
     }
 #left_down {
@@ -364,7 +364,7 @@ line-height: 12px;
         margin-top: 10px;
         
         background-repeat:no-repeat;
-        background-color:orange;
+        background-color:#F0E68C;
     }
 #middle {
         margin-bottom: 10px;
@@ -373,7 +373,7 @@ line-height: 12px;
         height: 790px;
         padding: 0 10px 10px 10px;
         margin-top: 10px;
-        background-color:orange;
+        background-color:#F0E68C;
     }
  .menuheader{
 	width:192px;
