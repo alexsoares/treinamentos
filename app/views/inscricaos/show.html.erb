@@ -28,13 +28,13 @@
                 </td>
               </tr>
             <tr>
-              <td><%=h "Opção1: #{@inscricao.opcao1.nome} - #{@inscricao.periodo_opcao1}" %></td>
-              <td><%=h "Opção2: #{@inscricao.opcao2.nome} - #{@inscricao.periodo_opcao2}" %></td>
+              <td><%=h "Opção1: #{Unidade.find(@inscricao.opcao1).nome} - #{@inscricao.periodo_opcao1}" %></td>
+              <td><%=h "Opção2: #{Unidade.find(@inscricao.opcao2).nome} - #{@inscricao.periodo_opcao2}" %></td>
             </tr>
           <% end %>
           <tr>
-              <td><b>Inscrição efetuada em:</b></td>
-              <td>  <%=h  @inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
+            <td colspan="2"><b>Inscrição efetuada em:</b>
+              <%=h  @inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
           </tr>
           <tr>
             <td colspan="2">
