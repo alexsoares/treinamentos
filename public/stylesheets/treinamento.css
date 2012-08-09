@@ -11,7 +11,7 @@
    width: 710px;
    left: 0px;
    top: 0px;
-   background-color:white;
+   background-color: gainsboro;
 
 }
 .formulario .form_title {
@@ -25,7 +25,7 @@
 
 .formulario .form_body {
    padding-top:0px;
-   background-color: white;
+   background-color: gainsboro;
    font-weight: bold;
    text-align:justify;
    color: black;
@@ -37,7 +37,7 @@
 
 .formulario .form_rodape {
    padding-top:82px;
-   background-color: white;
+   background-color: gainsboro;
    font-weight: bold;
    text-align:center;
    color: black;
