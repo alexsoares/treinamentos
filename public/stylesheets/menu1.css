@@ -15,7 +15,7 @@ ul.pureCssMenu,ul.pureCssMenu ul {
 }
 ul.pureCssMenu table {border-collapse:collapse}ul.pureCssMenu {
 	display:block;
-	zoom:1;
+	
 	height:21px;
 	float: left;
 }

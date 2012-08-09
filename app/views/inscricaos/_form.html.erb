@@ -24,15 +24,18 @@
     <%end%>
   </p>
 
-  <table class="tabelas" align="center">
-    <th colspan="4">Cursos</th>
+  <table class="tabelas">
+    <th colspan="2" style=" font-size: large">Cursos</th>
     <% @cursos.in_groups_of(2, false) do |row_cursos| %>
       <tr>
         <% row_cursos.each do |curso| %>
-        <td id="demo" align="left"><%= check_box_tag "inscricao[curso_ids][]", curso.id, @inscricao.cursos.include?(curso), :title => "#{curso.ementa}"%><%= curso.nome_curto %></td>
+          <td id="demo" align="left"><%= check_box_tag "inscricao[curso_ids][]", curso.id, @inscricao.cursos.include?(curso), :title => "#{curso.ementa}"%><%= curso.nome_curto %></td>
         <% end %>
       </tr>
     <%end%>
+      <tr>
+        <th colspan="2" style=" font-size: large">* Para maiores informações sobre os cursos, posicione o mouse sobre as caixas de opção</th>
+      </tr>
   </table>
 
   <p>
