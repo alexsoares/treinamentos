@@ -9965,3 +9965,65 @@ Rendered participantes/_form (27.4ms)
   [4;36;1mResposta Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `respostas`[0m
 Rendered shared/_show_results (25.8ms)
 Completed in 296ms (View: 85, DB: 8) | 200 OK [http://localhost/participantes/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ParticipantesController#create (for 127.0.0.1 at 2012-08-09 08:19:16) [POST]
+  Parameters: {"commit"=>"Salvar", "participante"=>{"nome"=>"Alexandre Soares", "obs"=>"", "cidade"=>"americana", "unidade_id"=>"31", "email"=>"corujao83@hotmail.com", "cel"=>"92631244", "bairro"=>"jd sao paulo", "matricula"=>"14098", "telefone"=>"", "endereco"=>"imbuias", "tipo_participante"=>"1"}, "authenticity_token"=>"+/hLbTckpuN9QhqrEysRl590Fe0yVnBvvIvuUqIr7/I="}
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;36;1mParticipante Load (2.1ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mParticipante Load (21.3ms)[0m   [0;1mSELECT `participantes`.id FROM `participantes` WHERE (`participantes`.`email` = BINARY 'corujao83@hotmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/cadastral
+Rendering participantes/new
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+Rendered participantes/_form (136.9ms)
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Load (0.1ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 1) [0m
+  [4;35;1mPergunta Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Load (2.9ms)[0m   [0;1mSELECT * FROM `respostas` WHERE (`respostas`.pergunta_id = 1) [0m
+  [4;35;1mResposta Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendered shared/_show_results (55.3ms)
+Completed in 338ms (View: 193, DB: 34) | 200 OK [http://localhost/participantes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ParticipantesController#create (for 127.0.0.1 at 2012-08-09 08:19:43) [POST]
+  Parameters: {"commit"=>"Salvar", "participante"=>{"nome"=>"Alexandre Soares", "obs"=>"", "cidade"=>"americana", "unidade_id"=>"31", "email"=>"corujao831@hotmail.com", "cel"=>"92631244", "bairro"=>"jd sao paulo", "matricula"=>"14098", "telefone"=>"", "endereco"=>"imbuias", "tipo_participante"=>"1"}, "authenticity_token"=>"+/hLbTckpuN9QhqrEysRl590Fe0yVnBvvIvuUqIr7/I="}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mParticipante Load (2.1ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mParticipante Load (1.8ms)[0m   [0mSELECT `participantes`.id FROM `participantes` WHERE (`participantes`.`email` = BINARY 'corujao831@hotmail.com') LIMIT 1[0m
+  [4;36;1mParticipante Create (32.6ms)[0m   [0;1mINSERT INTO `participantes` (`nome`, `num`, `obs`, `updated_at`, `funcao`, `cidade`, `complemento`, `unidade_id`, `bairro`, `cel`, `email`, `created_at`, `matricula`, `endereco`, `telefone`, `tipo_participante`) VALUES('ALEXANDRE SOARES', NULL, '', '2012-08-09 11:19:43', NULL, 'AMERICANA', NULL, 31, 'JD SAO PAULO', 92631244, 'corujao831@hotmail.com', '2012-08-09 11:19:43', 14098, 'IMBUIAS', '', 1)[0m
+  [4;35;1mSQL (79.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/participantes/1087
+Completed in 245ms (DB: 119) | 302 Found [http://localhost/participantes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ParticipantesController#show (for 127.0.0.1 at 2012-08-09 08:19:43) [GET]
+  Parameters: {"id"=>"1087"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mParticipante Load (27.6ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.4ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1087) [0m
+Rendering template within layouts/cadastral
+Rendering participantes/show
+  [4;35;1mUnidade Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mUnidade Load (0.4ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 31) [0m
+  [4;35;1mPesquisa Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `pesquisas`[0m
+  [4;36;1mPergunta Load (0.1ms)[0m   [0;1mSELECT * FROM `perguntas` WHERE (`perguntas`.pesquisa_id = 1) [0m
+  [4;35;1mPergunta Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `perguntas`[0m
+  [4;36;1mResposta Load (0.2ms)[0m   [0;1mSELECT * FROM `respostas` WHERE (`respostas`.pergunta_id = 1) [0m
+  [4;35;1mResposta Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `respostas`[0m
+Rendered shared/_show_results (28.8ms)
+Completed in 312ms (View: 76, DB: 37) | 200 OK [http://localhost/participantes/1087]
