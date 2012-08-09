@@ -28,21 +28,18 @@
                 </td>
               </tr>
             <tr>
-               <td width="30%"><b>Observações:</b></td>
-               <td>  <%=h  curso.obs %> </td>
-            </tr>
-            <tr>
-              <td><b>Data do Curso:</b></td>
-              <%if !curso.data_hora.present?%>
-                <td align="center">Horário a Definir</td>
-              <%else%>
-                <td><%=h curso.data_hora.strftime("%d de %B de %Y") %></td>
-              <%end%>
+              <td><%=h "Opção1: #{@inscricao.opcao1.nome} - #{@inscricao.periodo_opcao1}" %></td>
+              <td><%=h "Opção2: #{@inscricao.opcao2.nome} - #{@inscricao.periodo_opcao2}" %></td>
             </tr>
           <% end %>
           <tr>
-              <td><b>Data da Inscrição:</b></td>
+              <td><b>Inscrição efetuada em:</b></td>
               <td>  <%=h  @inscricao.data_inscricao.strftime("%d de %B de %Y") %> </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <b>Você já está pré-inscrito nos módulos acima, a partir do momento que os mesmos forem efetivados, enviaremos uma notificação via e-mail. Todas estas informações foram enviadas ao email informado.</b>
+            </td>
           </tr>
        </table>
      </td>
