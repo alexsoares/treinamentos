@@ -1,0 +1,29 @@
+<h1>Totaliza inscrições por Turno</h1>
+<table width="100%">
+      <tr>
+          <% form_tag busca_por_turno_participantes_path, :method => 'get' do %>
+            <td><%= label_tag :turno, "Digite o periodo: "  %><%= select_tag :turno, options_for_select(Inscricao::Periodo), :include_blank => "" %></td>
+            <td align="right"><%= submit_tag "Buscar", :name => nil %></td>
+          <% end %>
+      </tr>
+      <tr><td colspan="2"><hr/></td></tr>
+      <%if @turno_op.present?%>
+        <tr>
+          <td colspan="2"><b><%= "#{@turno_op.count} escolheram este período" %></b><hr/></td>
+        </tr>
+        <% @turno_op.each do |op| %>
+          <tr>
+            <td><%= op.participante.nome %><br/>
+            <%= " - #{op.periodo_opcao1} - #{Unidade.find(op.opcao1).nome}" %><br/>
+            <%= " - #{op.periodo_opcao1} - #{Unidade.find(op.opcao1).nome}" %></td>
+            <td>
+              <ul>
+                <%op.cursos.each do |curso|%>
+                  <li><%= curso.nome %></li>
+                <%end%>
+              </ul>              
+            </td>
+          </tr>          
+        <%end%>
+<%end%>
+</table>

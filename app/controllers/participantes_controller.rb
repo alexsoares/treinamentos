@@ -32,6 +32,13 @@ class ParticipantesController < ApplicationController
     end
   end
 
+  def busca_por_turno
+    if params[:turno].present?
+      @turno_op = Inscricao.paginate(:all, :conditions => ["periodo_opcao1 = ? or periodo_opcao2 =?", params[:turno], params[:turno]],:per_page =>10,:page => params[:page])
+      #@turno_op2 = Inscricao.find_all_by_periodo_opcao2(params[:turno])
+    end
+  end
+
   def logado?
     if logged_in?
       "gerenciar"
