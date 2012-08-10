@@ -140,7 +140,7 @@ def consulta
 
 
   def lista_participante
-    @participantes = Participante.find(:all, :conditions => ["id = ",params[:participante_participante_id]])
+    @inscricao = Inscricao.find_by_participante_id(params[:participante_participante_id])
     render :partial => 'lista_participantes'
   end
 

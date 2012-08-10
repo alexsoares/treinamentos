@@ -1,51 +1,20 @@
 <br/>
 <font size="4"><b><u> Resultado da Consulta</u></b></font>
   <br/>  <br/>
-   <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
-          <tr>
-            <th bgcolor="gray">Nome</th>
-            <th bgcolor="gray">Endereço</th>
-            <th bgcolor="gray">Cidade</th>
-            <th bgcolor="gray">Bairro</th>
-            <th bgcolor="gray">Estado</th>
-            <th bgcolor="gray">Fone Residencial</th>
-            <th bgcolor="gray">Fone Celular</th>
-
-         </tr>
-         <% for participante in @participantes %>
-         <tr>
-           <td><b><center><%=h participante.nome %></b></center></td>
-           <td><center><%=h participante.endereco %></center></td>
-           <td><center><%=h participante.cidade %></center></td>
-           <td><center><%=h participante.bairro %></center></td>
-           <td><center><%=h participante.estado %></center></td>
-           <td><center><%=h participante.foneres %></center></td>
-           <td><center><%=h participante.cel %></center></td>
-
-        </tr>
-        <tr>
-            <th bgcolor="gray"></th>
-            <th bgcolor="gray"><center>e-mail</center></th>
-            <th bgcolor="gray"><center>Trabalho</center></th>
-            <th bgcolor="gray"><center>Fone Comecial</center></th>
-            <th bgcolor="gray"><center>Matricula</center></th>
-            <th bgcolor="gray" colspan="2"><center>Observações</center></th>
-       </tr>
-         <% for participant in @participantes %>
-        <tr  >
-           <th bgcolor="gray"></th>
-           <td><center><%=h participant.email %></center></td>
-           <td><center><%=h participant.trabalho %></center></td>
-           <td><center><%=h participante.fonecom %></center></td>
-           <td><center><%=h participant.matricula %></center></td>
-           <td colspan="2"><center><%=h participant.obs %></center></td>
-
-        </tr>
-       <% end %>
-  <% end %>
+ <table border ="1" cellpadding="1" cellspacing="1" width="100%" >
+      <%unless @inscricao.present?%>
+        "Participante ainda não possui inscrição"
+      <%else%>
+          <% @inscricao.cursos.each do |curso| %>
+              <tr>
+                <td colspan="2" align="center">
+                  <b><%=h curso.nome %></b>
+                </td>
+              </tr>
+            <tr>
+              <td><%=h "Opção1: #{Unidade.find(@inscricao.opcao1).nome} - #{@inscricao.periodo_opcao1}" %></td>
+              <td><%=h "Opção2: #{Unidade.find(@inscricao.opcao2).nome} - #{@inscricao.periodo_opcao2}" %></td>
+            </tr>
+          <% end %>
+       <%end%>
  </table>
-
-
-
-
-
