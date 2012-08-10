@@ -135,7 +135,7 @@ class ParticipantesController < ApplicationController
   end
 
 def consulta
-    render :partial => 'consultas'
+    #render :partial => 'consultas'
   end
 
 

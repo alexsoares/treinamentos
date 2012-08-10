@@ -18,7 +18,16 @@ function valor(){
 
 $(document).ready(function()
 {
+$("#inscricao_periodo_opcao2").focusout(function(){
+var periodo_opcao2 = $("#inscricao_periodo_opcao2").val(), periodo_opcao1 = $("#inscricao_periodo_opcao1").val();
+var opcao1 = $("#inscricao_opcao1").val(), opcao2 = $("#inscricao_opcao2").val()
 
+if ((periodo_opcao2 == periodo_opcao1) && (opcao1 == opcao2))
+{
+  alert("Selecione Opções diferentes");
+  $("#inscricao_opcao2").focus();
+}
+});
 $("#email_confirmation").focusout(function(){   
         if ($("#email").val() == $("#email_confirmation").val())
         {}

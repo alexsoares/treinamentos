@@ -23,7 +23,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :cursos, :collection => {:voltar => :get}
 
-  map.resources :participantes, :collection => {:voltarparticipante => :get}, :member => [:addemail,:update_email]
+  map.resources :participantes, :collection => {:consulta => :get,:voltarparticipante => :get}, :member => [:addemail,:update_email]
 
   # The priority is based upon order of creation: first created -> highest priority.
 

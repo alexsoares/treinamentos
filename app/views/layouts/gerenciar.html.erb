@@ -27,7 +27,7 @@
             <p class="menu_head">Consultas</p>
             <div class="menu_body">
               <%= link_to "Por Curso", por_curso_inscricaos_path %>
-              <%= link_to_remote('Participantes', :update => "tela", :url => { :action => "consulta", :controller => 'participantes'}) %>
+              <%= link_to 'Participantes', consulta_participantes_path %>
               <%= link_to 'Estatistica', estatistica_inscricaos_path %>
             </div>
             <p class="menu_head">Listagem</p>

@@ -1,6 +1,7 @@
 class Participante < ActiveRecord::Base
 
   has_many :inscricaos
+  belongs_to :unidade
   has_many :cursos
   validates_presence_of :nome, :message => ' - PREENCHIMENTO OBRIGATÓRIO'
   validates_presence_of :matricula, :if => :tipo? , :message => ' => É PREENCHIMENTO OBRIGATÓRIO'
