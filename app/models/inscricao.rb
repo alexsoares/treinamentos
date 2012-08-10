@@ -7,6 +7,7 @@ class Inscricao < ActiveRecord::Base
   accepts_nested_attributes_for :participante
   validates_presence_of :participante_id
   validates_presence_of :opcao1, :if => :verifica_opcao
+  validates_presence_of :opcao2, :if => :verifica_opcao2
   validates_uniqueness_of :participante_id, :message => " Error => Este participante já efetuou a inscrição"
   Periodo = %w(Matutino Vespertino Noturno Sabado_Matutino)
 
@@ -18,4 +19,12 @@ class Inscricao < ActiveRecord::Base
       false
     end
   end
+    def verifica_opcao2
+    if self.opcao2 == ""
+      true
+    else
+      false
+    end
+  end
+
 end
