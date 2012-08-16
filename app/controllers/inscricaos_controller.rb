@@ -8,6 +8,21 @@ class InscricaosController < ApplicationController
     
     layout :define
 
+  def envia_email
+  end
+
+  def confirmacao
+    participante = Participante.find_by_matricula(params[:matricula])
+    @inscricao = Inscricao.find_by_participante_id(participante.id)
+    InscricaoMailer.deliver_confirmacao_inscricao(@inscricao,@inscricao.participante)
+
+  end
+
+  def kind
+    t = 0
+    y = 0
+  end
+
   def define
     if logged_in?
       'gerenciar'

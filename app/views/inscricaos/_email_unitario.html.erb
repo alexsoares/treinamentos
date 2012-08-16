@@ -1,0 +1,4 @@
+          <% form_tag confirmacao_inscricaos_path, :method => 'get' do %>
+            <%= label_tag :matricula, "Digite o matricula: "  %><%= text_field_tag :matricula%>
+            <%= submit_tag "Buscar", :name => nil %>
+          <% end %>
