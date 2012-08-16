@@ -1,5 +1,8 @@
   <p>
      <b>
+        <% if @inscricao.present?  %>
+          <b style="color:red"><%= "Este participante já possui inscrição realizada. NÃO PROSSIGA." %></b><br/>
+        <%end%>
         Matricula: <%=h @dadosparticipa.matricula %> - <%=h @dadosparticipa.nome %><br/>
         Cidade:<%=h @dadosparticipa.cidade %> -Observações: <%=h @dadosparticipa.obs %><br/>
         Email: <%=h "#{@dadosparticipa.email.present? ? @dadosparticipa.email : 'Favor editar seus dados e acrescentar email para contato - '}"%>        <%=link_to "Clique Aqui", addemail_participante_path(@dadosparticipa)%><br/>

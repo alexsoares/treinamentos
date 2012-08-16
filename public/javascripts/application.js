@@ -21,11 +21,12 @@ $(document).ready(function()
 
 //
 $("#type_of_2").click(function(){
-    $(".envia_geral").hide()
+    $(".envia_individual").hide()
     $(".envia_geral").show()
 });
 $("#type_of_1").click(function(){
-    $(".envia_geral").show()
+    $(".envia_individual").show()
+    $(".envia_geral").hide()
 });
 
 

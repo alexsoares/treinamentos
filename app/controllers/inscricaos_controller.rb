@@ -76,6 +76,7 @@ class InscricaosController < ApplicationController
 
   def sel_participa
     @dadosparticipa = Participante.find(params[:inscricao_participante_id])
+    @inscricao = Inscricao.find_by_participante_id(params[:inscricao_participante_id])
     render :update do |page|
       page.replace_html "informacoes", :partial => 'exibe_participante'
       if @dadosparticipa.possuidadosobrigatorios?

@@ -3,11 +3,14 @@
           <tr>
             <td>
                <a href="#"><%= radio_button_tag(:type_of, "1") %></a>Unitario
+            </td>
+            <td>
                <a href="#"><%= radio_button_tag(:type_of, "2") %></a>Geral
             </td>
          </tr>
          <tr>
-           <td><div class="envia_geral" style="display:none"> <%= render "/shared/consulta" %> </div></td>
+           <td><div class="envia_individual" style="display:none"> <%= render "/shared/consulta_individual" %> </div></td>
+           <td><div class="envia_geral" style="display:none"> <%= render "/shared/consulta_geral" %> </div></td>
          </tr>
         </table>
     <% end %>
