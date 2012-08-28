@@ -12,7 +12,9 @@
 <table border="1" frame="border" rules="rows">
   <tr><td colspan="3"><h2><%= "Listagem de presença" %></h2></td></tr>
   <tr><td colspan="3"><b><%= "Curso - #{Curso.find(params[:curso]).nome_curto}" %></b><br/></td></tr>
-  <tr><td colspan="2"><%= "Unidade: #{Unidade.find(session[:unidade]).nome}" %></td><td><%= "Opção: #{session[:opcao]}" %></td></tr>
+  <% unidade = session[:unidade].present? ? Unidade.find(session[:unidade]).nome : "Geral" %>
+  <% opcao = session[:opcao].present? ? session[:opcao] : "Todas" %>
+  <tr><td colspan="2"><%= "Unidade: #{unidade}" %></td><td><%= "Opção: #{opcao}" %></td></tr>
   <tr>
     <th class="numero">Id</th>
     <th>Participante</th>

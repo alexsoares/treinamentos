@@ -24111,3 +24111,1043 @@ Rendering inscricaos/gera_pdf
   [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1433) [0m
 Sending data Sistema GPD.pdf
 Completed in 1433ms (View: 2, DB: 0) | 200 OK [http://localhost/inscricaos/gera_pdf.pdf?curso=10]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#listagem (for 127.0.0.1 at 2012-08-28 15:14:04) [GET]
+  Parameters: {"authenticity_token"=>"VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo=", "curso"=>{"unidade"=>"43", "get"=>"10"}, "page"=>"3", "periodo_opcao1"=>"Noturno"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (3.0ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.8ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 10) [0m
+  [4;35;1mInscricao Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (0.2ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 and (inscricaos.opcao1 = '43' and inscricaos.periodo_opcao1 = 'Noturno')) LIMIT 20, 10[0m
+  [4;35;1mInscricao Load Including Associations (0.2ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 and (inscricaos.opcao1 = '43' and inscricaos.periodo_opcao1 = 'Noturno')) AND `inscricaos`.id IN (325, 636, 682, 324, 800) [0m
+  [4;36;1mInscricao Load Including Associations (0.3ms)[0m   [0;1mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 and (inscricaos.opcao1 = '43' and inscricaos.periodo_opcao1 = 'Noturno')) [0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/gerenciar
+Rendering inscricaos/listagem
+  [4;35;1mUnidade Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inscricaos` INNER JOIN `cursos_inscricaos` ON `inscricaos`.id = `cursos_inscricaos`.inscricao_id WHERE (`cursos_inscricaos`.curso_id = 10 ) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mParticipante Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 451) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1346) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1366) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 408) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1433) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+Rendered inscricaos/_inscritos (45.9ms)
+Rendered shared/_show_results (0.2ms)
+Completed in 355ms (View: 86, DB: 13) | 200 OK [http://localhost/inscricaos/listagem?authenticity_token=VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo%3D&curso%5Bget%5D=10&curso%5Bunidade%5D=43&page=3&periodo_opcao1=Noturno]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#listagem (for 127.0.0.1 at 2012-08-28 15:14:12) [GET]
+  Parameters: {"authenticity_token"=>"VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo=", "curso"=>{"unidade"=>"", "get"=>"1"}, "periodo_opcao1"=>"Matutino"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.7ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (1.1ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (0.1ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 and (inscricaos.opcao1 = '' and inscricaos.periodo_opcao1 = 'Matutino')) LIMIT 0, 10[0m
+  [4;35;1mInscricao Load Including Associations (6.8ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 and (inscricaos.opcao1 = '' and inscricaos.periodo_opcao1 = 'Matutino')) [0m
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering inscricaos/listagem
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inscricaos` INNER JOIN `cursos_inscricaos` ON `inscricaos`.id = `cursos_inscricaos`.inscricao_id WHERE (`cursos_inscricaos`.curso_id = 1 ) [0m
+  [4;35;1mUnidade Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mUnidade Load (0.4ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 0) [0m
+
+ActionView::TemplateError (Couldn't find Unidade with ID=) on line #6 of app/views/inscricaos/_inscritos.html.erb:
+3:   <table class="tabelas">
+4:     <tr><td colspan="4"><h3><%= "No total #{@search.inscricaos.count} estão inscritos neste curso." %></h3></td></tr>
+5:     <tr><td colspan="4"><h4><%= "Para esta seleção #{@contador.count} inscritos." %></h4></td></tr>
+6:     <tr><td colspan="3"><%= "Unidade: #{Unidade.find(session[:unidade]).nome}" %></td><td><%= "Unidade: #{session[:opcao]}" %></td></tr>
+7: 
+8:     <tr>
+9:       <th class="numero">Matricula</th>
+
+    app/views/inscricaos/_inscritos.html.erb:6
+    app/views/inscricaos/listagem.js.erb:1
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+    /usr/bin/rdebug-ide:19:in `load'
+    /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (179.5ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#listagem (for 127.0.0.1 at 2012-08-28 15:14:19) [GET]
+  Parameters: {"authenticity_token"=>"VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo=", "curso"=>{"unidade"=>"43", "get"=>"10"}, "page"=>"3", "periodo_opcao1"=>"Noturno"}
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (3.1ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (1.0ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mCurso Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.3ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 10) [0m
+  [4;36;1mInscricao Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load IDs For Limited Eager Loading (0.1ms)[0m   [0mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 and (inscricaos.opcao1 = '43' and inscricaos.periodo_opcao1 = 'Noturno')) LIMIT 20, 10[0m
+  [4;36;1mInscricao Load Including Associations (0.2ms)[0m   [0;1mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 and (inscricaos.opcao1 = '43' and inscricaos.periodo_opcao1 = 'Noturno')) AND `inscricaos`.id IN (325, 636, 682, 324, 800) [0m
+  [4;35;1mInscricao Load Including Associations (0.3ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 and (inscricaos.opcao1 = '43' and inscricaos.periodo_opcao1 = 'Noturno')) [0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/gerenciar
+Rendering inscricaos/listagem
+  [4;36;1mUnidade Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `inscricaos` INNER JOIN `cursos_inscricaos` ON `inscricaos`.id = `cursos_inscricaos`.inscricao_id WHERE (`cursos_inscricaos`.curso_id = 10 ) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mParticipante Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 451) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1346) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1366) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 408) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1433) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+Rendered inscricaos/_inscritos (63.7ms)
+Rendered shared/_show_results (0.3ms)
+Completed in 406ms (View: 123, DB: 16) | 200 OK [http://localhost/inscricaos/listagem?authenticity_token=VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo%3D&curso%5Bget%5D=10&curso%5Bunidade%5D=43&page=3&periodo_opcao1=Noturno]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#listagem (for 127.0.0.1 at 2012-08-28 15:14:31) [GET]
+  Parameters: {"authenticity_token"=>"VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo=", "curso"=>{"unidade"=>"", "get"=>"1"}, "periodo_opcao1"=>"Matutino"}
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.7ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (1.0ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mCurso Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mInscricao Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load IDs For Limited Eager Loading (0.2ms)[0m   [0mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 and (inscricaos.opcao1 = '' and inscricaos.periodo_opcao1 = 'Matutino')) LIMIT 0, 10[0m
+  [4;36;1mInscricao Load Including Associations (0.2ms)[0m   [0;1mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 and (inscricaos.opcao1 = '' and inscricaos.periodo_opcao1 = 'Matutino')) [0m
+  [4;35;1mUser Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering inscricaos/listagem
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `inscricaos` INNER JOIN `cursos_inscricaos` ON `inscricaos`.id = `cursos_inscricaos`.inscricao_id WHERE (`cursos_inscricaos`.curso_id = 1 ) [0m
+  [4;36;1mUnidade Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 0) [0m
+
+ActionView::TemplateError (Couldn't find Unidade with ID=) on line #6 of app/views/inscricaos/_inscritos.html.erb:
+3:   <table class="tabelas">
+4:     <tr><td colspan="4"><h3><%= "No total #{@search.inscricaos.count} estão inscritos neste curso." %></h3></td></tr>
+5:     <tr><td colspan="4"><h4><%= "Para esta seleção #{@contador.count} inscritos." %></h4></td></tr>
+6:     <tr><td colspan="3"><%= "Unidade: #{Unidade.find(session[:unidade]).nome}" %></td><td><%= "Unidade: #{session[:opcao]}" %></td></tr>
+7: 
+8:     <tr>
+9:       <th class="numero">Matricula</th>
+
+    app/views/inscricaos/_inscritos.html.erb:6
+    app/views/inscricaos/listagem.js.erb:1
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+    /usr/bin/rdebug-ide:19:in `load'
+    /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (196.6ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#listagem (for 127.0.0.1 at 2012-08-28 15:15:05) [GET]
+  Parameters: {"authenticity_token"=>"VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo=", "curso"=>{"unidade"=>"", "get"=>"1"}, "periodo_opcao1"=>"Matutino"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.8ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (1.0ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) LIMIT 0, 10[0m
+  [4;35;1mInscricao Load Including Associations (11.9ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) AND `inscricaos`.id IN (4, 14, 15, 18, 19, 22, 24, 25, 33, 34) [0m
+  [4;36;1mSQL (11.8ms)[0m   [0;1mSELECT count(DISTINCT `inscricaos`.id) AS count_all FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;35;1mInscricao Load Including Associations (17.0ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering inscricaos/listagem
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inscricaos` INNER JOIN `cursos_inscricaos` ON `inscricaos`.id = `cursos_inscricaos`.inscricao_id WHERE (`cursos_inscricaos`.curso_id = 1 ) [0m
+  [4;35;1mUnidade Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 0) [0m
+
+ActionView::TemplateError (Couldn't find Unidade with ID=) on line #6 of app/views/inscricaos/_inscritos.html.erb:
+3:   <table class="tabelas">
+4:     <tr><td colspan="4"><h3><%= "No total #{@search.inscricaos.count} estão inscritos neste curso." %></h3></td></tr>
+5:     <tr><td colspan="4"><h4><%= "Para esta seleção #{@contador.count} inscritos." %></h4></td></tr>
+6:     <tr><td colspan="3"><%= "Unidade: #{Unidade.find(session[:unidade]).nome}" %></td><td><%= "Unidade: #{session[:opcao]}" %></td></tr>
+7: 
+8:     <tr>
+9:       <th class="numero">Matricula</th>
+
+    app/views/inscricaos/_inscritos.html.erb:6
+    app/views/inscricaos/listagem.js.erb:1
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+    /usr/bin/rdebug-ide:19:in `load'
+    /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (231.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#listagem (for 127.0.0.1 at 2012-08-28 15:18:23) [GET]
+  Parameters: {"authenticity_token"=>"VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo=", "curso"=>{"unidade"=>"", "get"=>"1"}, "periodo_opcao1"=>"Matutino"}
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (6.5ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (1.1ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mCurso Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.1ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mInscricao Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load IDs For Limited Eager Loading (0.2ms)[0m   [0mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) LIMIT 0, 10[0m
+  [4;36;1mInscricao Load Including Associations (0.2ms)[0m   [0;1mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) AND `inscricaos`.id IN (4, 14, 15, 18, 19, 22, 24, 25, 33, 34) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(DISTINCT `inscricaos`.id) AS count_all FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;36;1mInscricao Load Including Associations (3.4ms)[0m   [0;1mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering inscricaos/listagem
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `inscricaos` INNER JOIN `cursos_inscricaos` ON `inscricaos`.id = `cursos_inscricaos`.inscricao_id WHERE (`cursos_inscricaos`.curso_id = 1 ) [0m
+  [4;36;1mParticipante Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `participantes`[0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 372) [0m
+  [4;36;1mUnidade Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mUnidade Load (0.6ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 153) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1034) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 324) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 50) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 160) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 161) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1094) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 403) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 50) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 749) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 824) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 44) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 49) [0m
+Rendered inscricaos/_inscritos (139.4ms)
+Completed in 7056ms (View: 171, DB: 26) | 200 OK [http://localhost/inscricaos/listagem?authenticity_token=VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo%3D&curso%5Bget%5D=1&curso%5Bunidade%5D=&periodo_opcao1=Matutino&authenticity_token=VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo%3D]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#gera_pdf to pdf (for 127.0.0.1 at 2012-08-28 15:18:58) [GET]
+  Parameters: {"curso"=>"1"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.9ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.8ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (6.4ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 and (inscricaos.opcao1 = '' and inscricaos.periodo_opcao1 = 'Matutino')) ORDER BY inscricaos.id LIMIT 0, 100[0m
+Rendering inscricaos/gera_pdf
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mUnidade Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 0) [0m
+
+ActionView::TemplateError (Couldn't find Unidade with ID=) on line #15 of app/views/inscricaos/gera_pdf.erb:
+12: <table border="1" frame="border" rules="rows">
+13:   <tr><td colspan="3"><h2><%= "Listagem de presença" %></h2></td></tr>
+14:   <tr><td colspan="3"><b><%= "Curso - #{Curso.find(params[:curso]).nome_curto}" %></b><br/></td></tr>
+15:   <tr><td colspan="2"><%= "Unidade: #{Unidade.find(session[:unidade]).nome}" %></td><td><%= "Opção: #{session[:opcao]}" %></td></tr>
+16:   <tr>
+17:     <th class="numero">Id</th>
+18:     <th>Participante</th>
+
+    app/views/inscricaos/gera_pdf.erb:15
+    app/controllers/inscricaos_controller.rb:162:in `gera_pdf'
+    app/controllers/inscricaos_controller.rb:159:in `gera_pdf'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_load'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/lib/ruby-debug-ide.rb:109:in `debug_program'
+    /usr/lib/ruby/gems/1.8/gems/ruby-debug-ide-0.4.9/bin/rdebug-ide:87
+    /usr/bin/rdebug-ide:19:in `load'
+    /usr/bin/rdebug-ide:19
+
+Rendered rescues/_trace (146.0ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#gera_pdf to pdf (for 127.0.0.1 at 2012-08-28 15:21:15) [GET]
+  Parameters: {"curso"=>"10"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.7ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (1.0ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.6ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 10) [0m
+  [4;35;1mInscricao Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (7.0ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 and (inscricaos.opcao1 = '' and inscricaos.periodo_opcao1 = 'Matutino')) ORDER BY inscricaos.id LIMIT 0, 100[0m
+Rendering inscricaos/gera_pdf
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 10) [0m
+Sending data Sistema GPD.pdf
+Completed in 995ms (View: 1, DB: 0) | 200 OK [http://localhost/inscricaos/gera_pdf.pdf?curso=10]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#gera_pdf to pdf (for 127.0.0.1 at 2012-08-28 15:22:52) [GET]
+  Parameters: {"curso"=>"10"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.1ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (0.8ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 10) [0m
+  [4;35;1mInscricao Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (0.8ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 ) LIMIT 0, 10[0m
+  [4;35;1mInscricao Load Including Associations (5.4ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 ) AND `inscricaos`.id IN (2, 4, 6, 7, 9, 10, 11, 13, 14, 19) [0m
+  [4;36;1mSQL (6.1ms)[0m   [0;1mSELECT count(DISTINCT `inscricaos`.id) AS count_all FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 ) [0m
+  [4;35;1mInscricao Load Including Associations (10.0ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 ) [0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (0.2ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 and (inscricaos.opcao1 = '' and inscricaos.periodo_opcao1 = 'Matutino')) ORDER BY inscricaos.id LIMIT 0, 100[0m
+Rendering inscricaos/gera_pdf
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 10) [0m
+Sending data Sistema GPD.pdf
+Completed in 1340ms (View: 2, DB: 0) | 200 OK [http://localhost/inscricaos/gera_pdf.pdf?curso=10]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#listagem (for 127.0.0.1 at 2012-08-28 15:23:21) [GET]
+  Parameters: {"authenticity_token"=>"VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo=", "curso"=>{"unidade"=>"43", "get"=>"10"}, "page"=>"3", "periodo_opcao1"=>"Noturno"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.9ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (1.0ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 10) [0m
+  [4;35;1mInscricao Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (1.2ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 ) LIMIT 20, 10[0m
+  [4;35;1mInscricao Load Including Associations (5.3ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 ) AND `inscricaos`.id IN (61, 65, 70, 72, 74, 75, 80, 83, 86, 87) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(DISTINCT `inscricaos`.id) AS count_all FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 ) [0m
+  [4;35;1mInscricao Load Including Associations (1.5ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =10 ) [0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/gerenciar
+Rendering inscricaos/listagem
+  [4;36;1mUnidade Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `unidades`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `inscricaos` INNER JOIN `cursos_inscricaos` ON `inscricaos`.id = `cursos_inscricaos`.inscricao_id WHERE (`cursos_inscricaos`.curso_id = 10 ) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mParticipante Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.4ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 830) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 10) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 478) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mParticipante Load (0.4ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1104) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 760) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 44) [0m
+  [4;35;1mParticipante Load (0.4ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1106) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 49) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 44) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 358) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 316) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mParticipante Load (0.4ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 360) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 909) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+Rendered inscricaos/_inscritos (80.8ms)
+Rendered shared/_show_results (0.2ms)
+Completed in 834ms (View: 297, DB: 23) | 200 OK [http://localhost/inscricaos/listagem?authenticity_token=VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo%3D&curso%5Bget%5D=10&curso%5Bunidade%5D=43&page=3&periodo_opcao1=Noturno]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#listagem (for 127.0.0.1 at 2012-08-28 15:23:26) [GET]
+  Parameters: {"authenticity_token"=>"VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo=", "curso"=>{"unidade"=>"", "get"=>"1"}, "periodo_opcao1"=>"Matutino"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (2.9ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (1.1ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (0.1ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) LIMIT 0, 10[0m
+  [4;35;1mInscricao Load Including Associations (0.1ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) AND `inscricaos`.id IN (4, 14, 15, 18, 19, 22, 24, 25, 33, 34) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(DISTINCT `inscricaos`.id) AS count_all FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;35;1mInscricao Load Including Associations (1.1ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering inscricaos/listagem
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `inscricaos` INNER JOIN `cursos_inscricaos` ON `inscricaos`.id = `cursos_inscricaos`.inscricao_id WHERE (`cursos_inscricaos`.curso_id = 1 ) [0m
+  [4;35;1mParticipante Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 372) [0m
+  [4;35;1mUnidade Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `unidades`[0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 153) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1034) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 324) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 50) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 160) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 161) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1094) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 43) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 51) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 403) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 50) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 749) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 45) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 46) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 824) [0m
+  [4;35;1mUnidade Load (0.1ms)[0m   [0mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 44) [0m
+  [4;36;1mUnidade Load (0.1ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (`unidades`.`id` = 49) [0m
+Rendered inscricaos/_inscritos (81.0ms)
+Completed in 578ms (View: 97, DB: 14) | 200 OK [http://localhost/inscricaos/listagem?authenticity_token=VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo%3D&curso%5Bget%5D=1&curso%5Bunidade%5D=&periodo_opcao1=Matutino&authenticity_token=VgOcIQOHBTwaA0ntR5iGSFHXPLBbHJ4hQFEkhl4s7xo%3D]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#gera_pdf to pdf (for 127.0.0.1 at 2012-08-28 15:23:28) [GET]
+  Parameters: {"curso"=>"1"}
+  [4;35;1mPesquisa Load (0.2ms)[0m   [0mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;36;1mCurso Load (0.2ms)[0m   [0;1mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;35;1mParticipante Load (2.0ms)[0m   [0mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;36;1mInscricao Load (0.8ms)[0m   [0;1mSELECT * FROM `inscricaos` [0m
+  [4;35;1mUnidade Load (0.2ms)[0m   [0mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;36;1mCurso Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `cursos`[0m
+  [4;35;1mCurso Load (0.1ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;36;1mInscricao Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `inscricaos`[0m
+  [4;35;1mInscricao Load IDs For Limited Eager Loading (0.2ms)[0m   [0mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) LIMIT 0, 10[0m
+  [4;36;1mInscricao Load Including Associations (0.2ms)[0m   [0;1mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) AND `inscricaos`.id IN (4, 14, 15, 18, 19, 22, 24, 25, 33, 34) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(DISTINCT `inscricaos`.id) AS count_all FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (0.2ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) LIMIT 0, 10[0m
+  [4;35;1mInscricao Load Including Associations (0.2ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) AND `inscricaos`.id IN (4, 14, 15, 18, 19, 22, 24, 25, 33, 34) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(DISTINCT `inscricaos`.id) AS count_all FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;35;1mInscricao Load Including Associations (7.8ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (0.2ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 and (inscricaos.opcao1 = '' and inscricaos.periodo_opcao1 = 'Matutino')) ORDER BY inscricaos.id LIMIT 0, 100[0m
+Rendering inscricaos/gera_pdf
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+Sending data Operações Básicas.pdf
+Completed in 40190ms (View: 2, DB: 0) | 200 OK [http://localhost/inscricaos/gera_pdf.pdf?curso=1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#gera_pdf to pdf (for 127.0.0.1 at 2012-08-28 15:24:11) [GET]
+  Parameters: {"curso"=>"1"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (3.0ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (1.1ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load IDs For Limited Eager Loading (4.0ms)[0m   [0;1mSELECT DISTINCT `inscricaos`.id FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) LIMIT 0, 10[0m
+  [4;35;1mInscricao Load Including Associations (0.2ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) AND `inscricaos`.id IN (4, 14, 15, 18, 19, 22, 24, 25, 33, 34) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(DISTINCT `inscricaos`.id) AS count_all FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;35;1mInscricao Load Including Associations (1.9ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+Rendering inscricaos/gera_pdf
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mParticipante Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 372) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 153) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1034) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 324) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 160) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 161) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1094) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 403) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 749) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 824) [0m
+Sending data Operações Básicas.pdf
+Completed in 4861ms (View: 2, DB: 0) | 200 OK [http://localhost/inscricaos/gera_pdf.pdf?curso=1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing InscricaosController#gera_pdf to pdf (for 127.0.0.1 at 2012-08-28 15:25:37) [GET]
+  Parameters: {"curso"=>"1"}
+  [4;36;1mPesquisa Load (0.2ms)[0m   [0;1mSELECT * FROM `pesquisas` ORDER BY created_at desc LIMIT 1[0m
+  [4;35;1mCurso Load (0.2ms)[0m   [0mSELECT * FROM `cursos` ORDER BY nome ASC[0m
+  [4;36;1mParticipante Load (6.2ms)[0m   [0;1mSELECT * FROM `participantes` ORDER BY nome ASC[0m
+  [4;35;1mInscricao Load (1.4ms)[0m   [0mSELECT * FROM `inscricaos` [0m
+  [4;36;1mUnidade Load (0.2ms)[0m   [0;1mSELECT * FROM `unidades` WHERE (id in (42,43,44,45,46,47,48,49,50,51)) [0m
+  [4;35;1mCurso Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `cursos`[0m
+  [4;36;1mCurso Load (0.1ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mInscricao Columns (4.8ms)[0m   [0mSHOW FIELDS FROM `inscricaos`[0m
+  [4;36;1mInscricao Load Including Associations (1.5ms)[0m   [0;1mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `inscricaos`.`id` AS t0_r0, `inscricaos`.`participante_id` AS t0_r1, `inscricaos`.`data_inscricao` AS t0_r2, `inscricaos`.`inscrito` AS t0_r3, `inscricaos`.`created_at` AS t0_r4, `inscricaos`.`updated_at` AS t0_r5, `inscricaos`.`opcao1` AS t0_r6, `inscricaos`.`opcao2` AS t0_r7, `inscricaos`.`periodo_opcao1` AS t0_r8, `inscricaos`.`periodo_opcao2` AS t0_r9, `cursos`.`id` AS t1_r0, `cursos`.`nome_curto` AS t1_r1, `cursos`.`nome` AS t1_r2, `cursos`.`ministrante` AS t1_r3, `cursos`.`carga_horaria` AS t1_r4, `cursos`.`ementa` AS t1_r5, `cursos`.`obs` AS t1_r6, `cursos`.`data_hora` AS t1_r7, `cursos`.`created_at` AS t1_r8, `cursos`.`updated_at` AS t1_r9 FROM `inscricaos` LEFT OUTER JOIN `cursos_inscricaos` ON `cursos_inscricaos`.inscricao_id = `inscricaos`.id LEFT OUTER JOIN `cursos` ON `cursos`.id = `cursos_inscricaos`.curso_id WHERE (cursos.id =1 ) [0m
+Rendering inscricaos/gera_pdf
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `cursos` WHERE (`cursos`.`id` = 1) [0m
+  [4;35;1mParticipante Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `participantes`[0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 372) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 153) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1034) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 324) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 160) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 161) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1094) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 403) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 749) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 824) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 687) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 223) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 79) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 737) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 10) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1102) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 478) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 760) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 698) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 712) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 661) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 358) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 686) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 316) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 851) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 909) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1107) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 309) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 845) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 147) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 326) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1108) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 901) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 724) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 954) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 209) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1110) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 855) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1050) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 151) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 820) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 505) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1113) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1078) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 354) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1114) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 485) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1031) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 803) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 53) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 42) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 182) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 751) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 172) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 541) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 966) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 651) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 142) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 757) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 599) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 298) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 972) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1058) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 907) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 794) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 417) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 629) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 918) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 411) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 486) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 643) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1093) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 380) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 252) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 233) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1121) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 457) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 335) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 936) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 649) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 469) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 761) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 606) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 616) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 548) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1123) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1124) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 439) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 767) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 826) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 212) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 189) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 908) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 827) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 915) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 818) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 821) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 782) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 823) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 603) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 694) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 526) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 567) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 193) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1098) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 930) [0m
+  [4;36;1mParticipante Load (1.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 754) [0m
+  [4;35;1mParticipante Load (2.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 536) [0m
+  [4;36;1mParticipante Load (5.8ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 941) [0m
+  [4;35;1mParticipante Load (3.8ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1045) [0m
+  [4;36;1mParticipante Load (1.6ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 535) [0m
+  [4;35;1mParticipante Load (6.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 263) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1128) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 30) [0m
+  [4;36;1mParticipante Load (4.3ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 282) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 290) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 292) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 170) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 262) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 59) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 173) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 37) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 682) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 40) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 57) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 197) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 75) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 31) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 73) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 259) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 303) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 879) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 547) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 287) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1127) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 735) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 538) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 926) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1132) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1130) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1133) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 882) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 140) [0m
+  [4;35;1mParticipante Load (0.5ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 243) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1135) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 957) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 312) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 245) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1141) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 509) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 699) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 297) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1064) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 218) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1148) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1020) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1119) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 934) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1152) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 608) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 624) [0m
+  [4;35;1mParticipante Load (0.3ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 588) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 404) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 308) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 607) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 639) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 609) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 480) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 597) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 576) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 162) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 288) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1156) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 388) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 456) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 557) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 400) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 408) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 451) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 338) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1158) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 570) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1089) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 549) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 447) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 741) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 627) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 554) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1160) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 416) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1162) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 441) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1163) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 377) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1165) [0m
+  [4;35;1mParticipante Load (0.3ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1166) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 285) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 602) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1171) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 438) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1172) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 186) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 640) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 363) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1174) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 216) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 319) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1175) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 359) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 543) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 387) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 758) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 704) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 848) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 428) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 709) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1185) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1186) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 958) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1189) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 384) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1192) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1194) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 555) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1195) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1197) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1199) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1201) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 111) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 91) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 54) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 527) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 540) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1204) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 866) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 507) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 396) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 391) [0m
+  [4;36;1mParticipante Load (0.2ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 124) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 731) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1111) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 280) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1212) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 346) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 38) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1215) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1216) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1218) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1217) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1220) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 329) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1221) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 395) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 90) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 119) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1223) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1226) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1228) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 647) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1225) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 783) [0m
+  [4;35;1mParticipante Load (3.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1229) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1227) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 785) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1234) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1236) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 266) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1238) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1240) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 323) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 310) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1242) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 106) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1053) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1244) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1245) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 617) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 418) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1248) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1122) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 632) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1250) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 681) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1251) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1252) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 385) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1253) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1247) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1256) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1257) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1258) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1260) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1259) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1263) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1262) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1261) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1264) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1266) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1267) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1268) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1269) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 992) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1270) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1271) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1272) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1273) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1274) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1277) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1278) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1279) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1280) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1281) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1282) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1283) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1284) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 373) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 397) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1286) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 869) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1287) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 981) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 272) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 800) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 300) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 748) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1290) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1291) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 585) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1293) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1051) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1294) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1296) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1297) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 534) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1298) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1299) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 427) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 466) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 423) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1300) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1301) [0m
+  [4;35;1mParticipante Load (0.2ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 506) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1302) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1303) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 974) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1304) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 916) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1306) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 729) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1310) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1311) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1313) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1314) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1316) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1315) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1005) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1320) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 587) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1325) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 399) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 491) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 583) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 586) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1327) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1328) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1329) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1331) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1332) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1333) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1334) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1335) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1336) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1337) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 769) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 944) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1343) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1344) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1345) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1346) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 264) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1348) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 592) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1349) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1350) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1352) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1353) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1354) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1355) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1012) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 449) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 834) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 615) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 996) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 883) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 187) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1358) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1359) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 215) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 273) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 169) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1363) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1364) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1366) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1365) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1370) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1371) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 208) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1374) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1373) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1376) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1382) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 355) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 953) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1384) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1386) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1389) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1390) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 862) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1391) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 379) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1394) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1398) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1399) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 32) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 481) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 154) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1401) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 60) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 29) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1403) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 975) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1016) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 905) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 676) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 987) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 83) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1405) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 113) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1406) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1081) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 191) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 440) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 841) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 738) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 85) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 333) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1407) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 942) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1408) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1410) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 561) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 675) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1411) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 188) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 739) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 768) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 742) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1413) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 313) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1074) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1416) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 135) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 493) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 301) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 914) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 248) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 946) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 78) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 475) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1434) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 501) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1439) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 145) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 382) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 569) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 877) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 460) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1442) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 873) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 872) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 459) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 65) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 89) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 110) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 68) [0m
+  [4;35;1mParticipante Load (0.1ms)[0m   [0mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1040) [0m
+  [4;36;1mParticipante Load (0.1ms)[0m   [0;1mSELECT * FROM `participantes` WHERE (`participantes`.`id` = 1149) [0m
+Sending data Operações Básicas.pdf
+Completed in 3395ms (View: 1, DB: 0) | 200 OK [http://localhost/inscricaos/gera_pdf.pdf?curso=1]

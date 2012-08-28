@@ -3,7 +3,8 @@
   <table class="tabelas">
     <tr><td colspan="4"><h3><%= "No total #{@search.inscricaos.count} estão inscritos neste curso." %></h3></td></tr>
     <tr><td colspan="4"><h4><%= "Para esta seleção #{@contador.count} inscritos." %></h4></td></tr>
-    <tr><td colspan="3"><%= "Unidade: #{Unidade.find(session[:unidade]).nome}" %></td><td><%= "Unidade: #{session[:opcao]}" %></td></tr>
+    <% unidade = session[:unidade].present? ? Unidade.find(session[:unidade]).nome : "Geral" %>
+    <tr><td colspan="3"><%= "Unidade: #{unidade}: " %></td><td><%= "Unidade: #{session[:opcao]}" %></td></tr>
 
     <tr>
       <th class="numero">Matricula</th>
