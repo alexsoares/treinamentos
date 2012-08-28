@@ -8,6 +8,15 @@ class InscricaosController < ApplicationController
     
     layout :define
 
+
+  def checar
+    if params[:matricula]
+      participante = Participante.find_by_matricula(params[:matricula])
+      @inscricao = Inscricao.find_by_participante_id(participante)
+    end
+  end
+
+
   def envia_email
   end
 
@@ -142,6 +151,27 @@ class InscricaosController < ApplicationController
     @curso = @search.paginate(:all,:page=>params[:page],:per_page =>20, :order => sort_column + " " + sort_direction)
    end
    render :action => 'por_curso'
+ end
+
+  def gera_pdf
+   @search = Curso.find(params[:curso])
+    respond_to do |format|
+      format.html {render(:layout => false)} ## index.html.erb
+      format.pdf do
+        html = render_to_string(:layout => 'false' , :action => "gera_pdf.erb")
+        kit = PDFKit.new(html)
+        kit.stylesheets << "#{Rails.root}/public/stylesheets/pdf.css"
+        send_data(kit.to_pdf, :filename => "#{@search}.pdf", :type => 'application/pdf')
+      end
+    end
+ end
+
+
+ def listagem
+   if params[:curso].present?
+     @search = Curso.find(params[:curso][:get])
+     @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =?', @search.id ]})
+   end
  end
 
 

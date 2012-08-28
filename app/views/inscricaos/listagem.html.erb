@@ -1,0 +1,16 @@
+   <% form_remote_tag :url => listagem_inscricaos_path, :method => :get do %>
+         <table>
+          <tr>
+            <td>
+               <%= label_tag :curso, "Curso" %>
+               <%= collection_select(:curso, :get, @cursos, :id,:nome_curto) %>
+            </td>
+            <td><%= submit_tag "Busca" %></td>
+          </tr>
+          <tr><td colspan="2"><hr/></td></tr>
+         <tr>
+           <td colspan="2"><div id="lista"><%= render "inscritos" %></div>
+           </td>
+         </tr>
+         </table>
+    <% end %>

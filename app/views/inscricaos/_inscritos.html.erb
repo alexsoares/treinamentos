@@ -1,4 +1,20 @@
-<% f.inscricaos.each do |inscrito| %>
-  <li><%= inscrito.participante.nome %></li>
-<%end%>
-  
+  <%if @search.present?%>
+  <%= link_to image_tag("/stylesheets/images/pdf.png", :size => "40x40"), gera_pdf_inscricaos_path(:format => "pdf", :curso => @search) %>
+  <table class="tabelas">
+    <tr><td colspan="3"><h1><%= "#{@search.inscricaos.count} estão inscritos neste curso" %></h1></td></tr>
+    <tr>
+      <th>Matricula</th>
+      <th>Nome</th>
+      <th>Função</th>
+    </tr>
+
+    <% @cursos_inscricaos.each do |inscrito| %>
+      <tr>
+        <td><%= inscrito.participante.matricula%></td>
+        <td><%= inscrito.participante.nome%></td>
+        <td><%= inscrito.participante.funcao%></td>
+      </tr>
+    <%end%>
+      <tr><td colspan="3"><%= will_paginate @cursos_inscricaos %></td></tr>
+  </table>
+  <%end%>

@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+}
+table {
+  border: solid 1px;
+  border-color:black;
+  width: 100%;
+}
+
+
+
+th {
+  font-size: 10px;
+  color: black;
+  background-color: white;
+  padding: 4px 8px;
+  padding-bottom: 4px;
+  text-align: center;
+}
+th {
+    background-color: gainsboro;
+    width: 50%;
+}
+th h1{
+    color:#000;
+}
+
+td {
+  padding: 4px 8px;
+  background-color: white;
+  width: 50%;
+}
+#brasao{
+    width: 30%;
+    background: url(Imagens/brasao.jpg) repeat-x;
+
+}
+#titulo{
+    width: 70%;
+
+}
+#titulo h1{
+    text-align: center;
+}
+
+.numero {
+    width: 10%;
+}

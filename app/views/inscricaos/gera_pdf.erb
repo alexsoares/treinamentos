@@ -1,0 +1,29 @@
+<table>
+    <tr>
+      <td colspan="2">
+        <h1>Prefeitura Municipal de Americana</h1>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">Americana - ____ / __________ / ______</td>
+    </tr>
+    <tr><td><%= "Ministrante:_______________" %></td></tr>
+</table>
+<table border="1" frame="border" rules="rows">
+  <tr><td colspan="3"><h2><%= "Listagem de presença" %></h2></td></tr>
+  <tr><td colspan="3"><b><%= "Curso - #{Curso.find(params[:curso]).nome_curto}" %></b><br/></td></tr>
+  <tr>
+    <th class="numero">Id</th>
+    <th>Participante</th>
+    <th>Assinatura</th>
+  </tr>
+  <%contador = 1%>
+  <% @search.inscricaos.each do |inscrito| %>
+    <tr>
+      <td class="numero"><%= contador%></td>
+      <td><%= inscrito.participante.nome %></td>
+      <td></td>
+    </tr>
+    <%contador += 1%>
+  <%end%>
+</table>

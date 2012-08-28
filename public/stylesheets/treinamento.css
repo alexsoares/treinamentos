@@ -1,3 +1,20 @@
+a:link {text-decoration:none}
+a:visited {text-decoration:none}
+a:active {text-decoration:none}
+a:hover {text-decoration:none}
+a img {
+border-width:0;
+}
+
+.pdf th{
+    background-color: #FE7B09;
+}
+#inscreva-se{
+    position:absolute;
+    left: 595px;
+    top: 380px;
+
+}
 .sombra {
     position:absolute;
     padding-top:5px;
@@ -16,7 +33,7 @@
 
 }
 .formulario .form_title {
-   
+
    background-color: dimgray;
    border-bottom: 1px solid black;
    font-weight: bold;
@@ -26,7 +43,7 @@
 
 .formulario .form_body {
    padding-top:0px;
-   background-color: cadetblue;
+   background-color: whitesmoke;
    font-weight: bold;
    text-align:justify;
    color: black;
@@ -109,10 +126,6 @@ body {
     background-color:silver;
 }
 
-a:hover {
-  color:white;
-  background-color:gray;
-}
 
 #topo {
 background-image:url(Imagens/logo.jpg);
@@ -186,7 +199,7 @@ margin-left: 300px;
     float:left;
     height:300px;
     width:950px;
-    background-image:url(Imagens/panfleto.jpg);
+    background-image:url(Imagens/panfleto.png);
     font-size:10px;
 }
 #box{
@@ -212,7 +225,7 @@ margin-left: 300px;
 .tabelas th {
   font-size: 10px;
   color: black;
-  background-color: #F0E68C;
+  background-color: #d9d6c4;
   padding: 4px 8px;
   padding-bottom: 4px;
   text-align: center;
@@ -226,11 +239,7 @@ margin-left: 300px;
 
 .tabelas td {
   padding: 4px 8px;
-  background-color: #F5DEB3;
-}
-
-.tabelas td:hover {
-  background-color: white;
+  background-color: #EFEFEF;
 }
 
 .tabelas .even td {
@@ -320,7 +329,7 @@ line-height: 12px;
 #wrap {
         padding: 10px 10px 3px 10px;
         width: 930px;
-        margin:20px auto; 
+        margin:20px auto;
         background: #fff;
         height:800px;
 
@@ -338,20 +347,20 @@ line-height: 12px;
         margin-top: 10px;
         height:385px;
         background-color:#F0E68C;
-        width:150px;        
+        width:150px;
     }
 .no_decorate{
     text-decoration:none;
 }
 #left ul { padding: 5px 10px 10px 10px; margin: 0; }
-#right { 
+#right {
         margin-bottom: 10px;
         float: right;
         width: 745px;
         height: 790px;
         padding: 0 10px 10px 10px;
         margin-top: 10px;
-        background-image:url(Imagens/panfleto.jpg);
+        background-image:url(Imagens/panfleto.png);
         background-repeat:no-repeat;
 
     }
@@ -362,9 +371,9 @@ line-height: 12px;
         height: 660px;
         padding: 0 10px 10px 10px;
         margin-top: 10px;
-        
+
         background-repeat:no-repeat;
-        background-color:#F0E68C;
+        background-color:whitesmoke;
     }
 #middle {
         margin-bottom: 10px;
@@ -373,7 +382,7 @@ line-height: 12px;
         height: 790px;
         padding: 0 10px 10px 10px;
         margin-top: 10px;
-        background-color:#F0E68C;
+        background-color:whitesmoke;
     }
  .menuheader{
 	width:192px;
