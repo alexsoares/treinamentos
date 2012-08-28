@@ -1,18 +1,20 @@
   <%if @search.present?%>
   <%= link_to image_tag("/stylesheets/images/pdf.png", :size => "40x40"), gera_pdf_inscricaos_path(:format => "pdf", :curso => @search) %>
   <table class="tabelas">
-    <tr><td colspan="3"><h1><%= "#{@search.inscricaos.count} estão inscritos neste curso" %></h1></td></tr>
+    <tr><td colspan="4"><h1><%= "#{@search.inscricaos.count} estão inscritos neste curso" %></h1></td></tr>
     <tr>
-      <th>Matricula</th>
-      <th>Nome</th>
-      <th>Função</th>
+      <th class="numero">Matricula</th>
+      <th class="tamanho_tab">Nome</th>
+      <th class="tamanho_tab">Opção 1</th>
+      <th class="tamanho_tab">Opção 2</th>
     </tr>
 
     <% @cursos_inscricaos.each do |inscrito| %>
       <tr>
-        <td><%= inscrito.participante.matricula%></td>
-        <td><%= inscrito.participante.nome%></td>
-        <td><%= inscrito.participante.funcao%></td>
+        <td class="numero"><%= inscrito.participante.matricula%></td>
+        <td class="tamanho_tab"><%= inscrito.participante.nome%></td>
+        <td class="tamanho_tab"><%= "#{Unidade.find(inscrito.opcao1).nome} - #{inscrito.periodo_opcao1}"%></td>
+        <td class="tamanho_tab"><%= "#{Unidade.find(inscrito.opcao2).nome} - #{inscrito.periodo_opcao1}"%></td>
       </tr>
     <%end%>
       <tr><td colspan="3"><%= will_paginate @cursos_inscricaos %></td></tr>

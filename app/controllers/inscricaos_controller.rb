@@ -170,7 +170,8 @@ class InscricaosController < ApplicationController
  def listagem
    if params[:curso].present?
      @search = Curso.find(params[:curso][:get])
-     @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =?', @search.id ]})
+     @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,params[:curso][:unidade], params[:curso][:perido] ]})
+     t = 0
    end
  end
 
