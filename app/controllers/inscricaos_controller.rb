@@ -162,7 +162,6 @@ class InscricaosController < ApplicationController
      @cursos_inscricaos = Inscricao.all({:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ], :order =>"inscricaos.id"})
      @contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id])
    end
-
     respond_to do |format|
       format.html {render(:layout => false)} ## index.html.erb
       format.pdf do
@@ -180,13 +179,12 @@ class InscricaosController < ApplicationController
      session[:opcao] = params[:periodo_opcao1]
      session[:unidade] = params[:curso][:unidade]
      @search = Curso.find(params[:curso][:get])
-     unless session[:unidade] == 'unidade'
+     unless session[:unidade].present?
        @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id]})
        @contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id])
      else
      @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ]})
      @contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ])
-
      end
    end
  end
