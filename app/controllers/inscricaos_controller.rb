@@ -155,13 +155,14 @@ class InscricaosController < ApplicationController
 
   def gera_pdf
    @search = Curso.find(params[:curso])
+   @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 100, :include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ], :order =>"inscricaos.id"})
     respond_to do |format|
       format.html {render(:layout => false)} ## index.html.erb
       format.pdf do
         html = render_to_string(:layout => 'false' , :action => "gera_pdf.erb")
         kit = PDFKit.new(html)
         kit.stylesheets << "#{Rails.root}/public/stylesheets/pdf.css"
-        send_data(kit.to_pdf, :filename => "#{@search}.pdf", :type => 'application/pdf')
+        send_data(kit.to_pdf, :filename => "#{@search.nome_curto}.pdf", :type => 'application/pdf')
       end
     end
  end
@@ -169,9 +170,11 @@ class InscricaosController < ApplicationController
 
  def listagem
    if params[:curso].present?
+     session[:opcao] = params[:periodo_opcao1]
+     session[:unidade] = params[:curso][:unidade]
      @search = Curso.find(params[:curso][:get])
-     @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,params[:curso][:unidade], params[:curso][:perido] ]})
-     t = 0
+     @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ]})
+     @contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ])
    end
  end
 

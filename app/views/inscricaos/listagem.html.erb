@@ -3,19 +3,19 @@
           <tr>
             <td>
                <%= label_tag :curso, "Curso" %>
-               <%= collection_select(:curso, :get, @cursos, :id,:nome_curto) %>
+               <%= collection_select(:curso, :get, @cursos, :id,:nome_curto, :include_blank => ' -- Selecione -- ' ) %>
             </td>
             <td>
               <%= label_tag :unidade, "Unidade" %>
-              <%= collection_select :curso, :opcao1, @locais, :id, :nome, :include_blank => ' -- Selecione -- ' %>
+              <%= collection_select :curso, :unidade, @locais, :id, :nome, :include_blank => ' -- Selecione -- ' %>
               <%= label_tag :periodo, "Periodo" %>
-              <%= select_tag :periodo_opcao1, options_for_select(Inscricao::Periodo), :include_blank => "" %><br/>
+              <%= select_tag :periodo_opcao1, options_for_select(Inscricao::Periodo)%><br/>
             </td>
             <td><%= submit_tag "Busca" %></td>
           </tr>
-          <tr><td colspan="2"><hr/></td></tr>
+          <tr><td colspan="3"><hr/></td></tr>
          <tr>
-           <td colspan="2"><div id="lista"><%= render "inscritos" %></div>
+           <td colspan="3"><div id="lista"><%= render "inscritos" %></div>
            </td>
          </tr>
          </table>
