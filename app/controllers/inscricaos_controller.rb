@@ -180,15 +180,36 @@ class InscricaosController < ApplicationController
      session[:unidade] = params[:curso][:unidade]
      @search = Curso.find(params[:curso][:get])
      unless session[:unidade].present?
-       @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id]})
-       @contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id])
+       #@cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id]})
+       @inscricao=@contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id])
      else
-     @cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ]})
-     @contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ])
+       #@cursos_inscricaos = Inscricao.paginate(:all, {:page => params[:page],:per_page => 10, :include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ]})
+       @inscricao=@contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ])
      end
+     @cursos_inscricaos = @inscricao.paginate({:page => params[:page],:per_page => 10})
+     gera_pdf(@inscricao)
    end
  end
 
+
+ def gera_pdf(inscricao)
+        ## Gera arquivo em pdf
+     #@inscricao = Inscricao.all(:include => "cursos",:conditions => [ 'cursos.id =1' ])
+     @report = DailyOrdersXlsFactory.new("simple report")
+     @report.add_column(10).add_column(40).add_column(30).add_column(30).add_column(30)
+     @report.add_row(["Prefeitura Municipal de Americana"], 30).join_last_row_heading(0..6)
+     @report.add_row(["Inscritos no curso: #{@search.truncar_curso} "], 30).join_last_row_heading(0..6)
+     @report.add_row(["Matricula","Nome","Unidade","Opção 1","Opçao 2"])
+     inscricao.each do |insc|
+       @report.add_row([insc.participante.matricula,insc.participante.nome,insc.participante.unidade.nome,insc.unidade(insc.opcao1),insc.unidade(insc.opcao2)])
+     end
+     @rel = Relatorio.new
+       @rel.ip = request.remote_ip
+       @rel.user_id = current_user
+       @rel.path = @report.save_to_file("public/saidas/#{@search.truncar_curso}_#{Date.today.strftime("%d_%m_%Y")}_#{@rel.user.login}.xls")
+     @rel.save
+
+ end
 
  def lista_inscricao
     $curso = params[:curso_curso_id]

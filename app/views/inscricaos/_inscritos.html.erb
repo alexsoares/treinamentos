@@ -1,5 +1,6 @@
   <%if @search.present?%>
   <%= link_to image_tag("/stylesheets/images/pdf.png", :size => "40x40"), gera_pdf_inscricaos_path(:format => "pdf", :curso => @search) %>
+  <%= link_to image_tag("/stylesheets/images/excel.gif", :size => "40x40"),@rel.path_truncado %>
   <table class="tabelas">
     <tr><td colspan="4"><h3><%= "No total #{@search.inscricaos.count} estão inscritos neste curso." %></h3></td></tr>
     <tr><td colspan="4"><h4><%= "Para esta seleção #{@contador.count} inscritos." %></h4></td></tr>

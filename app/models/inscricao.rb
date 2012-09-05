@@ -33,4 +33,8 @@ class Inscricao < ActiveRecord::Base
     end
   end
 
+  def unidade(codigo)
+    Unidade.find(codigo).nome
+  end
+
 end

@@ -18,4 +18,14 @@ class Curso < ActiveRecord::Base
     end
   end
 
+  def truncar_curso
+    if self.nome_curto.length > 20
+      str = self.nome_curto
+      str[0..20]
+    else
+      self.nome_curto
+    end
+  end
+
+
 end

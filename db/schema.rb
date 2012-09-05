@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806181454) do
+ActiveRecord::Schema.define(:version => 20120905173831) do
 
   create_table "cursos", :force => true do |t|
     t.string   "nome_curto"
@@ -74,6 +74,14 @@ ActiveRecord::Schema.define(:version => 20120806181454) do
 
   create_table "regiaos", :force => true do |t|
     t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "relatorios", :force => true do |t|
+    t.string   "path"
+    t.string   "ip"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
