@@ -9,7 +9,7 @@
               <%= label_tag :unidade, "Unidade" %>
               <%= collection_select :curso, :unidade, @locais, :id, :nome, :include_blank => ' -- Selecione -- ' %>
               <%= label_tag :periodo, "Periodo" %>
-              <%= select_tag :periodo_opcao1, options_for_select(Inscricao::Periodo)%><br/>
+              <%= select_tag :periodo_opcao1, options_for_select(%w(Todos Matutino Vespertino Noturno Sabado_Matutino))%><br/>
             </td>
             <td><%= submit_tag "Busca" %></td>
           </tr>

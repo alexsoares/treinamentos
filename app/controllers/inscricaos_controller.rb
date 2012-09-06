@@ -155,11 +155,15 @@ class InscricaosController < ApplicationController
 
   def gera_pdf
    @search = Curso.find(params[:curso])
-   unless session[:unidade] == 'unidade'
-     @cursos_inscricaos = Inscricao.all({:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id]})
-     @contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id])
+   unless session[:unidade].present?
+     @contador = @cursos_inscricaos = Inscricao.all({:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id]})
+     #@contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id])
    else
-     @cursos_inscricaos = Inscricao.all({:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ], :order =>"inscricaos.id"})
+     if session[:opcao] == "Todos"
+       @cursos_inscricaos = Inscricao.all({:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ], :order =>"inscricaos.id"})
+     else
+       @cursos_inscricaos = Inscricao.all({:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ?)', @search.id,session[:unidade] ], :order =>"inscricaos.id"})              
+     end
      @contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? ', @search.id])
    end
     respond_to do |format|
@@ -187,21 +191,21 @@ class InscricaosController < ApplicationController
        @inscricao=@contador = Inscricao.all(:include => 'cursos',:conditions => [ 'cursos.id =? and (inscricaos.opcao1 = ? and inscricaos.periodo_opcao1 = ?)', @search.id,session[:unidade], session[:opcao] ])
      end
      @cursos_inscricaos = @inscricao.paginate({:page => params[:page],:per_page => 10})
-     gera_pdf(@inscricao)
+     gera_excel(@inscricao)
    end
  end
 
 
- def gera_pdf(inscricao)
+ def gera_excel(inscricao)
         ## Gera arquivo em pdf
      #@inscricao = Inscricao.all(:include => "cursos",:conditions => [ 'cursos.id =1' ])
      @report = DailyOrdersXlsFactory.new("simple report")
      @report.add_column(10).add_column(40).add_column(30).add_column(30).add_column(30)
      @report.add_row(["Prefeitura Municipal de Americana"], 30).join_last_row_heading(0..6)
      @report.add_row(["Inscritos no curso: #{@search.truncar_curso} "], 30).join_last_row_heading(0..6)
-     @report.add_row(["Matricula","Nome","Unidade","Opção 1","Opçao 2"])
+     @report.add_row(["Matricula","Nome","Unidade","Opção 1","Horario","Opçao 2","Horario"])
      inscricao.each do |insc|
-       @report.add_row([insc.participante.matricula,insc.participante.nome,insc.participante.unidade.nome,insc.unidade(insc.opcao1),insc.unidade(insc.opcao2)])
+       @report.add_row([insc.participante.matricula,insc.participante.nome,insc.participante.unidade.nome,insc.unidade(insc.opcao1),insc.periodo_opcao1,insc.unidade(insc.opcao2),insc.periodo_opcao2])
      end
      @rel = Relatorio.new
        @rel.ip = request.remote_ip
